@@ -1,0 +1,414 @@
+format version: 5
+output mode:
+1 items
+0 -> single
+output directories:
+1 items
+output dir -> /home/facundo/whiteprompt/akka-http-slick-example/target/scala-2.11/classes
+compile options:
+0 items
+javac options:
+0 items
+compiler version:
+1 items
+0 -> 2.11.7
+compile order:
+1 items
+0 -> Mixed
+name hashing:
+1 items
+0 -> true
+products:
+16 items
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> /home/facundo/whiteprompt/akka-http-slick-example/target/scala-2.11/classes/com/frossi85/ToDoMicroService$$anonfun$1.class
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> /home/facundo/whiteprompt/akka-http-slick-example/target/scala-2.11/classes/com/frossi85/ToDoMicroService$$anonfun$2.class
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> /home/facundo/whiteprompt/akka-http-slick-example/target/scala-2.11/classes/com/frossi85/ToDoMicroService$.class
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> /home/facundo/whiteprompt/akka-http-slick-example/target/scala-2.11/classes/com/frossi85/ToDoMicroService$delayedInit$body.class
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> /home/facundo/whiteprompt/akka-http-slick-example/target/scala-2.11/classes/com/frossi85/ToDoMicroService.class
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> /home/facundo/whiteprompt/akka-http-slick-example/target/scala-2.11/classes/com/frossi85/Routes$$anonfun$1.class
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> /home/facundo/whiteprompt/akka-http-slick-example/target/scala-2.11/classes/com/frossi85/Routes$$anonfun$2$$anonfun$apply$1$$anonfun$apply$2.class
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> /home/facundo/whiteprompt/akka-http-slick-example/target/scala-2.11/classes/com/frossi85/Routes$$anonfun$2$$anonfun$apply$1.class
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> /home/facundo/whiteprompt/akka-http-slick-example/target/scala-2.11/classes/com/frossi85/Routes$$anonfun$2.class
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> /home/facundo/whiteprompt/akka-http-slick-example/target/scala-2.11/classes/com/frossi85/Routes$class.class
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> /home/facundo/whiteprompt/akka-http-slick-example/target/scala-2.11/classes/com/frossi85/Routes.class
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> /home/facundo/whiteprompt/akka-http-slick-example/target/scala-2.11/classes/com/frossi85/api/TasksApi$$anonfun$1$$anonfun$apply$1$$anonfun$apply$2.class
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> /home/facundo/whiteprompt/akka-http-slick-example/target/scala-2.11/classes/com/frossi85/api/TasksApi$$anonfun$1$$anonfun$apply$1.class
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> /home/facundo/whiteprompt/akka-http-slick-example/target/scala-2.11/classes/com/frossi85/api/TasksApi$$anonfun$1.class
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> /home/facundo/whiteprompt/akka-http-slick-example/target/scala-2.11/classes/com/frossi85/api/TasksApi$class.class
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> /home/facundo/whiteprompt/akka-http-slick-example/target/scala-2.11/classes/com/frossi85/api/TasksApi.class
+binary dependencies:
+32 items
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> /home/facundo/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.4.1.jar
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> /home/facundo/.ivy2/cache/com.typesafe.akka/akka-http-core-experimental_2.11/jars/akka-http-core-experimental_2.11-2.0-M2.jar
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> /home/facundo/.ivy2/cache/com.typesafe.akka/akka-http-experimental_2.11/jars/akka-http-experimental_2.11-2.0-M2.jar
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> /home/facundo/.ivy2/cache/com.typesafe.akka/akka-http-spray-json-experimental_2.11/jars/akka-http-spray-json-experimental_2.11-2.0-M2.jar
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> /home/facundo/.ivy2/cache/com.typesafe.akka/akka-http-xml-experimental_2.11/jars/akka-http-xml-experimental_2.11-2.0-M2.jar
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> /home/facundo/.ivy2/cache/com.typesafe.akka/akka-stream-experimental_2.11/jars/akka-stream-experimental_2.11-2.0-M2.jar
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> /home/facundo/.ivy2/cache/io.spray/spray-json_2.11/bundles/spray-json_2.11-1.3.2.jar
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> /home/facundo/Programas-Instalados/activator/repository/com.typesafe/config/1.3.0/bundles/config.jar
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> /home/facundo/Programas-Instalados/activator/repository/org.scala-lang/scala-library/2.11.7/jars/scala-library.jar
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> /usr/lib/jvm/java-8-oracle/jre/lib/rt.jar
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> /home/facundo/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.4.1.jar
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> /home/facundo/.ivy2/cache/com.typesafe.akka/akka-http-core-experimental_2.11/jars/akka-http-core-experimental_2.11-2.0-M2.jar
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> /home/facundo/.ivy2/cache/com.typesafe.akka/akka-http-experimental_2.11/jars/akka-http-experimental_2.11-2.0-M2.jar
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> /home/facundo/.ivy2/cache/com.typesafe.akka/akka-http-spray-json-experimental_2.11/jars/akka-http-spray-json-experimental_2.11-2.0-M2.jar
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> /home/facundo/.ivy2/cache/com.typesafe.akka/akka-http-xml-experimental_2.11/jars/akka-http-xml-experimental_2.11-2.0-M2.jar
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> /home/facundo/.ivy2/cache/com.typesafe.akka/akka-stream-experimental_2.11/jars/akka-stream-experimental_2.11-2.0-M2.jar
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> /home/facundo/.ivy2/cache/io.spray/spray-json_2.11/bundles/spray-json_2.11-1.3.2.jar
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> /home/facundo/Programas-Instalados/activator/repository/com.typesafe/config/1.3.0/bundles/config.jar
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> /home/facundo/Programas-Instalados/activator/repository/org.scala-lang.modules/scala-xml_2.11/1.0.3/bundles/scala-xml_2.11.jar
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> /home/facundo/Programas-Instalados/activator/repository/org.scala-lang/scala-library/2.11.7/jars/scala-library.jar
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> /usr/lib/jvm/java-8-oracle/jre/lib/rt.jar
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> /home/facundo/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.4.1.jar
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> /home/facundo/.ivy2/cache/com.typesafe.akka/akka-http-core-experimental_2.11/jars/akka-http-core-experimental_2.11-2.0-M2.jar
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> /home/facundo/.ivy2/cache/com.typesafe.akka/akka-http-experimental_2.11/jars/akka-http-experimental_2.11-2.0-M2.jar
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> /home/facundo/.ivy2/cache/com.typesafe.akka/akka-http-spray-json-experimental_2.11/jars/akka-http-spray-json-experimental_2.11-2.0-M2.jar
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> /home/facundo/.ivy2/cache/com.typesafe.akka/akka-http-xml-experimental_2.11/jars/akka-http-xml-experimental_2.11-2.0-M2.jar
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> /home/facundo/.ivy2/cache/com.typesafe.akka/akka-stream-experimental_2.11/jars/akka-stream-experimental_2.11-2.0-M2.jar
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> /home/facundo/.ivy2/cache/io.spray/spray-json_2.11/bundles/spray-json_2.11-1.3.2.jar
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> /home/facundo/Programas-Instalados/activator/repository/com.typesafe/config/1.3.0/bundles/config.jar
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> /home/facundo/Programas-Instalados/activator/repository/org.scala-lang.modules/scala-xml_2.11/1.0.3/bundles/scala-xml_2.11.jar
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> /home/facundo/Programas-Instalados/activator/repository/org.scala-lang/scala-library/2.11.7/jars/scala-library.jar
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> /usr/lib/jvm/java-8-oracle/jre/lib/rt.jar
+direct source dependencies:
+0 items
+direct external dependencies:
+0 items
+public inherited source dependencies:
+0 items
+public inherited external dependencies:
+0 items
+member reference internal dependencies:
+2 items
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> /home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> /home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala
+member reference external dependencies:
+0 items
+inheritance internal dependencies:
+2 items
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> /home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> /home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala
+inheritance external dependencies:
+0 items
+class names:
+16 items
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> com.frossi85.ToDoMicroService
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> com.frossi85.ToDoMicroService$
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> com.frossi85.ToDoMicroService$$anonfun$1
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> com.frossi85.ToDoMicroService$$anonfun$2
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> com.frossi85.ToDoMicroService$delayedInit$body
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> com.frossi85.Routes
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> com.frossi85.Routes$$anonfun$1
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> com.frossi85.Routes$$anonfun$2
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> com.frossi85.Routes$$anonfun$2$$anonfun$apply$1
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> com.frossi85.Routes$$anonfun$2$$anonfun$apply$1$$anonfun$apply$2
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> com.frossi85.Routes$class
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> com.frossi85.api.TasksApi
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> com.frossi85.api.TasksApi$$anonfun$1
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> com.frossi85.api.TasksApi$$anonfun$1$$anonfun$apply$1
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> com.frossi85.api.TasksApi$$anonfun$1$$anonfun$apply$1$$anonfun$apply$2
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> com.frossi85.api.TasksApi$class
+used names:
+232 items
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> <init>
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> ActorMaterializer
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> ActorSystem
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> App
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> Config
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> ConfigFactory
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> Console
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> DefaultJsonProtocol
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> Directives
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> ExecutionContextExecutor
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> Flow
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> FromEntityUnmarshaller
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> FromRequestUnmarshaller
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> Future
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> Http
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> HttpRequest
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> HttpResponse
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> Materializer
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> Predef
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> RequestBuilding
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> RouteResult
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> Routes
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> RoutingLog
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> RoutingSettings
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> ScalaXmlSupport
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> Sink
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> Source
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> SprayJsonSupport
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> StatusCodes
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> StringContext
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> ToDoMicroService
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> ToResponseMarshallable
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> Unmarshal
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> Unmarshaller
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> actor
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> akka
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> apply
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> bindAndHandle
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> bindingFuture
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> client
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> com
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> concurrent
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> config
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> default
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> dispatcher
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> ec
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> flatMap
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> fromActorSystem
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> frossi85
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> http
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> json
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> marshallers
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> marshalling
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> materializer
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> math
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> model
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> onComplete
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> println
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> qual$1
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> readLine
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> route2HandlerFlow
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> routes
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> s
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> scala
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> scaladsl
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> server
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> shutdown
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> spray
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> sprayjson
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> stream
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> system
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> typesafe
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> unbind
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> unmarshalling
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> x$10
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> x$11
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> x$12
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> x$13
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> x$14
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> x$15
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> x$3
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> x$4
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> x$5
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> x$6
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> x$7
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> x$8
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> x$9
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> xml
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> $buf
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> &+
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> <init>
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> ActorMaterializer
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> ActorSystem
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> Config
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> ConfigFactory
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> DefaultJsonProtocol
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> Directive
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> Directives
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> Elem
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> ExecutionContextExecutor
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> Flow
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> FromEntityUnmarshaller
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> FromRequestUnmarshaller
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> Future
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> Http
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> HttpRequest
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> HttpResponse
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> Marshaller
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> Materializer
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> NodeBuffer
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> Null
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> RequestBuilding
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> Routes
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> ScalaXmlSupport
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> Sink
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> Source
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> SprayJsonSupport
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> StatusCodes
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> TasksApi
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> Text
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> ToResponseMarshallable
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> TopScope
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> Unmarshal
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> Unmarshaller
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> actor
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> addByNameNullaryApply
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> akka
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> api
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> apply
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> client
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> com
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> complete
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> concurrent
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> config
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> defaultNodeSeqMarshaller
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> enhanceRouteWithConcatenation
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> frossi85
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> get
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> http
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> json
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> liftMarshaller
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> marshallers
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> marshalling
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> math
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> model
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> path
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> pathPrefix
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> routes
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> scala
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> scaladsl
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> segmentStringToPathMatcher
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> server
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> spray
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> sprayjson
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> stream
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> tasksRoutes
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> typesafe
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> unmarshalling
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> xml
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> ~
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> $buf
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> &+
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> /
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> <init>
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> ActorMaterializer
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> ActorSystem
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> AnyRef
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> Config
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> ConfigFactory
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> DefaultJsonProtocol
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> Directive
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> Directives
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> Elem
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> ExecutionContextExecutor
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> Flow
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> FromEntityUnmarshaller
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> FromRequestUnmarshaller
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> Future
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> Http
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> HttpRequest
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> HttpResponse
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> Join
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> Marshaller
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> Materializer
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> NodeBuffer
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> Null
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> RequestBuilding
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> ScalaXmlSupport
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> Sink
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> Source
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> SprayJsonSupport
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> StatusCodes
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> TasksApi
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> Text
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> ToResponseMarshallable
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> TopScope
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> TupleOps
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> Unmarshal
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> Unmarshaller
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> actor
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> addByNameNullaryApply
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> akka
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> api
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> apply
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> client
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> com
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> complete
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> concurrent
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> config
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> defaultNodeSeqMarshaller
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> frossi85
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> get
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> http
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> join0P
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> json
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> liftMarshaller
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> marshallers
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> marshalling
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> math
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> model
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> path
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> scala
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> scaladsl
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> segmentStringToPathMatcher
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> server
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> spray
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> sprayjson
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> stream
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> tasksRoutes
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> typesafe
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> unmarshalling
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> xml
+product stamps:
+16 items
+/home/facundo/whiteprompt/akka-http-slick-example/target/scala-2.11/classes/com/frossi85/Routes$$anonfun$1.class -> lastModified(1450903479000)
+/home/facundo/whiteprompt/akka-http-slick-example/target/scala-2.11/classes/com/frossi85/Routes$$anonfun$2$$anonfun$apply$1$$anonfun$apply$2.class -> lastModified(1450903479000)
+/home/facundo/whiteprompt/akka-http-slick-example/target/scala-2.11/classes/com/frossi85/Routes$$anonfun$2$$anonfun$apply$1.class -> lastModified(1450903479000)
+/home/facundo/whiteprompt/akka-http-slick-example/target/scala-2.11/classes/com/frossi85/Routes$$anonfun$2.class -> lastModified(1450903479000)
+/home/facundo/whiteprompt/akka-http-slick-example/target/scala-2.11/classes/com/frossi85/Routes$class.class -> lastModified(1450903479000)
+/home/facundo/whiteprompt/akka-http-slick-example/target/scala-2.11/classes/com/frossi85/Routes.class -> lastModified(1450903479000)
+/home/facundo/whiteprompt/akka-http-slick-example/target/scala-2.11/classes/com/frossi85/ToDoMicroService$$anonfun$1.class -> lastModified(1450903479000)
+/home/facundo/whiteprompt/akka-http-slick-example/target/scala-2.11/classes/com/frossi85/ToDoMicroService$$anonfun$2.class -> lastModified(1450903479000)
+/home/facundo/whiteprompt/akka-http-slick-example/target/scala-2.11/classes/com/frossi85/ToDoMicroService$.class -> lastModified(1450903479000)
+/home/facundo/whiteprompt/akka-http-slick-example/target/scala-2.11/classes/com/frossi85/ToDoMicroService$delayedInit$body.class -> lastModified(1450903479000)
+/home/facundo/whiteprompt/akka-http-slick-example/target/scala-2.11/classes/com/frossi85/ToDoMicroService.class -> lastModified(1450903479000)
+/home/facundo/whiteprompt/akka-http-slick-example/target/scala-2.11/classes/com/frossi85/api/TasksApi$$anonfun$1$$anonfun$apply$1$$anonfun$apply$2.class -> lastModified(1450903479000)
+/home/facundo/whiteprompt/akka-http-slick-example/target/scala-2.11/classes/com/frossi85/api/TasksApi$$anonfun$1$$anonfun$apply$1.class -> lastModified(1450903479000)
+/home/facundo/whiteprompt/akka-http-slick-example/target/scala-2.11/classes/com/frossi85/api/TasksApi$$anonfun$1.class -> lastModified(1450903479000)
+/home/facundo/whiteprompt/akka-http-slick-example/target/scala-2.11/classes/com/frossi85/api/TasksApi$class.class -> lastModified(1450903479000)
+/home/facundo/whiteprompt/akka-http-slick-example/target/scala-2.11/classes/com/frossi85/api/TasksApi.class -> lastModified(1450903479000)
+source stamps:
+3 items
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> hash(678c3d70c27b5b7fa688fe65697f52e388806bb2)
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> hash(bafb4946c1f266ea581fcbeadaadb3437c2ff719)
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> hash(839355dbbd295e7246dd5c6a1799fc30b5f8b7b6)
+binary stamps:
+11 items
+/home/facundo/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.4.1.jar -> lastModified(1448625061000)
+/home/facundo/.ivy2/cache/com.typesafe.akka/akka-http-core-experimental_2.11/jars/akka-http-core-experimental_2.11-2.0-M2.jar -> lastModified(1448896250000)
+/home/facundo/.ivy2/cache/com.typesafe.akka/akka-http-experimental_2.11/jars/akka-http-experimental_2.11-2.0-M2.jar -> lastModified(1448896297000)
+/home/facundo/.ivy2/cache/com.typesafe.akka/akka-http-spray-json-experimental_2.11/jars/akka-http-spray-json-experimental_2.11-2.0-M2.jar -> lastModified(1448896323000)
+/home/facundo/.ivy2/cache/com.typesafe.akka/akka-http-xml-experimental_2.11/jars/akka-http-xml-experimental_2.11-2.0-M2.jar -> lastModified(1448896316000)
+/home/facundo/.ivy2/cache/com.typesafe.akka/akka-stream-experimental_2.11/jars/akka-stream-experimental_2.11-2.0-M2.jar -> lastModified(1448896123000)
+/home/facundo/.ivy2/cache/io.spray/spray-json_2.11/bundles/spray-json_2.11-1.3.2.jar -> lastModified(1430920873000)
+/home/facundo/Programas-Instalados/activator/repository/com.typesafe/config/1.3.0/bundles/config.jar -> lastModified(1441288764000)
+/home/facundo/Programas-Instalados/activator/repository/org.scala-lang.modules/scala-xml_2.11/1.0.3/bundles/scala-xml_2.11.jar -> lastModified(1441288764000)
+/home/facundo/Programas-Instalados/activator/repository/org.scala-lang/scala-library/2.11.7/jars/scala-library.jar -> lastModified(1441288764000)
+/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar -> lastModified(1448327485000)
+class names:
+11 items
+/home/facundo/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.4.1.jar -> akka.actor.ActorSystem
+/home/facundo/.ivy2/cache/com.typesafe.akka/akka-http-core-experimental_2.11/jars/akka-http-core-experimental_2.11-2.0-M2.jar -> akka.http.scaladsl.model.HttpRequest$
+/home/facundo/.ivy2/cache/com.typesafe.akka/akka-http-experimental_2.11/jars/akka-http-experimental_2.11-2.0-M2.jar -> akka.http.scaladsl.server.PathMatcher
+/home/facundo/.ivy2/cache/com.typesafe.akka/akka-http-spray-json-experimental_2.11/jars/akka-http-spray-json-experimental_2.11-2.0-M2.jar -> akka.http.scaladsl.marshallers.sprayjson.SprayJsonSupport$
+/home/facundo/.ivy2/cache/com.typesafe.akka/akka-http-xml-experimental_2.11/jars/akka-http-xml-experimental_2.11-2.0-M2.jar -> akka.http.scaladsl.marshallers.xml.ScalaXmlSupport$
+/home/facundo/.ivy2/cache/com.typesafe.akka/akka-stream-experimental_2.11/jars/akka-stream-experimental_2.11-2.0-M2.jar -> akka.stream.Materializer
+/home/facundo/.ivy2/cache/io.spray/spray-json_2.11/bundles/spray-json_2.11-1.3.2.jar -> spray.json.DefaultJsonProtocol$
+/home/facundo/Programas-Instalados/activator/repository/com.typesafe/config/1.3.0/bundles/config.jar -> com.typesafe.config.ConfigFactory
+/home/facundo/Programas-Instalados/activator/repository/org.scala-lang.modules/scala-xml_2.11/1.0.3/bundles/scala-xml_2.11.jar -> scala.xml.TopScope$
+/home/facundo/Programas-Instalados/activator/repository/org.scala-lang/scala-library/2.11.7/jars/scala-library.jar -> scala.Function1
+/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar -> java.lang.Object
+internal apis:
+3 items
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlFlpwRASfbtoCAAZJAAdhcGlIYXNoWgAIaGFzTWFjcm9MABhfaW50ZXJuYWxPbmx5X25hbWVIYXNoZXN0ACRMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2hlcztMAANhcGl0ABVMeHNidGkvYXBpL1NvdXJjZUFQSTtMAAtjb21waWxhdGlvbnQAF0x4c2J0aS9hcGkvQ29tcGlsYXRpb247WwAEaGFzaHQAAltCeHA6M5soAHNyACJ4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaGVzVNq+mfrU7EwCAAJbAA9pbXBsaWNpdE1lbWJlcnN0ACNbTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoO1sADnJlZ3VsYXJNZW1iZXJzcQB+AAd4cHVyACNbTHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoO0lagLbdlov0AgAAeHAAAAADc3IAIHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoWw71InY4V88CAAJJAARoYXNoTAAEbmFtZXQAEkxqYXZhL2xhbmcvU3RyaW5nO3hw0OLMVHQADG1hdGVyaWFsaXplcnNxAH4ACwlqUct0AAJlY3NxAH4AC6VItfh0AAZzeXN0ZW11cQB+AAkAAAAbc3EAfgALLuLdvXQABm5vdGlmeXNxAH4AC2EnRTt0ABBUb0RvTWljcm9TZXJ2aWNlc3EAfgALYHjgY3QABHdhaXRzcQB+AAvbyiXTdAANJGFzSW5zdGFuY2VPZnNxAH4ACxmLD490AAZyb3V0ZXNzcQB+AAsWWP+8dAAGZXF1YWxzc3EAfgALd7d3aXQADGFzSW5zdGFuY2VPZnNxAH4AC5DwxkZ0AA5leGVjdXRpb25TdGFydHNxAH4ACyQDaQV0AAxzeW5jaHJvbml6ZWRzcQB+AAsmj2v/dAANJGlzSW5zdGFuY2VPZnNxAH4AC/BTFXl0AARtYWluc3EAfgAL5Bt7A3QACW5vdGlmeUFsbHNxAH4AC/9RxZV0AAxpc0luc3RhbmNlT2ZzcQB+AAusyBDrdAALdGFza3NSb3V0ZXNzcQB+AAvfD+WYdAACPT1zcQB+AAugbhkPdAANYmluZGluZ0Z1dHVyZXNxAH4AC9VOEUh0AAVjbG9uZXNxAH4AC6ndvw10AAh0b1N0cmluZ3NxAH4ACxQ4XRl0AARhcmdzc3EAfgALBWHY1XQAAiE9c3EAfgALBJhS9XQACGdldENsYXNzc3EAfgAL9wvn03QAAm5lc3EAfgALU0ykYnQAAmVxc3EAfgALJNAljXQAC2RlbGF5ZWRJbml0c3EAfgALtBKTfXQAAiMjc3EAfgALi3A23HQACGZpbmFsaXplc3EAfgALz0ana3QACGhhc2hDb2Rlc3IAE3hzYnRpLmFwaS5Tb3VyY2VBUEm5Xqf5KSM4pAIAAlsAC2RlZmluaXRpb25zdAAXW0x4c2J0aS9hcGkvRGVmaW5pdGlvbjtbAAhwYWNrYWdlc3QAFFtMeHNidGkvYXBpL1BhY2thZ2U7eHB1cgAXW0x4c2J0aS5hcGkuRGVmaW5pdGlvbjuIyVzntONeDgIAAHhwAAAAAXNyABN4c2J0aS5hcGkuQ2xhc3NMaWtlgzQcod+wl2wCAARMAA5kZWZpbml0aW9uVHlwZXQAGkx4c2J0aS9hcGkvRGVmaW5pdGlvblR5cGU7WwAQc2F2ZWRBbm5vdGF0aW9uc3QAE1tMamF2YS9sYW5nL1N0cmluZztMAAhzZWxmVHlwZXQAEEx4c2J0aS9hcGkvTGF6eTtMAAlzdHJ1Y3R1cmVxAH4AU3hyACF4c2J0aS5hcGkuUGFyYW1ldGVyaXplZERlZmluaXRpb275EW6x1VA84gIAAVsADnR5cGVQYXJhbWV0ZXJzdAAaW0x4c2J0aS9hcGkvVHlwZVBhcmFtZXRlcjt4cgAUeHNidGkuYXBpLkRlZmluaXRpb26HKhvocULjRgIABEwABmFjY2Vzc3QAEkx4c2J0aS9hcGkvQWNjZXNzO1sAC2Fubm90YXRpb25zdAAXW0x4c2J0aS9hcGkvQW5ub3RhdGlvbjtMAAltb2RpZmllcnN0ABVMeHNidGkvYXBpL01vZGlmaWVycztMAARuYW1lcQB+AAx4cHNyABB4c2J0aS5hcGkuUHVibGljulg9rmwtYEICAAB4cgAQeHNidGkuYXBpLkFjY2Vzc91imvgdYzFIAgAAeHB1cgAXW0x4c2J0aS5hcGkuQW5ub3RhdGlvbjvrl+sZEPaNSAIAAHhwAAAAAHNyABN4c2J0aS5hcGkuTW9kaWZpZXJzxxETIWmc3CQCAAFCAAVmbGFnc3hwAHQAHWNvbS5mcm9zc2k4NS5Ub0RvTWljcm9TZXJ2aWNldXIAGltMeHNidGkuYXBpLlR5cGVQYXJhbWV0ZXI72W0mDyid8rYCAAB4cAAAAAB+cgAYeHNidGkuYXBpLkRlZmluaXRpb25UeXBlAAAAAAAAAAASAAB4cgAOamF2YS5sYW5nLkVudW0AAAAAAAAAABIAAHhwdAAGTW9kdWxldXIAE1tMamF2YS5sYW5nLlN0cmluZzut0lbn6R17RwIAAHhwAAAAAnQAEHNjYWxhLmRlcHJlY2F0ZWR0ABpzY2FsYS5kZXByZWNhdGVkT3ZlcnJpZGluZ3NyABN4c2J0aS5TYWZlTGF6eSRJbXBsUAIuk5eXQD8CAANaAAhiaXRtYXAkMEwAAl90dAASTGphdmEvbGFuZy9PYmplY3Q7TAAEZXZhbHQAEUxzY2FsYS9GdW5jdGlvbjA7eHIAFnhzYnRpLmFwaS5BYnN0cmFjdExhennTd7UBX7vnoAIAAHhwAHBzcgAgeHNidGkuU2FmZUxhenkkJGFub25mdW4kc3RyaWN0JDEAAAAAAAAAAAIAAUwAB3ZhbHVlJDFxAH4Abnhwc3IAE3hzYnRpLmFwaS5FbXB0eVR5cGW8/Z5GSTuJJAIAAHhyABR4c2J0aS5hcGkuU2ltcGxlVHlwZXJ4YoghI79AAgAAeHIADnhzYnRpLmFwaS5UeXBlP2rZIRZJqsoCAAB4cHNxAH4AbQBwc3EAfgByc3IAE3hzYnRpLmFwaS5TdHJ1Y3R1cmWpqvmAk2/YAAIAA0wACGRlY2xhcmVkcQB+AFNMAAlpbmhlcml0ZWRxAH4AU0wAB3BhcmVudHNxAH4AU3hxAH4AdnNxAH4AbQBwc3EAfgBydXEAfgBOAAAAAHNxAH4AbQBwc3EAfgBydXEAfgBOAAAAAXNyAA14c2J0aS5hcGkuRGVmUr6f4ny0NmkCAAJMAApyZXR1cm5UeXBldAAQTHhzYnRpL2FwaS9UeXBlO1sAD3ZhbHVlUGFyYW1ldGVyc3QAGltMeHNidGkvYXBpL1BhcmFtZXRlckxpc3Q7eHEAfgBUcQB+AF11cQB+AF4AAAABc3IAFHhzYnRpLmFwaS5Bbm5vdGF0aW9u3g6BovZcCrICAAJbAAlhcmd1bWVudHN0AB9bTHhzYnRpL2FwaS9Bbm5vdGF0aW9uQXJndW1lbnQ7TAAEYmFzZXEAfgCDeHB1cgAfW0x4c2J0aS5hcGkuQW5ub3RhdGlvbkFyZ3VtZW50O1Gdpo84JQ94AgAAeHAAAAABc3IAHHhzYnRpLmFwaS5Bbm5vdGF0aW9uQXJndW1lbnTWRbHYAxsXfAIAAkwABG5hbWVxAH4ADEwABXZhbHVlcQB+AAx4cHQAAHQAKigibWFpbiBzaG91bGQgbm90IGJlIG92ZXJyaWRkZW4iLCIyLjExLjAiKXNyABR4c2J0aS5hcGkuUHJvamVjdGlvbvPSjVTpRaQtAgACTAACaWRxAH4ADEwABnByZWZpeHQAFkx4c2J0aS9hcGkvU2ltcGxlVHlwZTt4cQB+AHV0ABRkZXByZWNhdGVkT3ZlcnJpZGluZ3NyABN4c2J0aS5hcGkuU2luZ2xldG9u/Kdf+M9W5EYCAAFMAARwYXRodAAQTHhzYnRpL2FwaS9QYXRoO3hxAH4AdXNyAA54c2J0aS5hcGkuUGF0aJs9XAjOpSeEAgABWwAKY29tcG9uZW50c3QAGltMeHNidGkvYXBpL1BhdGhDb21wb25lbnQ7eHB1cgAaW0x4c2J0aS5hcGkuUGF0aENvbXBvbmVudDtD2gl0LWcWdAIAAHhwAAAAAnNyAAx4c2J0aS5hcGkuSWSYMmyLN1PEQAIAAUwAAmlkcQB+AAx4cgAXeHNidGkuYXBpLlBhdGhDb21wb25lbnRfmiJbLoafvAIAAHhwdAAFc2NhbGFzcgAOeHNidGkuYXBpLlRoaXPbCe2mzFpAXAIAAHhxAH4AnXNxAH4AYABxAH4AKXVxAH4AYwAAAABzcQB+AJB0AARVbml0cQB+AJZ1cgAaW0x4c2J0aS5hcGkuUGFyYW1ldGVyTGlzdDv10zod8rNw7gIAAHhwAAAAAXNyABd4c2J0aS5hcGkuUGFyYW1ldGVyTGlzdNbFvBxkSXTjAgACWgAKaXNJbXBsaWNpdFsACnBhcmFtZXRlcnN0ABxbTHhzYnRpL2FwaS9NZXRob2RQYXJhbWV0ZXI7eHAAdXIAHFtMeHNidGkuYXBpLk1ldGhvZFBhcmFtZXRlcjvPuMVdpd21bQIAAHhwAAAAAXNyABl4c2J0aS5hcGkuTWV0aG9kUGFyYW1ldGVyH0WuF9NJsOoCAARaAApoYXNEZWZhdWx0TAAIbW9kaWZpZXJ0AB1MeHNidGkvYXBpL1BhcmFtZXRlck1vZGlmaWVyO0wABG5hbWVxAH4ADEwAA3RwZXEAfgCDeHAAfnIAG3hzYnRpLmFwaS5QYXJhbWV0ZXJNb2RpZmllcgAAAAAAAAAAEgAAeHEAfgBmdAAFUGxhaW5xAH4AOXNyABd4c2J0aS5hcGkuUGFyYW1ldGVyaXplZBZs7mkDybt/AgACTAAIYmFzZVR5cGVxAH4AkVsADXR5cGVBcmd1bWVudHN0ABFbTHhzYnRpL2FwaS9UeXBlO3hxAH4AdXNxAH4AkHQABUFycmF5cQB+AJZ1cgARW0x4c2J0aS5hcGkuVHlwZTt0/6Vae/npQQIAAHhwAAAAAXNxAH4AkHQABlN0cmluZ3NxAH4AlHNxAH4Al3VxAH4AmgAAAANzcQB+AJx0AARqYXZhc3EAfgCcdAAEbGFuZ3EAfgChc3EAfgBtAHBzcQB+AHJ1cQB+ALgAAAAGc3EAfgCQdAAGUm91dGVzc3EAfgCUc3EAfgCXdXEAfgCaAAAAA3NxAH4AnHQAA2NvbXNxAH4AnHQACGZyb3NzaTg1cQB+AKFzcQB+AJB0AAhUYXNrc0FwaXNxAH4AlHNxAH4Al3VxAH4AmgAAAARzcQB+AJx0AANjb21zcQB+AJx0AAhmcm9zc2k4NXNxAH4AnHQAA2FwaXEAfgChc3EAfgCQdAADQXBwcQB+AJZzcQB+AJB0AAtEZWxheWVkSW5pdHEAfgCWc3EAfgCQdAAGT2JqZWN0cQB+ALxzcQB+AJB0AANBbnlxAH4AlnVyABRbTHhzYnRpLmFwaS5QYWNrYWdlO1sTGTdwpyehAgAAeHAAAAACc3IAEXhzYnRpLmFwaS5QYWNrYWdlflmP9q7OOVgCAAFMAARuYW1lcQB+AAx4cHQADGNvbS5mcm9zc2k4NXNxAH4A5HQAA2NvbXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABUdCWFud1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5cQB+AAxMAA9zb3VyY2VEaXJlY3RvcnlxAH4ADHhwdABLL2hvbWUvZmFjdW5kby93aGl0ZXByb21wdC9ha2thLWh0dHAtc2xpY2stZXhhbXBsZS90YXJnZXQvc2NhbGEtMi4xMS9jbGFzc2VzdAABL3VyAAJbQqzzF/gGCFTgAgAAeHAAAAAUZ4w9cMJ7W3+miP5laX9S44iAa7I=
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlFlpwRASfbtoCAAZJAAdhcGlIYXNoWgAIaGFzTWFjcm9MABhfaW50ZXJuYWxPbmx5X25hbWVIYXNoZXN0ACRMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2hlcztMAANhcGl0ABVMeHNidGkvYXBpL1NvdXJjZUFQSTtMAAtjb21waWxhdGlvbnQAF0x4c2J0aS9hcGkvQ29tcGlsYXRpb247WwAEaGFzaHQAAltCeHA37SH7AHNyACJ4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaGVzVNq+mfrU7EwCAAJbAA9pbXBsaWNpdE1lbWJlcnN0ACNbTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoO1sADnJlZ3VsYXJNZW1iZXJzcQB+AAd4cHVyACNbTHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoO0lagLbdlov0AgAAeHAAAAAAdXEAfgAJAAAAF3NyACB4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaFsO9SJ2OFfPAgACSQAEaGFzaEwABG5hbWV0ABJMamF2YS9sYW5nL1N0cmluZzt4cMVTo/F0AAZub3RpZnlzcQB+AAzOZWOidAAEd2FpdHNxAH4ADOD5d7h0AA0kYXNJbnN0YW5jZU9mc3EAfgAMqqR1a3QABnJvdXRlc3NxAH4ADIiePM10AAZlcXVhbHNzcQB+AAx948eUdAAMYXNJbnN0YW5jZU9mc3EAfgAMzEm8l3QADHN5bmNocm9uaXplZHNxAH4ADHEQwJt0AA0kaXNJbnN0YW5jZU9mc3EAfgAMZZZ/uXQACW5vdGlmeUFsbHNxAH4ADA1LQTx0AAxpc0luc3RhbmNlT2ZzcQB+AAyPn7Y1dAALdGFza3NSb3V0ZXNzcQB+AAzZEry4dAACPT1zcQB+AAyHj8KbdAAFY2xvbmVzcQB+AAxvNyredAAGJGluaXQkc3EAfgAM5EK3+XQABlJvdXRlc3NxAH4ADFlGTwJ0AAh0b1N0cmluZ3NxAH4ADDg2ryt0AAIhPXNxAH4ADETyhI10AAhnZXRDbGFzc3NxAH4ADKSv2tV0AAJuZXNxAH4ADGllEFt0AAJlcXNxAH4ADJOHlwl0AAIjI3NxAH4ADFIeawN0AAhmaW5hbGl6ZXNxAH4ADCDZKi50AAhoYXNoQ29kZXNyABN4c2J0aS5hcGkuU291cmNlQVBJuV6n+SkjOKQCAAJbAAtkZWZpbml0aW9uc3QAF1tMeHNidGkvYXBpL0RlZmluaXRpb247WwAIcGFja2FnZXN0ABRbTHhzYnRpL2FwaS9QYWNrYWdlO3hwdXIAF1tMeHNidGkuYXBpLkRlZmluaXRpb247iMlc57TjXg4CAAB4cAAAAAFzcgATeHNidGkuYXBpLkNsYXNzTGlrZYM0HKHfsJdsAgAETAAOZGVmaW5pdGlvblR5cGV0ABpMeHNidGkvYXBpL0RlZmluaXRpb25UeXBlO1sAEHNhdmVkQW5ub3RhdGlvbnN0ABNbTGphdmEvbGFuZy9TdHJpbmc7TAAIc2VsZlR5cGV0ABBMeHNidGkvYXBpL0xhenk7TAAJc3RydWN0dXJlcQB+AEV4cgAheHNidGkuYXBpLlBhcmFtZXRlcml6ZWREZWZpbml0aW9u+RFusdVQPOICAAFbAA50eXBlUGFyYW1ldGVyc3QAGltMeHNidGkvYXBpL1R5cGVQYXJhbWV0ZXI7eHIAFHhzYnRpLmFwaS5EZWZpbml0aW9uhyob6HFC40YCAARMAAZhY2Nlc3N0ABJMeHNidGkvYXBpL0FjY2VzcztbAAthbm5vdGF0aW9uc3QAF1tMeHNidGkvYXBpL0Fubm90YXRpb247TAAJbW9kaWZpZXJzdAAVTHhzYnRpL2FwaS9Nb2RpZmllcnM7TAAEbmFtZXEAfgANeHBzcgAQeHNidGkuYXBpLlB1YmxpY7pYPa5sLWBCAgAAeHIAEHhzYnRpLmFwaS5BY2Nlc3PdYpr4HWMxSAIAAHhwdXIAF1tMeHNidGkuYXBpLkFubm90YXRpb24765frGRD2jUgCAAB4cAAAAABzcgATeHNidGkuYXBpLk1vZGlmaWVyc8cREyFpnNwkAgABQgAFZmxhZ3N4cAF0ABNjb20uZnJvc3NpODUuUm91dGVzdXIAGltMeHNidGkuYXBpLlR5cGVQYXJhbWV0ZXI72W0mDyid8rYCAAB4cAAAAAB+cgAYeHNidGkuYXBpLkRlZmluaXRpb25UeXBlAAAAAAAAAAASAAB4cgAOamF2YS5sYW5nLkVudW0AAAAAAAAAABIAAHhwdAAFVHJhaXR1cgATW0xqYXZhLmxhbmcuU3RyaW5nO63SVufpHXtHAgAAeHAAAAAAc3IAE3hzYnRpLlNhZmVMYXp5JEltcGxQAi6Tl5dAPwIAA1oACGJpdG1hcCQwTAACX3R0ABJMamF2YS9sYW5nL09iamVjdDtMAARldmFsdAARTHNjYWxhL0Z1bmN0aW9uMDt4cgAWeHNidGkuYXBpLkFic3RyYWN0TGF6edN3tQFfu+egAgAAeHAAcHNyACB4c2J0aS5TYWZlTGF6eSQkYW5vbmZ1biRzdHJpY3QkMQAAAAAAAAAAAgABTAAHdmFsdWUkMXEAfgBeeHBzcgATeHNidGkuYXBpLkVtcHR5VHlwZbz9nkZJO4kkAgAAeHIAFHhzYnRpLmFwaS5TaW1wbGVUeXBlcnhiiCEjv0ACAAB4cgAOeHNidGkuYXBpLlR5cGU/atkhFkmqygIAAHhwc3EAfgBdAHBzcQB+AGJzcgATeHNidGkuYXBpLlN0cnVjdHVyZamq+YCTb9gAAgADTAAIZGVjbGFyZWRxAH4ARUwACWluaGVyaXRlZHEAfgBFTAAHcGFyZW50c3EAfgBFeHEAfgBmc3EAfgBdAHBzcQB+AGJ1cQB+AEAAAAAAc3EAfgBdAHBzcQB+AGJ1cQB+AEAAAAAAc3EAfgBdAHBzcQB+AGJ1cgARW0x4c2J0aS5hcGkuVHlwZTt0/6Vae/npQQIAAHhwAAAAA3NyABR4c2J0aS5hcGkuUHJvamVjdGlvbvPSjVTpRaQtAgACTAACaWRxAH4ADUwABnByZWZpeHQAFkx4c2J0aS9hcGkvU2ltcGxlVHlwZTt4cQB+AGV0AAhUYXNrc0FwaXNyABN4c2J0aS5hcGkuU2luZ2xldG9u/Kdf+M9W5EYCAAFMAARwYXRodAAQTHhzYnRpL2FwaS9QYXRoO3hxAH4AZXNyAA54c2J0aS5hcGkuUGF0aJs9XAjOpSeEAgABWwAKY29tcG9uZW50c3QAGltMeHNidGkvYXBpL1BhdGhDb21wb25lbnQ7eHB1cgAaW0x4c2J0aS5hcGkuUGF0aENvbXBvbmVudDtD2gl0LWcWdAIAAHhwAAAABHNyAAx4c2J0aS5hcGkuSWSYMmyLN1PEQAIAAUwAAmlkcQB+AA14cgAXeHNidGkuYXBpLlBhdGhDb21wb25lbnRfmiJbLoafvAIAAHhwdAADY29tc3EAfgCCdAAIZnJvc3NpODVzcQB+AIJ0AANhcGlzcgAOeHNidGkuYXBpLlRoaXPbCe2mzFpAXAIAAHhxAH4Ag3NxAH4AdnQABk9iamVjdHNxAH4AenNxAH4AfXVxAH4AgAAAAANzcQB+AIJ0AARqYXZhc3EAfgCCdAAEbGFuZ3EAfgCLc3EAfgB2dAADQW55c3EAfgB6c3EAfgB9dXEAfgCAAAAAAnNxAH4AgnQABXNjYWxhcQB+AIt1cgAUW0x4c2J0aS5hcGkuUGFja2FnZTtbExk3cKcnoQIAAHhwAAAAAnNyABF4c2J0aS5hcGkuUGFja2FnZX5Zj/auzjlYAgABTAAEbmFtZXEAfgANeHB0AAxjb20uZnJvc3NpODVzcQB+AJ50AANjb21zcgAVeHNidGkuYXBpLkNvbXBpbGF0aW9u7frgw2rooEICAAJKAAlzdGFydFRpbWVbAAdvdXRwdXRzdAAaW0x4c2J0aS9hcGkvT3V0cHV0U2V0dGluZzt4cAAAAVHQlhbndXIAGltMeHNidGkuYXBpLk91dHB1dFNldHRpbmc7f2rC86eHpUICAAB4cAAAAAFzcgAXeHNidGkuYXBpLk91dHB1dFNldHRpbmd62ZpHdPsdewIAAkwAD291dHB1dERpcmVjdG9yeXEAfgANTAAPc291cmNlRGlyZWN0b3J5cQB+AA14cHQASy9ob21lL2ZhY3VuZG8vd2hpdGVwcm9tcHQvYWtrYS1odHRwLXNsaWNrLWV4YW1wbGUvdGFyZ2V0L3NjYWxhLTIuMTEvY2xhc3Nlc3QAAS91cgACW0Ks8xf4BghU4AIAAHhwAAAAFLr7SUbB8mbqWB/L6tqts0N8L/cZ
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlFlpwRASfbtoCAAZJAAdhcGlIYXNoWgAIaGFzTWFjcm9MABhfaW50ZXJuYWxPbmx5X25hbWVIYXNoZXN0ACRMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2hlcztMAANhcGl0ABVMeHNidGkvYXBpL1NvdXJjZUFQSTtMAAtjb21waWxhdGlvbnQAF0x4c2J0aS9hcGkvQ29tcGlsYXRpb247WwAEaGFzaHQAAltCeHCT0MgQAHNyACJ4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaGVzVNq+mfrU7EwCAAJbAA9pbXBsaWNpdE1lbWJlcnN0ACNbTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoO1sADnJlZ3VsYXJNZW1iZXJzcQB+AAd4cHVyACNbTHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoO0lagLbdlov0AgAAeHAAAAAAdXEAfgAJAAAAFnNyACB4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaFsO9SJ2OFfPAgACSQAEaGFzaEwABG5hbWV0ABJMamF2YS9sYW5nL1N0cmluZzt4cGUTm3V0AAZub3RpZnlzcQB+AAxQHtAhdAAEd2FpdHNxAH4ADE+VMQl0AA0kYXNJbnN0YW5jZU9mc3EAfgAMJRJhj3QABmVxdWFsc3NxAH4ADLPJKCZ0AAhUYXNrc0FwaXNxAH4ADMssa6h0AAxhc0luc3RhbmNlT2ZzcQB+AAyKpBjEdAAMc3luY2hyb25pemVkc3EAfgAM7ZojX3QADSRpc0luc3RhbmNlT2ZzcQB+AAzFij7gdAAJbm90aWZ5QWxsc3EAfgAMnyQlX3QADGlzSW5zdGFuY2VPZnNxAH4ADHfj7VR0AAt0YXNrc1JvdXRlc3NxAH4ADDP0pSN0AAI9PXNxAH4ADBu72Mt0AAVjbG9uZXNxAH4ADGIBbbN0AAYkaW5pdCRzcQB+AAz/W21TdAAIdG9TdHJpbmdzcQB+AAykLZ2WdAACIT1zcQB+AAwct/QGdAAIZ2V0Q2xhc3NzcQB+AAzZI1UIdAACbmVzcQB+AAwSROTIdAACZXFzcQB+AAwRB9sYdAACIyNzcQB+AAyETbKqdAAIZmluYWxpemVzcQB+AAzaq5nEdAAIaGFzaENvZGVzcgATeHNidGkuYXBpLlNvdXJjZUFQSblep/kpIzikAgACWwALZGVmaW5pdGlvbnN0ABdbTHhzYnRpL2FwaS9EZWZpbml0aW9uO1sACHBhY2thZ2VzdAAUW0x4c2J0aS9hcGkvUGFja2FnZTt4cHVyABdbTHhzYnRpLmFwaS5EZWZpbml0aW9uO4jJXOe0414OAgAAeHAAAAABc3IAE3hzYnRpLmFwaS5DbGFzc0xpa2WDNByh37CXbAIABEwADmRlZmluaXRpb25UeXBldAAaTHhzYnRpL2FwaS9EZWZpbml0aW9uVHlwZTtbABBzYXZlZEFubm90YXRpb25zdAATW0xqYXZhL2xhbmcvU3RyaW5nO0wACHNlbGZUeXBldAAQTHhzYnRpL2FwaS9MYXp5O0wACXN0cnVjdHVyZXEAfgBDeHIAIXhzYnRpLmFwaS5QYXJhbWV0ZXJpemVkRGVmaW5pdGlvbvkRbrHVUDziAgABWwAOdHlwZVBhcmFtZXRlcnN0ABpbTHhzYnRpL2FwaS9UeXBlUGFyYW1ldGVyO3hyABR4c2J0aS5hcGkuRGVmaW5pdGlvbocqG+hxQuNGAgAETAAGYWNjZXNzdAASTHhzYnRpL2FwaS9BY2Nlc3M7WwALYW5ub3RhdGlvbnN0ABdbTHhzYnRpL2FwaS9Bbm5vdGF0aW9uO0wACW1vZGlmaWVyc3QAFUx4c2J0aS9hcGkvTW9kaWZpZXJzO0wABG5hbWVxAH4ADXhwc3IAEHhzYnRpLmFwaS5QdWJsaWO6WD2ubC1gQgIAAHhyABB4c2J0aS5hcGkuQWNjZXNz3WKa+B1jMUgCAAB4cHVyABdbTHhzYnRpLmFwaS5Bbm5vdGF0aW9uO+uX6xkQ9o1IAgAAeHAAAAAAc3IAE3hzYnRpLmFwaS5Nb2RpZmllcnPHERMhaZzcJAIAAUIABWZsYWdzeHABdAAZY29tLmZyb3NzaTg1LmFwaS5UYXNrc0FwaXVyABpbTHhzYnRpLmFwaS5UeXBlUGFyYW1ldGVyO9ltJg8onfK2AgAAeHAAAAAAfnIAGHhzYnRpLmFwaS5EZWZpbml0aW9uVHlwZQAAAAAAAAAAEgAAeHIADmphdmEubGFuZy5FbnVtAAAAAAAAAAASAAB4cHQABVRyYWl0dXIAE1tMamF2YS5sYW5nLlN0cmluZzut0lbn6R17RwIAAHhwAAAAAHNyABN4c2J0aS5TYWZlTGF6eSRJbXBsUAIuk5eXQD8CAANaAAhiaXRtYXAkMEwAAl90dAASTGphdmEvbGFuZy9PYmplY3Q7TAAEZXZhbHQAEUxzY2FsYS9GdW5jdGlvbjA7eHIAFnhzYnRpLmFwaS5BYnN0cmFjdExhennTd7UBX7vnoAIAAHhwAHBzcgAgeHNidGkuU2FmZUxhenkkJGFub25mdW4kc3RyaWN0JDEAAAAAAAAAAAIAAUwAB3ZhbHVlJDFxAH4AXHhwc3IAE3hzYnRpLmFwaS5FbXB0eVR5cGW8/Z5GSTuJJAIAAHhyABR4c2J0aS5hcGkuU2ltcGxlVHlwZXJ4YoghI79AAgAAeHIADnhzYnRpLmFwaS5UeXBlP2rZIRZJqsoCAAB4cHNxAH4AWwBwc3EAfgBgc3IAE3hzYnRpLmFwaS5TdHJ1Y3R1cmWpqvmAk2/YAAIAA0wACGRlY2xhcmVkcQB+AENMAAlpbmhlcml0ZWRxAH4AQ0wAB3BhcmVudHNxAH4AQ3hxAH4AZHNxAH4AWwBwc3EAfgBgdXEAfgA+AAAAAHNxAH4AWwBwc3EAfgBgdXEAfgA+AAAAAHNxAH4AWwBwc3EAfgBgdXIAEVtMeHNidGkuYXBpLlR5cGU7dP+lWnv56UECAAB4cAAAAAJzcgAUeHNidGkuYXBpLlByb2plY3Rpb27z0o1U6UWkLQIAAkwAAmlkcQB+AA1MAAZwcmVmaXh0ABZMeHNidGkvYXBpL1NpbXBsZVR5cGU7eHEAfgBjdAAGT2JqZWN0c3IAE3hzYnRpLmFwaS5TaW5nbGV0b278p1/4z1bkRgIAAUwABHBhdGh0ABBMeHNidGkvYXBpL1BhdGg7eHEAfgBjc3IADnhzYnRpLmFwaS5QYXRomz1cCM6lJ4QCAAFbAApjb21wb25lbnRzdAAaW0x4c2J0aS9hcGkvUGF0aENvbXBvbmVudDt4cHVyABpbTHhzYnRpLmFwaS5QYXRoQ29tcG9uZW50O0PaCXQtZxZ0AgAAeHAAAAADc3IADHhzYnRpLmFwaS5JZJgybIs3U8RAAgABTAACaWRxAH4ADXhyABd4c2J0aS5hcGkuUGF0aENvbXBvbmVudF+aIlsuhp+8AgAAeHB0AARqYXZhc3EAfgCAdAAEbGFuZ3NyAA54c2J0aS5hcGkuVGhpc9sJ7abMWkBcAgAAeHEAfgCBc3EAfgB0dAADQW55c3EAfgB4c3EAfgB7dXEAfgB+AAAAAnNxAH4AgHQABXNjYWxhcQB+AId1cgAUW0x4c2J0aS5hcGkuUGFja2FnZTtbExk3cKcnoQIAAHhwAAAAA3NyABF4c2J0aS5hcGkuUGFja2FnZX5Zj/auzjlYAgABTAAEbmFtZXEAfgANeHB0AAxjb20uZnJvc3NpODVzcQB+AJF0ABBjb20uZnJvc3NpODUuYXBpc3EAfgCRdAADY29tc3IAFXhzYnRpLmFwaS5Db21waWxhdGlvbu364MNq6KBCAgACSgAJc3RhcnRUaW1lWwAHb3V0cHV0c3QAGltMeHNidGkvYXBpL091dHB1dFNldHRpbmc7eHAAAAFR0JYW53VyABpbTHhzYnRpLmFwaS5PdXRwdXRTZXR0aW5nO39qwvOnh6VCAgAAeHAAAAABc3IAF3hzYnRpLmFwaS5PdXRwdXRTZXR0aW5netmaR3T7HXsCAAJMAA9vdXRwdXREaXJlY3RvcnlxAH4ADUwAD3NvdXJjZURpcmVjdG9yeXEAfgANeHB0AEsvaG9tZS9mYWN1bmRvL3doaXRlcHJvbXB0L2Fra2EtaHR0cC1zbGljay1leGFtcGxlL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEvdXIAAltCrPMX+AYIVOACAAB4cAAAABSDk1XbvSleckbdXGoXmfwwtfi3tg==
+external apis:
+0 items
+source infos:
+3 items
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Main.scala -> 
+AAAAAAAAAAA=
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/Routes.scala -> 
+AAAAAAAAAAA=
+/home/facundo/whiteprompt/akka-http-slick-example/src/main/scala/com/frossi85/api/TasksApi.scala -> 
+AAAAAAAAAAA=
+compilations:
+1 items
+0 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABUdCWFud1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQASy9ob21lL2ZhY3VuZG8vd2hpdGVwcm9tcHQvYWtrYS1odHRwLXNsaWNrLWV4YW1wbGUvdGFyZ2V0L3NjYWxhLTIuMTEvY2xhc3Nlc3QAAS8=

@@ -1,0 +1,35 @@
+run
+clean
+run
+clear
+clean
+run
+clean
+run
+compile
+~ compile
+~ run
+compile
+run
+inspect sampleKeyA 
+sbt
+compile
+run
+clean
+run
+clean
+run
+sbt
+run
+clean
+run
+clean
+run
+clean
+run
+clean
+run
+clean
+run
+clean
+run
