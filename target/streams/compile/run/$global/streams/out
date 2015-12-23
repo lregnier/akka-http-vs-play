@@ -1,7 +1,7 @@
-[0m[[0minfo[0m] [0mRunning com.frossi85.ToDoMicroService [0m
+[0m[[0minfo[0m] [0mRunning com.github.frossi85.ToDoMicroService [0m
 [0m[[0mdebug[0m] [0mWaiting for threads to exit or System.exit to be called.[0m
 [0m[[0mdebug[0m] [0m  Classpath:[0m
-[0m[[0mdebug[0m] [0m	/home/facundo/whiteprompt/akka-http-slick-example/target/scala-2.11/classes[0m
+[0m[[0mdebug[0m] [0m	/home/facundo/whiteprompt/complete-akka-microservice/target/scala-2.11/classes[0m
 [0m[[0mdebug[0m] [0m	/home/facundo/Programas-Instalados/activator/repository/org.scala-lang/scala-library/2.11.7/jars/scala-library.jar[0m
 [0m[[0mdebug[0m] [0m	/home/facundo/Programas-Instalados/activator/repository/org.scala-lang.modules/scala-xml_2.11/1.0.3/bundles/scala-xml_2.11.jar[0m
 [0m[[0mdebug[0m] [0m	/home/facundo/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.4.1.jar[0m
@@ -17,10 +17,10 @@
 [0m[[0mdebug[0m] [0m	/home/facundo/.ivy2/cache/com.typesafe.akka/akka-http-testkit-experimental_2.11/jars/akka-http-testkit-experimental_2.11-2.0-M2.jar[0m
 [0m[[0mdebug[0m] [0m	/home/facundo/.ivy2/cache/com.typesafe.akka/akka-stream-testkit-experimental_2.11/jars/akka-stream-testkit-experimental_2.11-2.0-M2.jar[0m
 [0m[[0mdebug[0m] [0m	/home/facundo/.ivy2/cache/com.typesafe.akka/akka-testkit_2.11/jars/akka-testkit_2.11-2.3.12.jar[0m
-[0m[[0mdebug[0m] [0mWaiting for thread run-main-2 to terminate.[0m
-[0m[[0mdebug[0m] [0m	Thread run-main-2 exited.[0m
-[0m[[0mdebug[0m] [0mWaiting for thread my-system-akka.actor.default-dispatcher-18 to terminate.[0m
-[0m[[0mdebug[0m] [0m	Thread my-system-akka.actor.default-dispatcher-18 exited.[0m
+[0m[[0mdebug[0m] [0mWaiting for thread run-main-0 to terminate.[0m
+[0m[[0mdebug[0m] [0m	Thread run-main-0 exited.[0m
+[0m[[0mdebug[0m] [0mWaiting for thread my-system-akka.actor.default-dispatcher-4 to terminate.[0m
+[0m[[0mdebug[0m] [0m	Thread my-system-akka.actor.default-dispatcher-4 exited.[0m
 [0m[[0mdebug[0m] [0mInterrupting remaining threads (should be all daemons).[0m
 [0m[[0mdebug[0m] [0mSandboxed run complete..[0m
 [0m[[0mdebug[0m] [0mExited with code 0[0m
