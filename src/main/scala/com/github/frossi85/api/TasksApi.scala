@@ -24,13 +24,37 @@ import spray.json.DefaultJsonProtocol
 
 
 trait TasksApi {
-  
-  val tasksRoutes =
-    path("tasks" / "all") {
-      get {
-        complete {
-          <h1>Task List</h1>
-        }
+
+  def byIdRoutes(id: Int) = {
+	get {
+	  complete {
+	    "Received GET request for task " + id
+	  }
+	} ~
+  	put {
+      complete {
+        "Received PUT request for task " + id
+      }
+    } ~
+  	delete {
+      complete {
+        "Received DELETE request for task " + id
       }
     }
+  }
+  
+  val tasksRoutes =
+    path("tasks") {
+      get {
+        complete {
+          "Received GET request for tasks"
+        }
+      } ~
+      post {
+        complete {
+          "Received POST request for tasks"
+        }
+      }
+    } ~
+    path("tasks" / IntNumber) { id => byIdRoutes(id) }
 }

@@ -16,6 +16,10 @@ object HelloBuild extends Build {
       "com.typesafe.akka" %% "akka-http-xml-experimental" % akkaStreamV,
       //"com.hunorkovacs" %% "koauth" % "1.1.0",
       "com.typesafe.akka" %% "akka-http-testkit-experimental"       % akkaStreamV,
+
+      "com.typesafe.slick" %% "slick" % "3.1.1",
+      "org.slf4j" % "slf4j-nop" % "1.6.4",
+
       "com.typesafe.akka" %% "akka-stream-testkit-experimental"     % akkaStreamV % "test",
       "org.scalatest"     %% "scalatest"                            % scalaTestV % "test"
     )
