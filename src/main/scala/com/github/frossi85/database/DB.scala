@@ -26,16 +26,16 @@ trait DB[T <: EntityWithID[A], A <: WithId] {
 
   def copyWithId(entity: A, id: Long): A
 
-  def populateWithDummyData = {
+  def populateWithDummyData() = {
     val setup = DBIO.seq(
       // Insert some suppliers
-      users += User("frossi85@gmail.com", "11111111"),
+      users += User("frossi85@gmail.com", "11111111")/*,
 
       // Insert some coffees (using JDBC's batch insert feature, if supported by the DB)
       tasks ++= Seq(
         Task("Task.scala 1", "One description", 1L),
         Task("Task.scala 2", "Another description", 1L)
-      )
+      )*/
     )
     db.run(setup)
   }

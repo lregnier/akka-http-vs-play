@@ -7,15 +7,27 @@
 		revision="0.1.0"
 		conf="runtime"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20151228124825"/>
+		date="20151228180242"/>
 	<dependencies>
 		<module organisation="org.slf4j" name="slf4j-nop">
-			<revision name="1.6.4" status="release" pubdate="20111031184556" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.slf4j.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="17">
+			<revision name="1.6.4" status="release" pubdate="20111031184556" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.slf4j.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="18">
 				<metadata-artifact status="no" details="" size="4373" time="0" location="/home/facundo/.ivy2/cache/org.slf4j/slf4j-nop/ivy-1.6.4.xml" searched="false" origin-is-local="true" origin-location="/home/facundo/Programas-Instalados/activator/repository/org.slf4j/slf4j-nop/1.6.4/ivys/ivy.xml"/>
 				<caller organisation="com.frossi85" name="hello_2.11" conf="compile, runtime" rev="1.6.4" rev-constraint-default="1.6.4" rev-constraint-dynamic="1.6.4" callerrev="0.1.0"/>
 				<artifacts>
 					<artifact name="slf4j-nop" type="jar" ext="jar" status="no" details="" size="4811" time="0" location="/home/facundo/Programas-Instalados/activator/repository/org.slf4j/slf4j-nop/1.6.4/jars/slf4j-nop.jar">
 						<origin-location is-local="true" location="/home/facundo/Programas-Instalados/activator/repository/org.slf4j/slf4j-nop/1.6.4/jars/slf4j-nop.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.h2database" name="h2">
+			<revision name="1.3.170" status="release" pubdate="20121130011810" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.h2database.com" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="17">
+				<license name="The H2 License, Version 1.0" url="http://h2database.com/html/license.html"/>
+				<metadata-artifact status="no" details="" size="2326" time="0" location="/home/facundo/.ivy2/cache/com.h2database/h2/ivy-1.3.170.xml" searched="false" origin-is-local="true" origin-location="/home/facundo/Programas-Instalados/activator/repository/com.h2database/h2/1.3.170/ivys/ivy.xml"/>
+				<caller organisation="com.frossi85" name="hello_2.11" conf="compile, runtime" rev="1.3.170" rev-constraint-default="1.3.170" rev-constraint-dynamic="1.3.170" callerrev="0.1.0"/>
+				<artifacts>
+					<artifact name="h2" type="jar" ext="jar" status="no" details="" size="1469903" time="0" location="/home/facundo/Programas-Instalados/activator/repository/com.h2database/h2/1.3.170/jars/h2.jar">
+						<origin-location is-local="true" location="/home/facundo/Programas-Instalados/activator/repository/com.h2database/h2/1.3.170/jars/h2.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>

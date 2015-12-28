@@ -82,3 +82,34 @@ clean
 run
 clean
 run
+sbt idea
+idea
+gen-idea
+gen idea
+clean
+reload
+compile
+run
+idea
+clean
+test
+compile
+test
+compile
+test
+compile
+test
+reload
+test
+clean
+run
+test
+clean
+compile
+test
+clean
+test
+clean
+test
+clean
+test

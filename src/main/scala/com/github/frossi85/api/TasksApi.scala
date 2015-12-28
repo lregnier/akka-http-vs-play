@@ -4,6 +4,7 @@ import akka.actor.ActorSystem
 import akka.http._
 import akka.stream._
 import akka.http.scaladsl.model._
+import com.github.frossi85.services.TaskService
 import spray.json._
 import com.typesafe.config.{ ConfigFactory, Config }
 import akka.http.scaladsl.Http
@@ -24,6 +25,8 @@ import spray.json.DefaultJsonProtocol
 
 
 trait TasksApi {
+
+  val taskService = new TaskService
 
   def byIdRoutes(id: Int) = {
 	get {

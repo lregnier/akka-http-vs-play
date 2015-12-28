@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for com.frossi85#hello_2.11;0.1.0 [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->org.scala-lang#scala-library;2.11.7 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.11.7 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@1bc03067[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@56c658db[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.11.7[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.11.7 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m	[2.11.7] org.scala-lang#scala-library;2.11.7[0m
@@ -309,6 +309,14 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.11;3.1.1->org.reactivestreams#reactive-streams;1.0.0 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.11;3.1.1->org.reactivestreams#reactive-streams;1.0.0 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.typesafe.slick#slick_2.11;3.1.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.h2database#h2;1.3.170 [compile->default(compile)][0m
+[0m[[0minfo[0m] [0mResolving com.h2database#h2;1.3.170 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.h2database#h2;1.3.170 {compile=[default(compile)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.h2database#h2;1.3.170[0m
+[0m[[0mdebug[0m] [0m	found com.h2database#h2;1.3.170 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.h2database#h2;1.3.170 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.h2database#h2;1.3.170 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.h2database#h2;1.3.170 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->org.slf4j#slf4j-nop;1.6.4 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.slf4j#slf4j-nop;1.6.4 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.slf4j#slf4j-nop;1.6.4 {compile=[default(compile)]}[0m
@@ -542,6 +550,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.11;3.1.1->org.reactivestreams#reactive-streams;1.0.0 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.11;3.1.1->org.reactivestreams#reactive-streams;1.0.0 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.typesafe.slick#slick_2.11;3.1.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.h2database#h2;1.3.170 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.h2database#h2;1.3.170 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.h2database#h2;1.3.170 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.h2database#h2;1.3.170 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->org.slf4j#slf4j-nop;1.6.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->org.slf4j#slf4j-nop;1.6.4 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->org.slf4j#slf4j-nop;1.6.4 [compile->compile][0m
@@ -776,6 +788,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.11;3.1.1->org.reactivestreams#reactive-streams;1.0.0 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.11;3.1.1->org.reactivestreams#reactive-streams;1.0.0 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.typesafe.slick#slick_2.11;3.1.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.h2database#h2;1.3.170 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.h2database#h2;1.3.170 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.h2database#h2;1.3.170 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.h2database#h2;1.3.170 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->org.slf4j#slf4j-nop;1.6.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->org.slf4j#slf4j-nop;1.6.4 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->org.slf4j#slf4j-nop;1.6.4 [compile->compile][0m
@@ -787,6 +803,42 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.slf4j#slf4j-nop;1.6.4->org.slf4j#slf4j-api;1.7.10 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.slf4j#slf4j-nop;1.6.4->org.slf4j#slf4j-api;1.7.10 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->org.slf4j#slf4j-nop;1.6.4 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.novocode#junit-interface;0.10 [test->default(compile)][0m
+[0m[[0minfo[0m] [0mResolving com.novocode#junit-interface;0.10 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.novocode#junit-interface;0.10 {test=[default(compile)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.novocode#junit-interface;0.10[0m
+[0m[[0mdebug[0m] [0m	found com.novocode#junit-interface;0.10 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.novocode#junit-interface;0.10 [test->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.novocode#junit-interface;0.10 [test->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novocode#junit-interface;0.10->junit#junit-dep;4.10 [compile->master(compile)][0m
+[0m[[0minfo[0m] [0mResolving junit#junit-dep;4.10 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: junit#junit-dep;4.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: junit#junit-dep;4.10[0m
+[0m[[0mdebug[0m] [0m	found junit#junit-dep;4.10 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novocode#junit-interface;0.10->junit#junit-dep;4.10 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies junit#junit-dep;4.10->org.hamcrest#hamcrest-core;1.1 [compile->master(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.hamcrest#hamcrest-core;1.1 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.hamcrest#hamcrest-core;1.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.hamcrest#hamcrest-core;1.1[0m
+[0m[[0mdebug[0m] [0m	found org.hamcrest#hamcrest-core;1.1 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies junit#junit-dep;4.10->org.hamcrest#hamcrest-core;1.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novocode#junit-interface;0.10->junit#junit-dep;4.10 [compile->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novocode#junit-interface;0.10->junit#junit-dep;4.10 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies junit#junit-dep;4.10->org.hamcrest#hamcrest-core;1.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies junit#junit-dep;4.10->org.hamcrest#hamcrest-core;1.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novocode#junit-interface;0.10->org.scala-tools.testing#test-interface;0.5 [compile->master(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.scala-tools.testing#test-interface;0.5 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-tools.testing#test-interface;0.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-tools.testing#test-interface;0.5[0m
+[0m[[0mdebug[0m] [0m	found org.scala-tools.testing#test-interface;0.5 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novocode#junit-interface;0.10->org.scala-tools.testing#test-interface;0.5 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novocode#junit-interface;0.10->org.scala-tools.testing#test-interface;0.5 [compile->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novocode#junit-interface;0.10->org.scala-tools.testing#test-interface;0.5 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novocode#junit-interface;0.10->junit#junit-dep;4.10 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novocode#junit-interface;0.10->junit#junit-dep;4.10 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novocode#junit-interface;0.10->org.scala-tools.testing#test-interface;0.5 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novocode#junit-interface;0.10->org.scala-tools.testing#test-interface;0.5 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.novocode#junit-interface;0.10 [test->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.typesafe.akka#akka-stream-testkit-experimental_2.11;2.0-M2 [test->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.typesafe.akka#akka-stream-testkit-experimental_2.11;2.0-M2 [test->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.typesafe.akka#akka-stream-testkit-experimental_2.11;2.0-M2 [test->compile][0m
@@ -1053,6 +1105,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.11;3.1.1->org.reactivestreams#reactive-streams;1.0.0 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.11;3.1.1->org.reactivestreams#reactive-streams;1.0.0 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.typesafe.slick#slick_2.11;3.1.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.h2database#h2;1.3.170 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.h2database#h2;1.3.170 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.h2database#h2;1.3.170 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.h2database#h2;1.3.170 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->org.slf4j#slf4j-nop;1.6.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->org.slf4j#slf4j-nop;1.6.4 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->org.slf4j#slf4j-nop;1.6.4 [compile->compile][0m
@@ -1285,6 +1341,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.11;3.1.1->org.reactivestreams#reactive-streams;1.0.0 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.11;3.1.1->org.reactivestreams#reactive-streams;1.0.0 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.typesafe.slick#slick_2.11;3.1.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.h2database#h2;1.3.170 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.h2database#h2;1.3.170 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.h2database#h2;1.3.170 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.h2database#h2;1.3.170 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->org.slf4j#slf4j-nop;1.6.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->org.slf4j#slf4j-nop;1.6.4 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->org.slf4j#slf4j-nop;1.6.4 [compile->compile][0m
@@ -1517,6 +1577,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.11;3.1.1->org.reactivestreams#reactive-streams;1.0.0 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.slick#slick_2.11;3.1.1->org.reactivestreams#reactive-streams;1.0.0 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.typesafe.slick#slick_2.11;3.1.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.h2database#h2;1.3.170 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.h2database#h2;1.3.170 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.h2database#h2;1.3.170 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.h2database#h2;1.3.170 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->org.slf4j#slf4j-nop;1.6.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->org.slf4j#slf4j-nop;1.6.4 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->org.slf4j#slf4j-nop;1.6.4 [compile->compile][0m
@@ -1528,6 +1592,22 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.slf4j#slf4j-nop;1.6.4->org.slf4j#slf4j-api;1.7.10 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.slf4j#slf4j-nop;1.6.4->org.slf4j#slf4j-api;1.7.10 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->org.slf4j#slf4j-nop;1.6.4 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.novocode#junit-interface;0.10 [test->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.novocode#junit-interface;0.10 [test->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.novocode#junit-interface;0.10 [test->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novocode#junit-interface;0.10->junit#junit-dep;4.10 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novocode#junit-interface;0.10->junit#junit-dep;4.10 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies junit#junit-dep;4.10->org.hamcrest#hamcrest-core;1.1 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies junit#junit-dep;4.10->org.hamcrest#hamcrest-core;1.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novocode#junit-interface;0.10->org.scala-tools.testing#test-interface;0.5 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novocode#junit-interface;0.10->org.scala-tools.testing#test-interface;0.5 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novocode#junit-interface;0.10->junit#junit-dep;4.10 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novocode#junit-interface;0.10->junit#junit-dep;4.10 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies junit#junit-dep;4.10->org.hamcrest#hamcrest-core;1.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies junit#junit-dep;4.10->org.hamcrest#hamcrest-core;1.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novocode#junit-interface;0.10->org.scala-tools.testing#test-interface;0.5 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novocode#junit-interface;0.10->org.scala-tools.testing#test-interface;0.5 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.novocode#junit-interface;0.10 [test->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.typesafe.akka#akka-stream-testkit-experimental_2.11;2.0-M2 [test->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.typesafe.akka#akka-stream-testkit-experimental_2.11;2.0-M2 [test->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->com.typesafe.akka#akka-stream-testkit-experimental_2.11;2.0-M2 [test->compile][0m
@@ -1663,6 +1743,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.akka#akka-http-xml-experimental_2.11;2.0-M2!akka-http-xml-experimental_2.11.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.akka#akka-http-testkit-experimental_2.11;2.0-M2!akka-http-testkit-experimental_2.11.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.slick#slick_2.11;3.1.1!slick_2.11.jar(bundle)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.h2database#h2;1.3.170!h2.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.slf4j#slf4j-nop;1.6.4!slf4j-nop.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe#config;1.3.0!config.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.reactivestreams#reactive-streams;1.0.0!reactive-streams.jar[0m
@@ -1671,14 +1752,18 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.akka#akka-stream-testkit-experimental_2.11;2.0-M2!akka-stream-testkit-experimental_2.11.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.akka#akka-testkit_2.11;2.3.12!akka-testkit_2.11.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.slf4j#slf4j-api;1.7.10!slf4j-api.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.novocode#junit-interface;0.10!junit-interface.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scalatest#scalatest_2.11;2.2.5!scalatest_2.11.jar(bundle)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] junit#junit-dep;4.10!junit-dep.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-tools.testing#test-interface;0.5!test-interface.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.hamcrest#hamcrest-core;1.1!hamcrest-core.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.11.2!scala-reflect.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.11.7!scala-compiler.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.11.7!scala-reflect.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.11;1.0.4!scala-xml_2.11.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4!scala-parser-combinators_2.11.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] jline#jline;2.12.1!jline.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 543ms :: artifacts dl 22ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 440ms :: artifacts dl 17ms[0m
 [0m[[0mdebug[0m] [0m	report for com.frossi85#hello_2.11;0.1.0 compile produced in /home/facundo/whiteprompt/complete-akka-microservice/target/resolution-cache/reports/com.frossi85-hello_2.11-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for com.frossi85#hello_2.11;0.1.0 runtime produced in /home/facundo/whiteprompt/complete-akka-microservice/target/resolution-cache/reports/com.frossi85-hello_2.11-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for com.frossi85#hello_2.11;0.1.0 test produced in /home/facundo/whiteprompt/complete-akka-microservice/target/resolution-cache/reports/com.frossi85-hello_2.11-test.xml[0m
@@ -1692,7 +1777,7 @@
 [0m[[0mdebug[0m] [0m	report for com.frossi85#hello_2.11;0.1.0 docs produced in /home/facundo/whiteprompt/complete-akka-microservice/target/resolution-cache/reports/com.frossi85-hello_2.11-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for com.frossi85#hello_2.11;0.1.0 pom produced in /home/facundo/whiteprompt/complete-akka-microservice/target/resolution-cache/reports/com.frossi85-hello_2.11-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for com.frossi85#hello_2.11;0.1.0 scala-tool produced in /home/facundo/whiteprompt/complete-akka-microservice/target/resolution-cache/reports/com.frossi85-hello_2.11-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (543ms resolve - 22ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (440ms resolve - 17ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m
 [0m[[33mwarn[0m] [0mThere may be incompatibilities among your library dependencies.[0m
 [0m[[33mwarn[0m] [0mHere are some of the libraries that were evicted:[0m

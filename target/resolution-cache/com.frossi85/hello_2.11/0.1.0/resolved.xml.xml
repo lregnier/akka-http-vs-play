@@ -4,7 +4,7 @@
 		module="hello_2.11"
 		revision="0.1.0"
 		status="integration"
-		publication="20151228124825"
+		publication="20151228180242"
 	>
 		<description>
 		hello
@@ -43,6 +43,8 @@
 		<dependency org="com.typesafe.akka" name="akka-http-xml-experimental_2.11" rev="2.0-M2" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.akka" name="akka-http-testkit-experimental_2.11" rev="2.0-M2" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.slick" name="slick_2.11" rev="3.1.1" conf="compile->default(compile)"/>
+		<dependency org="com.h2database" name="h2" rev="1.3.170" conf="compile->default(compile)"/>
+		<dependency org="com.novocode" name="junit-interface" rev="0.10" conf="test->default(compile)"/>
 		<dependency org="org.slf4j" name="slf4j-nop" rev="1.6.4" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.akka" name="akka-stream-testkit-experimental_2.11" rev="2.0-M2" conf="test->default(compile)"/>
 		<dependency org="org.scalatest" name="scalatest_2.11" rev="2.2.5" conf="test->default(compile)"/>

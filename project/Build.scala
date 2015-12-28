@@ -1,7 +1,7 @@
 import sbt._
 import Keys._
 
-object HelloBuild extends Build {
+object Build extends Build {
 
   val dependencies = {
     val akkaV       = "2.4.1"
@@ -19,6 +19,8 @@ object HelloBuild extends Build {
       "com.typesafe.akka" %% "akka-http-testkit-experimental"       % akkaStreamV,
 
       "com.typesafe.slick" %% "slick" % "3.1.1",
+      "com.h2database" % "h2" % "1.3.170",
+      "com.novocode" % "junit-interface" % "0.10" % "test",
       "org.slf4j" % "slf4j-nop" % "1.6.4",
 
       "com.typesafe.akka" %% "akka-stream-testkit-experimental"     % akkaStreamV % "test",

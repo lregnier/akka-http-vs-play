@@ -1,0 +1,12 @@
+[0m[[0mdebug[0m] [0mRunning TaskDef(com.github.frossi85.database.TablesSuite, org.scalatest.tools.Framework$$anon$1@5a35db37, false, [SuiteSelector])[0m
+[0m[[0minfo[0m] [0mScalaTest[0m
+[0m[[0minfo[0m] [0m[36mRun completed in 1 second, 46 milliseconds.[0m[0m
+[0m[[0minfo[0m] [0m[36mTotal number of tests run: 1[0m[0m
+[0m[[0minfo[0m] [0m[36mSuites: completed 0, aborted 1[0m[0m
+[0m[[0minfo[0m] [0m[36mTests: succeeded 1, failed 0, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0minfo[0m] [0m[31m*** 1 SUITE ABORTED ***[0m[0m
+[0m[[0mdebug[0m] [0mSummary for JUnit not available.[0m
+[0m[[31merror[0m] [0mError: Total 2, Failed 0, Errors 1, Passed 1[0m
+[0m[[31merror[0m] [0mError during tests:[0m
+[0m[[31merror[0m] [0m	com.github.frossi85.database.TablesSuite[0m
+[0m[[31merror[0m] [0m(test:[31mtest[0m) sbt.TestsFailedException: Tests unsuccessful[0m

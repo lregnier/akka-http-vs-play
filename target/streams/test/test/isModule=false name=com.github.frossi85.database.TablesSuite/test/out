@@ -1,0 +1,15 @@
+[0m[[0minfo[0m] [0m[32mTablesSuite:[0m[0m
+[0m[[0minfo[0m] [0m[32m- Query Suppliers works[0m[0m
+[0m[[0minfo[0m] [0m[31mException encountered when attempting to run a suite with class name: com.github.frossi85.database.TablesSuite *** ABORTED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  java.lang.NullPointerException:[0m[0m
+[0m[[0minfo[0m] [0m[31m  at com.github.frossi85.database.TablesSuite$$anonfun$3.apply$mcV$sp(DBSpec.scala:54)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at com.github.frossi85.database.TablesSuite$$anonfun$3.apply(DBSpec.scala:54)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at com.github.frossi85.database.TablesSuite$$anonfun$3.apply(DBSpec.scala:54)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.BeforeAndAfter$class.runTest(BeforeAndAfter.scala:210)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at com.github.frossi85.database.TablesSuite.runTest(DBSpec.scala:21)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.FunSuiteLike$$anonfun$runTests$1.apply(FunSuiteLike.scala:208)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.FunSuiteLike$$anonfun$runTests$1.apply(FunSuiteLike.scala:208)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.SuperEngine$$anonfun$traverseSubNodes$1$1.apply(Engine.scala:413)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.SuperEngine$$anonfun$traverseSubNodes$1$1.apply(Engine.scala:401)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at scala.collection.immutable.List.foreach(List.scala:381)[0m[0m
+[0m[[0minfo[0m] [0m[31m  ...[0m[0m

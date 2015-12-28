@@ -1,4 +1,4 @@
-class AppSpec extends FlatSpec with Matchers with ScalaFutures with BeforeAndAfterAll {
+/*class AppSpec extends FlatSpec with Matchers with ScalaFutures with BeforeAndAfterAll {
  
   implicit val testSystem = akka.actor.ActorSystem("test-system")
   
@@ -33,3 +33,4 @@ class AppSpec extends FlatSpec with Matchers with ScalaFutures with BeforeAndAft
     }
   }
 }
+*/

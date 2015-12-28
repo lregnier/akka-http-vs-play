@@ -2,60 +2,55 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4bb95a85-c84e-4be9-b902-41e451eedd95" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules/root-build.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules/root.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sbt.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scala_compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/com/github/frossi85/services/TaskService.scala" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/github/frossi85/services/ExampleService.scala" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/HelloBuild$$anonfun$1.class" afterPath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/HelloBuild$$anonfun$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/HelloBuild$$anonfun$commonSettings$1.class" afterPath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/HelloBuild$$anonfun$commonSettings$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/HelloBuild$$anonfun$commonSettings$2.class" afterPath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/HelloBuild$$anonfun$commonSettings$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/HelloBuild$$anonfun$commonSettings$3.class" afterPath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/HelloBuild$$anonfun$commonSettings$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/HelloBuild$$anonfun$root$1.class" afterPath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/HelloBuild$$anonfun$root$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/HelloBuild$$anonfun$root$2.class" afterPath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/HelloBuild$$anonfun$root$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/HelloBuild$$anonfun$root$3.class" afterPath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/HelloBuild$$anonfun$root$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/HelloBuild$$anonfun$root$4.class" afterPath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/HelloBuild$$anonfun$root$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/HelloBuild$$anonfun$root$5.class" afterPath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/HelloBuild$$anonfun$root$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/HelloBuild$$anonfun$root$6.class" afterPath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/HelloBuild$$anonfun$root$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/HelloBuild$.class" afterPath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/HelloBuild$.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.10/output_dsp" afterPath="$PROJECT_DIR$/project/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.10/output_dsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/update_cache_2.10/output" afterPath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/update_cache_2.10/output" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/scala/com/github/frossi85/database/DBSpec.scala" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build.sbt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/HelloBuild$$anonfun$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/HelloBuild$$anonfun$commonSettings$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/HelloBuild$$anonfun$commonSettings$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/HelloBuild$$anonfun$commonSettings$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/HelloBuild$$anonfun$root$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/HelloBuild$$anonfun$root$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/HelloBuild$$anonfun$root$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/HelloBuild$$anonfun$root$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/HelloBuild$$anonfun$root$5.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/HelloBuild$$anonfun$root$6.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/HelloBuild$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/HelloBuild.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/streams/compile/copyResources/$global/streams/copy-resources" afterPath="$PROJECT_DIR$/project/target/streams/compile/copyResources/$global/streams/copy-resources" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/database/DB$$anonfun$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/database/DB$$anonfun$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/database/DB$$anonfun$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/database/DB$$anonfun$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/database/DB$class.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/database/DB$class.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/ToDoMicroService$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/ToDoMicroService$.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/ToDoMicroService.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/ToDoMicroService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/api/TasksApi$$anonfun$1$$anonfun$apply$4$$anonfun$apply$5.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/api/TasksApi$$anonfun$1$$anonfun$apply$4$$anonfun$apply$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/api/TasksApi$$anonfun$1$$anonfun$apply$4.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/api/TasksApi$$anonfun$1$$anonfun$apply$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/api/TasksApi$$anonfun$1$$anonfun$apply$6$$anonfun$apply$7.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/api/TasksApi$$anonfun$1$$anonfun$apply$6$$anonfun$apply$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/api/TasksApi$$anonfun$1$$anonfun$apply$6.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/api/TasksApi$$anonfun$1$$anonfun$apply$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/api/TasksApi$$anonfun$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/api/TasksApi$$anonfun$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/api/TasksApi$$anonfun$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/api/TasksApi$$anonfun$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/api/TasksApi$$anonfun$byIdRoutes$1$$anonfun$apply$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/api/TasksApi$$anonfun$byIdRoutes$1$$anonfun$apply$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/api/TasksApi$$anonfun$byIdRoutes$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/api/TasksApi$$anonfun$byIdRoutes$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/api/TasksApi$$anonfun$byIdRoutes$2$$anonfun$apply$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/api/TasksApi$$anonfun$byIdRoutes$2$$anonfun$apply$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/api/TasksApi$$anonfun$byIdRoutes$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/api/TasksApi$$anonfun$byIdRoutes$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/api/TasksApi$$anonfun$byIdRoutes$3$$anonfun$apply$3.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/api/TasksApi$$anonfun$byIdRoutes$3$$anonfun$apply$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/api/TasksApi$$anonfun$byIdRoutes$3.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/api/TasksApi$$anonfun$byIdRoutes$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/api/TasksApi$class.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/api/TasksApi$class.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/api/TasksApi.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/api/TasksApi.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/database/DB.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/database/DB.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/domain/Task.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/domain/Task.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/domain/User.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/com/github/frossi85/domain/User.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.11/input_dsp" afterPath="$PROJECT_DIR$/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.11/input_dsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.11/output_dsp" afterPath="$PROJECT_DIR$/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.11/output_dsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/$global/update/$global/streams/update_cache_2.11/inputs" afterPath="$PROJECT_DIR$/target/streams/$global/update/$global/streams/update_cache_2.11/inputs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/$global/update/$global/streams/update_cache_2.11/output" afterPath="$PROJECT_DIR$/target/streams/$global/update/$global/streams/update_cache_2.11/output" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/test/$global/$global/definedTestNames/data" afterPath="$PROJECT_DIR$/target/streams/test/$global/$global/definedTestNames/data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/root-build.iml" afterPath="$PROJECT_DIR$/.idea/modules/root-build.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/root.iml" afterPath="$PROJECT_DIR$/.idea/modules/root.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/Build.scala" afterPath="$PROJECT_DIR$/project/Build.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/plugins.sbt" afterPath="$PROJECT_DIR$/project/plugins.sbt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/resolution-cache/default/complete-akka-microservice-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.properties" afterPath="$PROJECT_DIR$/project/target/resolution-cache/default/complete-akka-microservice-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/resolution-cache/default/complete-akka-microservice-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.xml" afterPath="$PROJECT_DIR$/project/target/resolution-cache/default/complete-akka-microservice-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-complete-akka-microservice-build-compile-internal.xml" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-complete-akka-microservice-build-compile-internal.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-complete-akka-microservice-build-compile.xml" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-complete-akka-microservice-build-compile.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-complete-akka-microservice-build-docs.xml" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-complete-akka-microservice-build-docs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-complete-akka-microservice-build-optional.xml" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-complete-akka-microservice-build-optional.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-complete-akka-microservice-build-plugin.xml" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-complete-akka-microservice-build-plugin.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-complete-akka-microservice-build-pom.xml" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-complete-akka-microservice-build-pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-complete-akka-microservice-build-provided.xml" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-complete-akka-microservice-build-provided.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-complete-akka-microservice-build-runtime-internal.xml" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-complete-akka-microservice-build-runtime-internal.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-complete-akka-microservice-build-runtime.xml" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-complete-akka-microservice-build-runtime.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-complete-akka-microservice-build-scala-tool.xml" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-complete-akka-microservice-build-scala-tool.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-complete-akka-microservice-build-sources.xml" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-complete-akka-microservice-build-sources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-complete-akka-microservice-build-test-internal.xml" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-complete-akka-microservice-build-test-internal.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-complete-akka-microservice-build-test.xml" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-complete-akka-microservice-build-test.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/out" afterPath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/sbt/sbt.builds" afterPath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/classes/sbt/sbt.builds" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/resource_managed/main/sbt/sbt.builds" afterPath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/resource_managed/main/sbt/sbt.builds" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/streams/compile/compileIncremental/$global/streams/export" afterPath="$PROJECT_DIR$/project/target/streams/compile/compileIncremental/$global/streams/export" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/streams/compile/incCompileSetup/$global/streams/inc_compile_2.10" afterPath="$PROJECT_DIR$/project/target/streams/compile/incCompileSetup/$global/streams/inc_compile_2.10" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/github/frossi85/api/TasksApi.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/github/frossi85/api/TasksApi.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/github/frossi85/database/DB.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/github/frossi85/database/DB.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/github/frossi85/domain/Task.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/github/frossi85/domain/Task.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/github/frossi85/domain/User.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/github/frossi85/domain/User.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/com/github/frossi85/AppSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/com/github/frossi85/AppSpec.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/.history" afterPath="$PROJECT_DIR$/target/.history" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/resolution-cache/com.frossi85/hello_2.11/0.1.0/resolved.xml.properties" afterPath="$PROJECT_DIR$/target/resolution-cache/com.frossi85/hello_2.11/0.1.0/resolved.xml.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/resolution-cache/com.frossi85/hello_2.11/0.1.0/resolved.xml.xml" afterPath="$PROJECT_DIR$/target/resolution-cache/com.frossi85/hello_2.11/0.1.0/resolved.xml.xml" />
@@ -115,7 +110,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/scala/com/github/frossi85/services/TaskService.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+              <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
               <folding>
                 <element signature="e#83#117#0" expanded="true" />
               </folding>
@@ -123,23 +118,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DB.scala" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/com/github/frossi85/database/DB.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.803125">
-              <caret line="76" column="3" selection-start-line="76" selection-start-column="3" selection-end-line="76" selection-end-column="3" />
-              <folding>
-                <element signature="e#83#117#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/com/github/frossi85/domain/User.scala">
+      <file leaf-file-name="TaskTable.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/com/github/frossi85/database/tables/TaskTable.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="77" selection-start-line="2" selection-start-column="77" selection-end-line="2" selection-end-column="77" />
+              <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DB.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/com/github/frossi85/database/DB.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="29" />
+              <folding>
+                <element signature="e#83#117#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DBSpec.scala" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/scala/com/github/frossi85/database/DBSpec.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.97613364">
+              <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -155,12 +160,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WithId.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/com/github/frossi85/domain/WithId.scala">
+      <file leaf-file-name="application.conf" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/application.conf">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.37037">
+              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Build.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/project/Build.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="39" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="39" />
-              <folding />
+              <caret line="32" column="32" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#12#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -179,13 +196,17 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/project/plugins.sbt" />
-        <option value="$PROJECT_DIR$/project/Build.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/github/frossi85/database/tables/EntityWithID.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/github/frossi85/domain/Task.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/github/frossi85/domain/User.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/github/frossi85/domain/WithId.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/github/frossi85/services/ExampleService.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/com/github/frossi85/api/TasksApi.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/com/github/frossi85/database/AppSpec.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/com/github/frossi85/AppSpec.scala" />
+        <option value="$PROJECT_DIR$/project/Build.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/github/frossi85/database/DB.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/com/github/frossi85/database/DBSpec.scala" />
       </list>
     </option>
   </component>
@@ -258,22 +279,8 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="hello" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="complete-akka-microservice" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -299,7 +306,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -311,7 +318,55 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hello" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="complete-akka-microservice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hello" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="complete-akka-microservice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frossi85" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -439,7 +494,27 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.github.frossi85.database" />
+    </key>
+  </component>
+  <component name="RunManager" selected="ScalaTest.TablesSuite">
+    <configuration default="false" name="TablesSuite" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="root" />
+      <setting name="path" value="com.github.frossi85.database.TablesSuite" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -905,8 +980,17 @@
       <envs />
       <method />
     </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="ScalaTest.TablesSuite" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="ScalaTest.TablesSuite" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SbtLocalSettings">
+    <option name="lastUpdateTimestamp" value="1451326092699" />
     <option name="availableProjects">
       <map>
         <entry>
@@ -935,7 +1019,6 @@
       <map>
         <entry key="$USER_HOME$/coursera/fun-prog-scala/funsets" value="1443190150000" />
         <entry key="$USER_HOME$/coursera/fun-prog-scala/objsets" value="1443207412000" />
-        <entry key="$PROJECT_DIR$" value="1451308994389" />
       </map>
     </option>
     <option name="externalProjectsViewState">
@@ -949,12 +1032,17 @@
       <created>1451309070179</created>
       <option name="number" value="Default" />
       <updated>1451309070179</updated>
-      <workItem from="1451309089554" duration="7885000" />
+      <workItem from="1451309089554" duration="19037000" />
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="TablesSuite - 2015.12.28 at 18h 04m 42s.xml">
+      <configuration name="TablesSuite" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7885000" />
+    <option name="totallyTimeSpent" value="19037000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
@@ -969,22 +1057,22 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2955224" sideWeight="0.50269026" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2955224" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2955224" sideWeight="0.49730977" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="SBT" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24980783" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32985073" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
@@ -995,6 +1083,10 @@
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/project/plugins.sbt">
@@ -1013,14 +1105,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/Build.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.703125">
-          <caret line="26" column="3" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/github/frossi85/database/tables/EntityWithID.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.14729951">
@@ -1029,12 +1113,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/github/frossi85/database/tables/TaskTable.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/github/frossi85/domain/WithId.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.196875">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        <state vertical-scroll-proportion="0.05625">
+          <caret line="2" column="39" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/github/frossi85/api/TasksApi.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8984375">
+          <caret line="32" column="14" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
           <folding>
-            <element signature="e#90#124#0" expanded="true" />
+            <element signature="e#33#62#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1047,20 +1139,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/github/frossi85/services/TaskService.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/github/frossi85/Routes.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+          <caret line="14" column="66" selection-start-line="14" selection-start-column="66" selection-end-line="14" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scalatest/scalatest_2.11/bundles/scalatest_2.11-2.2.5.jar!/org/scalatest/concurrent/Futures.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.4827585">
+          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/com/github/frossi85/AppSpec.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08591885">
+          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/Build.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="32" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
           <folding>
-            <element signature="e#83#117#0" expanded="true" />
+            <element signature="e#0#12#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/github/frossi85/domain/WithId.scala">
+    <entry file="file://$PROJECT_DIR$/src/test/resources/application.conf">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="39" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="39" />
+        <state vertical-scroll-proportion="-8.37037">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1073,13 +1189,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/github/frossi85/database/DB.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/github/frossi85/services/TaskService.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.803125">
-          <caret line="76" column="3" selection-start-line="76" selection-start-column="3" selection-end-line="76" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
           <folding>
             <element signature="e#83#117#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/github/frossi85/database/tables/UserTable.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20361991">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/github/frossi85/database/DB.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="29" />
+          <folding>
+            <element signature="e#83#117#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/github/frossi85/database/tables/TaskTable.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/com/github/frossi85/database/DBSpec.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.97613364">
+          <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>

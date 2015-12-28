@@ -7,10 +7,10 @@
 		revision="0.1.0"
 		conf="test-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20151228124825"/>
+		date="20151228180242"/>
 	<dependencies>
 		<module organisation="org.scalatest" name="scalatest_2.11">
-			<revision name="2.2.5" status="release" pubdate="20150514062034" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scalatest.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="18">
+			<revision name="2.2.5" status="release" pubdate="20150514062034" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scalatest.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="23">
 				<license name="the Apache License, ASL Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
 				<metadata-artifact status="no" details="" size="4971" time="0" location="/home/facundo/.ivy2/cache/org.scalatest/scalatest_2.11/ivy-2.2.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scalatest/scalatest_2.11/2.2.5/scalatest_2.11-2.2.5.pom"/>
 				<caller organisation="com.frossi85" name="hello_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="2.2.5" rev-constraint-default="2.2.5" rev-constraint-dynamic="2.2.5" callerrev="0.1.0"/>
@@ -22,7 +22,7 @@
 			</revision>
 		</module>
 		<module organisation="org.scala-lang" name="scala-reflect">
-			<revision name="2.11.2" status="release" pubdate="20140723023911" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.11.2/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="19">
+			<revision name="2.11.2" status="release" pubdate="20140723023911" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.11.2/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="24">
 				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
 				<metadata-artifact status="no" details="" size="2812" time="0" location="/home/facundo/.ivy2/cache/org.scala-lang/scala-reflect/ivy-2.11.2.xml" searched="false" origin-is-local="true" origin-location="/home/facundo/Programas-Instalados/activator/repository/org.scala-lang/scala-reflect/2.11.2/ivys/ivy.xml"/>
 				<caller organisation="org.scalatest" name="scalatest_2.11" conf="default, compile, runtime, master" rev="2.11.2" rev-constraint-default="2.11.2" rev-constraint-dynamic="2.11.2" callerrev="2.2.5"/>
@@ -34,12 +34,24 @@
 			</revision>
 		</module>
 		<module organisation="org.slf4j" name="slf4j-nop">
-			<revision name="1.6.4" status="release" pubdate="20111031184556" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.slf4j.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="17">
+			<revision name="1.6.4" status="release" pubdate="20111031184556" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.slf4j.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="18">
 				<metadata-artifact status="no" details="" size="4373" time="0" location="/home/facundo/.ivy2/cache/org.slf4j/slf4j-nop/ivy-1.6.4.xml" searched="false" origin-is-local="true" origin-location="/home/facundo/Programas-Instalados/activator/repository/org.slf4j/slf4j-nop/1.6.4/ivys/ivy.xml"/>
 				<caller organisation="com.frossi85" name="hello_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="1.6.4" rev-constraint-default="1.6.4" rev-constraint-dynamic="1.6.4" callerrev="0.1.0"/>
 				<artifacts>
 					<artifact name="slf4j-nop" type="jar" ext="jar" status="no" details="" size="4811" time="0" location="/home/facundo/Programas-Instalados/activator/repository/org.slf4j/slf4j-nop/1.6.4/jars/slf4j-nop.jar">
 						<origin-location is-local="true" location="/home/facundo/Programas-Instalados/activator/repository/org.slf4j/slf4j-nop/1.6.4/jars/slf4j-nop.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.h2database" name="h2">
+			<revision name="1.3.170" status="release" pubdate="20121130011810" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.h2database.com" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="17">
+				<license name="The H2 License, Version 1.0" url="http://h2database.com/html/license.html"/>
+				<metadata-artifact status="no" details="" size="2326" time="0" location="/home/facundo/.ivy2/cache/com.h2database/h2/ivy-1.3.170.xml" searched="false" origin-is-local="true" origin-location="/home/facundo/Programas-Instalados/activator/repository/com.h2database/h2/1.3.170/ivys/ivy.xml"/>
+				<caller organisation="com.frossi85" name="hello_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="1.3.170" rev-constraint-default="1.3.170" rev-constraint-dynamic="1.3.170" callerrev="0.1.0"/>
+				<artifacts>
+					<artifact name="h2" type="jar" ext="jar" status="no" details="" size="1469903" time="0" location="/home/facundo/Programas-Instalados/activator/repository/com.h2database/h2/1.3.170/jars/h2.jar">
+						<origin-location is-local="true" location="/home/facundo/Programas-Instalados/activator/repository/com.h2database/h2/1.3.170/jars/h2.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
@@ -278,6 +290,52 @@
 				<evicted-by rev="1.0.3"/>
 				<caller organisation="com.typesafe.akka" name="akka-http-xml-experimental_2.11" conf="default, compile, runtime, master" rev="1.0.1" rev-constraint-default="1.0.1" rev-constraint-dynamic="1.0.1" callerrev="2.0-M2"/>
 				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.novocode" name="junit-interface">
+			<revision name="0.10" status="release" pubdate="20130730110827" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://github.com/szeiger/junit-interface/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="19">
+				<license name="Two-clause BSD-style license" url="http://github.com/szeiger/junit-interface/blob/master/LICENSE.txt"/>
+				<metadata-artifact status="no" details="" size="2887" time="0" location="/home/facundo/.ivy2/cache/com.novocode/junit-interface/ivy-0.10.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/novocode/junit-interface/0.10/junit-interface-0.10.pom"/>
+				<caller organisation="com.frossi85" name="hello_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="0.10" rev-constraint-default="0.10" rev-constraint-dynamic="0.10" callerrev="0.1.0"/>
+				<artifacts>
+					<artifact name="junit-interface" type="jar" ext="jar" status="no" details="" size="22633" time="0" location="/home/facundo/.ivy2/cache/com.novocode/junit-interface/jars/junit-interface-0.10.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/novocode/junit-interface/0.10/junit-interface-0.10.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-tools.testing" name="test-interface">
+			<revision name="0.5" status="release" pubdate="20100327193658" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="22">
+				<metadata-artifact status="no" details="" size="2199" time="0" location="/home/facundo/.ivy2/cache/org.scala-tools.testing/test-interface/ivy-0.5.xml" searched="false" origin-is-local="true" origin-location="/home/facundo/Programas-Instalados/activator/repository/org.scala-tools.testing/test-interface/0.5/ivys/ivy.xml"/>
+				<caller organisation="com.novocode" name="junit-interface" conf="default, compile, runtime, master" rev="0.5" rev-constraint-default="0.5" rev-constraint-dynamic="0.5" callerrev="0.10"/>
+				<artifacts>
+					<artifact name="test-interface" type="jar" ext="jar" status="no" details="" size="4407" time="0" location="/home/facundo/Programas-Instalados/activator/repository/org.scala-tools.testing/test-interface/0.5/jars/test-interface.jar">
+						<origin-location is-local="true" location="/home/facundo/Programas-Instalados/activator/repository/org.scala-tools.testing/test-interface/0.5/jars/test-interface.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="junit" name="junit-dep">
+			<revision name="4.10" status="release" pubdate="20110929161235" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://junit.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="20">
+				<license name="Common Public License Version 1.0" url="http://www.opensource.org/licenses/cpl1.0.txt"/>
+				<metadata-artifact status="no" details="" size="2905" time="0" location="/home/facundo/.ivy2/cache/junit/junit-dep/ivy-4.10.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/junit/junit-dep/4.10/junit-dep-4.10.pom"/>
+				<caller organisation="com.novocode" name="junit-interface" conf="default, compile, runtime, master" rev="4.10" rev-constraint-default="4.10" rev-constraint-dynamic="4.10" callerrev="0.10"/>
+				<artifacts>
+					<artifact name="junit-dep" type="jar" ext="jar" status="no" details="" size="234088" time="0" location="/home/facundo/.ivy2/cache/junit/junit-dep/jars/junit-dep-4.10.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/junit/junit-dep/4.10/junit-dep-4.10.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.hamcrest" name="hamcrest-core">
+			<revision name="1.1" status="release" pubdate="20070718151143" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="21">
+				<metadata-artifact status="no" details="" size="4328" time="0" location="/home/facundo/.ivy2/cache/org.hamcrest/hamcrest-core/ivy-1.1.xml" searched="false" origin-is-local="true" origin-location="/home/facundo/Programas-Instalados/activator/repository/org.hamcrest/hamcrest-core/1.1/ivys/ivy.xml"/>
+				<caller organisation="junit" name="junit-dep" conf="compile, runtime" rev="1.1" rev-constraint-default="1.1" rev-constraint-dynamic="1.1" callerrev="4.10"/>
+				<artifacts>
+					<artifact name="hamcrest-core" type="jar" ext="jar" status="no" details="" size="76643" time="0" location="/home/facundo/Programas-Instalados/activator/repository/org.hamcrest/hamcrest-core/1.1/jars/hamcrest-core.jar">
+						<origin-location is-local="true" location="/home/facundo/Programas-Instalados/activator/repository/org.hamcrest/hamcrest-core/1.1/jars/hamcrest-core.jar"/>
+					</artifact>
 				</artifacts>
 			</revision>
 		</module>
