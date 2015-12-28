@@ -1148,7 +1148,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#complete-akka-microservice-build;0.1-SNAPSHOT [provided][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#complete-akka-microservice-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.5 [provided->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.10.5 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@4cabea6d[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@17fe72ef[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.5[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.10.5 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m	[2.10.5] org.scala-lang#scala-library;2.10.5[0m
@@ -4340,19 +4340,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.sonatype.plexus#plexus-cipher;1.4!plexus-cipher.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] javax.enterprise#cdi-api;1.0!cdi-api.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.google.guava#guava;10.0.1!guava.jar[0m
-[0m[[0mdebug[0m] [0m		tried https://repo.typesafe.com/typesafe/ivy-releases/org.sonatype.sisu/sisu-guice/3.1.0/jars/sisu-guice.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=https://repo.typesafe.com/typesafe/ivy-releases/org.sonatype.sisu/sisu-guice/3.1.0/jars/sisu-guice.jar[0m
-[0m[[0mdebug[0m] [0m		tried https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/org.sonatype.sisu/sisu-guice/3.1.0/jars/sisu-guice.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/org.sonatype.sisu/sisu-guice/3.1.0/jars/sisu-guice.jar[0m
-[0m[[0mdebug[0m] [0m		tried /home/facundo/.ivy2/local/org.sonatype.sisu/sisu-guice/3.1.0/jars/sisu-guice.jar[0m
-[0m[[0mdebug[0m] [0m		tried /home/facundo/.activator/repository/org.sonatype.sisu/sisu-guice/3.1.0/jars/sisu-guice.jar[0m
-[0m[[0mdebug[0m] [0m		tried /home/facundo/Programas-Instalados/activator/repository/org.sonatype.sisu/sisu-guice/3.1.0/jars/sisu-guice.jar[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0.jar[0m
-[0m[[0minfo[0m] [0mdownloading https://repo1.maven.org/maven2/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0.jar ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0.jar[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0.jar.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.sonatype.sisu#sisu-guice;3.1.0!sisu-guice.jar (4722ms)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.sonatype.sisu#sisu-guice;3.1.0!sisu-guice.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.eclipse.sisu#org.eclipse.sisu.inject;0.0.0.M5!org.eclipse.sisu.inject.jar(eclipse-plugin)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] javax.annotation#jsr250-api;1.0!jsr250-api.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] javax.inject#javax.inject;1!javax.inject.jar[0m
@@ -4417,7 +4405,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.9!apply-macro.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.5!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 4609ms :: artifacts dl 9130ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 3098ms :: artifacts dl 55ms[0m
 [0m[[0mdebug[0m] [0m	report for default#complete-akka-microservice-build;0.1-SNAPSHOT compile produced in /home/facundo/whiteprompt/complete-akka-microservice/project/target/resolution-cache/reports/default-complete-akka-microservice-build-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#complete-akka-microservice-build;0.1-SNAPSHOT runtime produced in /home/facundo/whiteprompt/complete-akka-microservice/project/target/resolution-cache/reports/default-complete-akka-microservice-build-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#complete-akka-microservice-build;0.1-SNAPSHOT test produced in /home/facundo/whiteprompt/complete-akka-microservice/project/target/resolution-cache/reports/default-complete-akka-microservice-build-test.xml[0m
@@ -4431,5 +4419,5 @@
 [0m[[0mdebug[0m] [0m	report for default#complete-akka-microservice-build;0.1-SNAPSHOT docs produced in /home/facundo/whiteprompt/complete-akka-microservice/project/target/resolution-cache/reports/default-complete-akka-microservice-build-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#complete-akka-microservice-build;0.1-SNAPSHOT pom produced in /home/facundo/whiteprompt/complete-akka-microservice/project/target/resolution-cache/reports/default-complete-akka-microservice-build-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#complete-akka-microservice-build;0.1-SNAPSHOT scala-tool produced in /home/facundo/whiteprompt/complete-akka-microservice/project/target/resolution-cache/reports/default-complete-akka-microservice-build-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (4609ms resolve - 9130ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (3098ms resolve - 55ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

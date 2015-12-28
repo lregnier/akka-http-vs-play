@@ -9,7 +9,7 @@
 		extra-sbtVersion="0.13"
 		conf="test-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20151223175505"/>
+		date="20151228103300"/>
 	<dependencies>
 		<module organisation="org.scala-sbt" name="sbt">
 			<revision name="0.13.9" status="release" pubdate="20150810202742" resolver="sbt-chain" artresolver="sbt-chain" downloaded="false" searched="false" default="false" conf="compile, default(compile)" position="40">
@@ -910,7 +910,7 @@
 				<metadata-artifact status="no" details="" size="4706" time="0" location="/home/facundo/.ivy2/cache/org.sonatype.sisu/sisu-guice/ivy-3.1.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0.pom"/>
 				<caller organisation="org.eclipse.sisu" name="org.eclipse.sisu.plexus" conf="compile, runtime" rev="3.1.0" rev-constraint-default="3.1.0" rev-constraint-dynamic="3.1.0" callerrev="0.0.0.M5"/>
 				<artifacts>
-					<artifact name="sisu-guice" type="jar" ext="jar" status="successful" details="" size="585485" time="4722" location="/home/facundo/.ivy2/cache/org.sonatype.sisu/sisu-guice/jars/sisu-guice-3.1.0.jar">
+					<artifact name="sisu-guice" type="jar" ext="jar" status="no" details="" size="585485" time="0" location="/home/facundo/.ivy2/cache/org.sonatype.sisu/sisu-guice/jars/sisu-guice-3.1.0.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0.jar"/>
 					</artifact>
 				</artifacts>

@@ -2,6 +2,7 @@ import sbt._
 import Keys._
 
 object HelloBuild extends Build {
+
   val dependencies = {
     val akkaV       = "2.4.1"
     val akkaStreamV = "2.0-M2"
@@ -23,7 +24,7 @@ object HelloBuild extends Build {
       "com.typesafe.akka" %% "akka-stream-testkit-experimental"     % akkaStreamV % "test",
       "org.scalatest"     %% "scalatest"                            % scalaTestV % "test"
     )
-  } 
+  }
 
   scalacOptions := Seq("-unchecked", "-deprecation", "-encoding", "utf8")
 
@@ -36,7 +37,7 @@ object HelloBuild extends Build {
   lazy val root = (project in file(".")).
     settings(commonSettings: _*).
     settings(
-    name := "hello",
-    libraryDependencies ++= dependencies
-  )
+      name := "hello",
+      libraryDependencies ++= dependencies
+    )
 }

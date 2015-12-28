@@ -1,5 +1,6 @@
 [0m[[0minfo[0m] [0mRunning com.github.frossi85.ToDoMicroService [0m
 [0m[[0mdebug[0m] [0mWaiting for threads to exit or System.exit to be called.[0m
+[0m[[0mdebug[0m] [0mWaiting for thread run-main-1 to terminate.[0m
 [0m[[0mdebug[0m] [0m  Classpath:[0m
 [0m[[0mdebug[0m] [0m	/home/facundo/whiteprompt/complete-akka-microservice/target/scala-2.11/classes[0m
 [0m[[0mdebug[0m] [0m	/home/facundo/Programas-Instalados/activator/repository/org.scala-lang/scala-library/2.11.7/jars/scala-library.jar[0m
@@ -20,4 +21,11 @@
 [0m[[0mdebug[0m] [0m	/home/facundo/.ivy2/cache/com.typesafe.slick/slick_2.11/bundles/slick_2.11-3.1.1.jar[0m
 [0m[[0mdebug[0m] [0m	/home/facundo/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.10.jar[0m
 [0m[[0mdebug[0m] [0m	/home/facundo/Programas-Instalados/activator/repository/org.slf4j/slf4j-nop/1.6.4/jars/slf4j-nop.jar[0m
-[0m[[0mdebug[0m] [0mWaiting for thread run-main-0 to terminate.[0m
+[0m[[0mdebug[0m] [0m	Thread run-main-1 exited.[0m
+[0m[[0mdebug[0m] [0mWaiting for thread my-system-scheduler-1 to terminate.[0m
+[0m[[0mdebug[0m] [0m	Thread my-system-scheduler-1 exited.[0m
+[0m[[0mdebug[0m] [0mWaiting for thread my-system-akka.actor.default-dispatcher-6 to terminate.[0m
+[0m[[0mdebug[0m] [0m	Thread my-system-akka.actor.default-dispatcher-6 exited.[0m
+[0m[[0mdebug[0m] [0mInterrupting remaining threads (should be all daemons).[0m
+[0m[[0mdebug[0m] [0mSandboxed run complete..[0m
+[0m[[0mdebug[0m] [0mExited with code 0[0m
