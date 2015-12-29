@@ -1,66 +1,15 @@
-[debug] 
-[debug] Initial source changes: 
-[debug] 	removed:Set()
-[debug] 	added: Set()
-[debug] 	modified: Set(/home/facundo/whiteprompt/complete-akka-microservice/project/Build.scala)
-[debug] Invalidated products: Set()
-[debug] External API changes: API Changes: Set()
-[debug] Modified binary dependencies: Set()
-[debug] Initial directly invalidated sources: Set(/home/facundo/whiteprompt/complete-akka-microservice/project/Build.scala)
-[debug] 
-[debug] Sources indirectly invalidated by:
-[debug] 	product: Set()
-[debug] 	binary dep: Set()
-[debug] 	external source: Set()
-[debug] All initially invalidated sources: Set(/home/facundo/whiteprompt/complete-akka-microservice/project/Build.scala)
-[debug] Recompiling all 1 sources: invalidated sources (1) exceeded 50.0% of all sources
-java.lang.IllegalArgumentException: requirement failed: Source file '/home/facundo/whiteprompt/complete-akka-microservice/project/target/scala-2.10/sbt-0.13/classes/Build$$anonfun$root$2.class' does not exist.
-	at scala.Predef$.require(Predef.scala:233)
-	at sbt.IO$.copyFile(IO.scala:583)
-	at sbt.IO$.move(IO.scala:786)
-	at sbt.inc.ClassfileManager$$anonfun$transactional$1$$anon$2.sbt$inc$ClassfileManager$$anonfun$$anon$$move(ClassfileManager.scala:75)
-	at sbt.inc.ClassfileManager$$anonfun$transactional$1$$anon$2$$anonfun$delete$3.apply(ClassfileManager.scala:52)
-	at sbt.inc.ClassfileManager$$anonfun$transactional$1$$anon$2$$anonfun$delete$3.apply(ClassfileManager.scala:51)
-	at scala.collection.immutable.HashSet$HashSet1.foreach(HashSet.scala:153)
-	at scala.collection.immutable.HashSet$HashTrieSet.foreach(HashSet.scala:306)
-	at sbt.inc.ClassfileManager$$anonfun$transactional$1$$anon$2.delete(ClassfileManager.scala:51)
-	at sbt.inc.Incremental$.prune(Incremental.scala:82)
-	at sbt.inc.IncrementalCommon.cycle(IncrementalCommon.scala:28)
-	at sbt.inc.Incremental$$anonfun$1.apply(Incremental.scala:62)
-	at sbt.inc.Incremental$$anonfun$1.apply(Incremental.scala:61)
-	at sbt.inc.Incremental$.manageClassfiles(Incremental.scala:89)
-	at sbt.inc.Incremental$.compile(Incremental.scala:61)
-	at sbt.inc.IncrementalCompile$.apply(Compile.scala:54)
-	at sbt.compiler.IC$.compileInternal(IncrementalCompiler.scala:160)
-	at sbt.compiler.IC$.incrementalCompile(IncrementalCompiler.scala:138)
-	at sbt.Compiler$.compile(Compiler.scala:128)
-	at sbt.Compiler$.compile(Compiler.scala:114)
-	at sbt.Defaults$.sbt$Defaults$$compileIncrementalTaskImpl(Defaults.scala:829)
-	at sbt.Defaults$$anonfun$compileIncrementalTask$1.apply(Defaults.scala:820)
-	at sbt.Defaults$$anonfun$compileIncrementalTask$1.apply(Defaults.scala:818)
-	at scala.Function1$$anonfun$compose$1.apply(Function1.scala:47)
-	at sbt.$tilde$greater$$anonfun$$u2219$1.apply(TypeFunctions.scala:40)
-	at sbt.std.Transform$$anon$4.work(System.scala:63)
-	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:226)
-	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:226)
-	at sbt.ErrorHandling$.wideConvert(ErrorHandling.scala:17)
-	at sbt.Execute.work(Execute.scala:235)
-	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:226)
-	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:226)
-	at sbt.ConcurrentRestrictions$$anon$4$$anonfun$1.apply(ConcurrentRestrictions.scala:159)
-	at sbt.CompletionService$$anon$2.call(CompletionService.scala:28)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-[error] (compile:compileIncremental) java.lang.IllegalArgumentException: requirement failed: Source file '/home/facundo/whiteprompt/complete-akka-microservice/project/target/scala-2.10/sbt-0.13/classes/Build$$anonfun$root$2.class' does not exist.
-.sonatype.plexus/plexus-sec-dispatcher/1.3/jars/plexus-sec-dispatcher.jar:/home/facundo/.ivy2/cache/org.sonatype.plexus/plexus-cipher/jars/plexus-cipher-1.4.jar:/home/facundo/Programas-Instalados/activator/repository/org.apache.maven/maven-repository-metadata/3.2.2/jars/maven-repository-metadata.jar:/home/facundo/Programas-Instalados/activator/repository/org.apache.maven/maven-artifact/3.2.2/jars/maven-artifact.jar:/home/facundo/Programas-Instalados/activator/repository/org.apache.maven/maven-plugin-api/3.2.2/jars/maven-plugin-api.jar:/home/facundo/Programas-Instalados/activator/repository/org.eclipse.sisu/org.eclipse.sisu.plexus/0.0.0.M5/eclipse-plugins/org.eclipse.sisu.plexus.jar:/home/facundo/Programas-Instalados/activator/repository/javax.enterprise/cdi-api/1.0/jars/cdi-api.jar:/home/facundo/Programas-Instalados/activator/repository/javax.annotation/jsr250-api/1.0/jars/jsr250-api.jar:/home/facundo/Programas-Instalados/activator/repository/javax.inject/javax.inject/1/jars/javax.inject.jar:/home/facundo/.ivy2/cache/com.google.guava/guava/jars/guava-10.0.1.jar:/home/facundo/Programas-Instalados/activator/repository/com.google.code.findbugs/jsr305/1.3.9/jars/jsr305.jar:/home/facundo/.ivy2/cache/org.sonatype.sisu/sisu-guice/jars/sisu-guice-3.1.0.jar:/home/facundo/Programas-Instalados/activator/repository/aopalliance/aopalliance/1.0/jars/aopalliance.jar:/home/facundo/Programas-Instalados/activator/repository/org.eclipse.sisu/org.eclipse.sisu.inject/0.0.0.M5/eclipse-plugins/org.eclipse.sisu.inject.jar:/home/facundo/Programas-Instalados/activator/repository/org.codehaus.plexus/plexus-classworlds/2.5.1/bundles/plexus-classworlds.jar:/home/facundo/Programas-Instalados/activator/repository/org.apache.maven/maven-model-builder/3.2.2/jars/maven-model-builder.jar:/home/facundo/Programas-Instalados/activator/repository/org.apache.maven/maven-aether-provider/3.2.2/jars/maven-aether-provider.jar:/home/facundo/Programas-Instalados/activator/repository/org.eclipse.aether/aether-api/0.9.0.M2/jars/aether-api.jar:/home/facundo/Programas-Instalados/activator/repository/org.eclipse.aether/aether-spi/0.9.0.M2/jars/aether-spi.jar:/home/facundo/Programas-Instalados/activator/repository/org.eclipse.aether/aether-util/0.9.0.M2/jars/aether-util.jar:/home/facundo/Programas-Instalados/activator/repository/org.eclipse.aether/aether-impl/0.9.0.M2/jars/aether-impl.jar:/home/facundo/Programas-Instalados/activator/repository/org.apache.ant/ant/1.9.3/jars/ant.jar:/home/facundo/Programas-Instalados/activator/repository/org.apache.ant/ant-launcher/1.9.3/jars/ant-launcher.jar:/home/facundo/Programas-Instalados/activator/repository/org.bouncycastle/bcpg-jdk15on/1.51/jars/bcpg-jdk15on.jar:/home/facundo/Programas-Instalados/activator/repository/org.bouncycastle/bcprov-jdk15on/1.51/jars/bcprov-jdk15on.jar:/home/facundo/.ivy2/cache/org.scala-sbt/sbt/jars/sbt-0.13.9.jar:/home/facundo/.ivy2/cache/org.scala-sbt/main/jars/main-0.13.9.jar:/home/facundo/.ivy2/cache/org.scala-sbt/actions/jars/actions-0.13.9.jar:/home/facundo/.ivy2/cache/org.scala-sbt/classpath/jars/classpath-0.13.9.jar:/home/facundo/.sbt/boot/scala-2.10.5/lib/scala-compiler.jar:/home/facundo/.sbt/boot/scala-2.10.5/lib/scala-reflect.jar:/home/facundo/.ivy2/cache/org.scala-sbt/interface/jars/interface-0.13.9.jar:/home/facundo/.ivy2/cache/org.scala-sbt/io/jars/io-0.13.9.jar:/home/facundo/.ivy2/cache/org.scala-sbt/control/jars/control-0.13.9.jar:/home/facundo/.ivy2/cache/org.scala-sbt/launcher-interface/jars/launcher-interface-1.0.0-M1.jar:/home/facundo/.ivy2/cache/org.scala-sbt/completion/jars/completion-0.13.9.jar:/home/facundo/.ivy2/cache/org.scala-sbt/collections/jars/collections-0.13.9.jar:/home/facundo/Programas-Instalados/activator/repository/jline/jline/2.11/jars/jline.jar:/home/facundo/.ivy2/cache/org.scala-sbt/api/jars/api-0.13.9.jar:/home/facundo/.ivy2/cache/org.scala-sbt/compiler-integration/jars/compiler-integration-0.13.9.jar:/home/facundo/.ivy2/cache/org.scala-sbt/incremental-compiler/jars/incremental-compiler-0.13.9.jar:/home/facundo/.ivy2/cache/org.scala-sbt/logging/jars/logging-0.13.9.jar:/home/facundo/.ivy2/cache/org.scala-sbt/process/jars/process-0.13.9.jar:/home/facundo/.ivy2/cache/org.scala-sbt/relation/jars/relation-0.13.9.jar:/home/facundo/.ivy2/cache/org.scala-sbt/compile/jars/compile-0.13.9.jar:/home/facundo/.ivy2/cache/org.scala-sbt/classfile/jars/classfile-0.13.9.jar:/home/facundo/.ivy2/cache/org.scala-sbt/persist/jars/persist-0.13.9.jar:/home/facundo/.ivy2/cache/org.scala-tools.sbinary/sbinary_2.10/jars/sbinary_2.10-0.4.2.jar:/home/facundo/.ivy2/cache/org.scala-sbt/compiler-ivy-integration/jars/compiler-ivy-integration-0.13.9.jar:/home/facundo/.ivy2/cache/org.scala-sbt/ivy/jars/ivy-0.13.9.jar:/home/facundo/.ivy2/cache/org.scala-sbt/cross/jars/cross-0.13.9.jar:/home/facundo/.ivy2/cache/org.scala-sbt.ivy/ivy/jars/ivy-2.3.0-sbt-c5d1b95fdcc1e1007740ffbecf4eb07abc51ec93.jar:/home/facundo/Programas-Instalados/activator/repository/com.jcraft/jsch/0.1.46/jars/jsch.jar:/home/facundo/.ivy2/cache/org.scala-sbt/serialization_2.10/jars/serialization_2.10-0.1.1.jar:/home/facundo/.ivy2/cache/org.scala-lang.modules/scala-pickling_2.10/jars/scala-pickling_2.10-0.10.0.jar:/home/facundo/.ivy2/cache/org.scalamacros/quasiquotes_2.10/jars/quasiquotes_2.10-2.0.1.jar:/home/facundo/Programas-Instalados/activator/repository/org.json4s/json4s-core_2.10/3.2.10/jars/json4s-core_2.10.jar:/home/facundo/Programas-Instalados/activator/repository/org.json4s/json4s-ast_2.10/3.2.10/jars/json4s-ast_2.10.jar:/home/facundo/Programas-Instalados/activator/repository/com.thoughtworks.paranamer/paranamer/2.6/jars/paranamer.jar:/home/facundo/Programas-Instalados/activator/repository/org.spire-math/jawn-parser_2.10/0.6.0/jars/jawn-parser_2.10.jar:/home/facundo/Programas-Instalados/activator/repository/org.spire-math/json4s-support_2.10/0.6.0/jars/json4s-support_2.10.jar:/home/facundo/.ivy2/cache/org.scala-sbt/run/jars/run-0.13.9.jar:/home/facundo/.ivy2/cache/org.scala-sbt/task-system/jars/task-system-0.13.9.jar:/home/facundo/.ivy2/cache/org.scala-sbt/tasks/jars/tasks-0.13.9.jar:/home/facundo/.ivy2/cache/org.scala-sbt/tracking/jars/tracking-0.13.9.jar:/home/facundo/.ivy2/cache/org.scala-sbt/cache/jars/cache-0.13.9.jar:/home/facundo/.ivy2/cache/org.scala-sbt/testing/jars/testing-0.13.9.jar:/home/facundo/.ivy2/cache/org.scala-sbt/test-agent/jars/test-agent-0.13.9.jar:/home/facundo/Programas-Instalados/activator/repository/org.scala-sbt/test-interface/1.0/jars/test-interface.jar:/home/facundo/.ivy2/cache/org.scala-sbt/main-settings/jars/main-settings-0.13.9.jar:/home/facundo/.ivy2/cache/org.scala-sbt/apply-macro/jars/apply-macro-0.13.9.jar:/home/facundo/.ivy2/cache/org.scala-sbt/command/jars/command-0.13.9.jar:/home/facundo/.ivy2/cache/org.scala-sbt/logic/jars/logic-0.13.9.jar:/home/facundo/.ivy2/cache/org.scala-sbt/compiler-interface/jars/compiler-interface-src-0.13.9.jar:/home/facundo/.ivy2/cache/org.scala-sbt/compiler-interface/jars/compiler-interface-bin-0.13.9.jar:/home/facundo/.ivy2/cache/org.scala-sbt/precompiled-2_8_2/jars/compiler-interface-bin-0.13.9.jar:/home/facundo/.ivy2/cache/org.scala-sbt/precompiled-2_9_2/jars/compiler-interface-bin-0.13.9.jar:/home/facundo/.ivy2/cache/org.scala-sbt/precompiled-2_9_3/jars/compiler-interface-bin-0.13.9.jar[0m
-[0m[[0mdebug[0m] [0mScala compilation took 11.138679949 s[0m
-[0m[[0mdebug[0m] [0mNew invalidations:[0m
-[0m[[0mdebug[0m] [0m	Set()[0m
-[0m[[0mdebug[0m] [0mInitial set of included nodes: Set()[0m
-[0m[[0mdebug[0m] [0mPreviously invalidated, but (transitively) depend on new invalidations:[0m
-[0m[[0mdebug[0m] [0m	Set()[0m
-[0m[[0mdebug[0m] [0mAll newly invalidated sources after taking into account (previously) recompiled sources:Set()[0m
+[0m[[0mdebug[0m] [0m[0m
+[0m[[0mdebug[0m] [0mInitial source changes: [0m
+[0m[[0mdebug[0m] [0m	removed:Set()[0m
+[0m[[0mdebug[0m] [0m	added: Set()[0m
+[0m[[0mdebug[0m] [0m	modified: Set()[0m
+[0m[[0mdebug[0m] [0mInvalidated products: Set()[0m
+[0m[[0mdebug[0m] [0mExternal API changes: API Changes: Set()[0m
+[0m[[0mdebug[0m] [0mModified binary dependencies: Set()[0m
+[0m[[0mdebug[0m] [0mInitial directly invalidated sources: Set()[0m
+[0m[[0mdebug[0m] [0m[0m
+[0m[[0mdebug[0m] [0mSources indirectly invalidated by:[0m
+[0m[[0mdebug[0m] [0m	product: Set()[0m
+[0m[[0mdebug[0m] [0m	binary dep: Set()[0m
+[0m[[0mdebug[0m] [0m	external source: Set()[0m
+[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set()[0m
