@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for com.frossi85#hello_2.11;0.1.0 [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.frossi85#hello_2.11;0.1.0->org.scala-lang#scala-library;2.11.7 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.11.7 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@2f0df030[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@309f32bf[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.11.7[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.11.7 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m	[2.11.7] org.scala-lang#scala-library;2.11.7[0m
@@ -1763,7 +1763,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.11;1.0.4!scala-xml_2.11.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4!scala-parser-combinators_2.11.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] jline#jline;2.12.1!jline.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 2696ms :: artifacts dl 18ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 3378ms :: artifacts dl 561ms[0m
 [0m[[0mdebug[0m] [0m	report for com.frossi85#hello_2.11;0.1.0 compile produced in /home/facundo/whiteprompt/complete-akka-microservice/target/resolution-cache/reports/com.frossi85-hello_2.11-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for com.frossi85#hello_2.11;0.1.0 runtime produced in /home/facundo/whiteprompt/complete-akka-microservice/target/resolution-cache/reports/com.frossi85-hello_2.11-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for com.frossi85#hello_2.11;0.1.0 test produced in /home/facundo/whiteprompt/complete-akka-microservice/target/resolution-cache/reports/com.frossi85-hello_2.11-test.xml[0m
@@ -1777,7 +1777,7 @@
 [0m[[0mdebug[0m] [0m	report for com.frossi85#hello_2.11;0.1.0 docs produced in /home/facundo/whiteprompt/complete-akka-microservice/target/resolution-cache/reports/com.frossi85-hello_2.11-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for com.frossi85#hello_2.11;0.1.0 pom produced in /home/facundo/whiteprompt/complete-akka-microservice/target/resolution-cache/reports/com.frossi85-hello_2.11-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for com.frossi85#hello_2.11;0.1.0 scala-tool produced in /home/facundo/whiteprompt/complete-akka-microservice/target/resolution-cache/reports/com.frossi85-hello_2.11-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (2696ms resolve - 18ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (3378ms resolve - 561ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m
 [0m[[33mwarn[0m] [0mThere may be incompatibilities among your library dependencies.[0m
 [0m[[33mwarn[0m] [0mHere are some of the libraries that were evicted:[0m

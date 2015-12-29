@@ -1,9 +1,7 @@
 package com.github.frossi85.database.tables
 
-// Use H2Driver to connect to an H2 database
-import slick.driver.H2Driver.api._
-import scala.concurrent.ExecutionContext.Implicits.global
 import com.github.frossi85.domain.User
+import slick.driver.H2Driver.api._
 
 class UserTable(tag: Tag) extends EntityWithID[User](tag, "Users") {
   def email = column[String]("email")

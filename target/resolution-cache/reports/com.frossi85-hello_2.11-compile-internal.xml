@@ -7,7 +7,7 @@
 		revision="0.1.0"
 		conf="compile-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20151229103615"/>
+		date="20151229113325"/>
 	<dependencies>
 		<module organisation="org.slf4j" name="slf4j-nop">
 			<revision name="1.6.4" status="release" pubdate="20111031184556" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.slf4j.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="18">
