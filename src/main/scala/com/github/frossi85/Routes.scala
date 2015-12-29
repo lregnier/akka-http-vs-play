@@ -8,6 +8,7 @@ import akka.actor.ActorSystem
 import akka.http._
 import akka.stream._
 import akka.http.scaladsl.model._
+import com.github.frossi85.database.DB
 import spray.json._
 import com.typesafe.config.{ ConfigFactory, Config }
 import akka.http.scaladsl.Http
@@ -31,10 +32,19 @@ trait Routes extends TasksApi {
   val routes = pathPrefix("v1") {
     tasksRoutes
   } ~ 
-  path("") {
-    get {
+  path("create-schemas") {
+    post {
       complete {
-        <h1>Say hello to akka-http</h1>
+        DB.createSchemas()
+        <h1>Schemas created</h1>
+      }
+    }
+  } ~
+  path("populate-database") {
+    post {
+      complete {
+        DB.populateWithDummyData()
+        <h1>Database populated with dummy data</h1>
       }
     }
   }
