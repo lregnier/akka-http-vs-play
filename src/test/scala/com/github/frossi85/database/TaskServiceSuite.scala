@@ -9,6 +9,7 @@ import slick.driver.H2Driver.api._
 import scala.concurrent.Await
 import scala.concurrent.duration.Duration
 
+
 class TaskServiceSuite extends DBSpec {
   val taskService = new TaskService
 

@@ -29,7 +29,7 @@ import spray.json.DefaultJsonProtocol
 
 
 trait Routes extends TasksApi {
-  val routes = pathPrefix("v1") {
+  lazy val routes = pathPrefix("v1") {
     tasksRoutes
   } ~
   path("health-check") {
@@ -54,3 +54,5 @@ trait Routes extends TasksApi {
     }
   }
 }
+
+trait TestRoute

@@ -29,8 +29,8 @@ trait TasksApi extends AutoMarshaller {
         taskService.delete(id).map(x => s"Task with id=$id was deleted")
       }
     }
-  
-  val tasksRoutes =
+
+  def tasksRoutes =
     path("tasks") {
       get {
         complete {

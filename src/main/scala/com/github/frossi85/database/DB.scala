@@ -16,9 +16,9 @@ object DB {
 
   def createSchemas() = {
     db.run(DBIO.seq(
-      tablesNotCreated(
-        users,
-        tasks
+      (
+        users.schema ++
+        tasks.schema
       ).create
     ))
   }
@@ -29,13 +29,6 @@ object DB {
         tasks.schema
       ).drop
     ))
-  }
-
-  private def tablesNotCreated(tables: TableQuery[_ <: Table[_]]*) = {
-    tables.filter(table => Await.result(
-      db.run(MTable.getTables(table.baseTableRow.tableName)).flatMap { result => Future(result.isEmpty) },
-      Duration.Inf
-    )).map(table => table.schema).reduceLeft((a, b) => a ++ b)
   }
 
   def populateWithDummyData() = {
