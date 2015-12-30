@@ -1,7 +1,9 @@
 package com.github.frossi85.database
 
+import com.github.frossi85.database.DBSpec
 import com.github.frossi85.domain.Task
 import com.github.frossi85.services.TaskService
+import org.scalatest.FunSuite
 import org.scalatest.Matchers._
 import slick.driver.H2Driver.api._
 import scala.concurrent.Await

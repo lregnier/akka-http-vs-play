@@ -3,7 +3,11 @@ package com.github.frossi85.database
 import com.github.frossi85.database.tables.{TaskTable, UserTable}
 import com.github.frossi85.domain.{Task, User}
 import slick.driver.H2Driver.api._
+import slick.jdbc.meta.MTable
 import slick.lifted.TableQuery
+import scala.concurrent.ExecutionContext.Implicits.global
+import scala.concurrent.duration.Duration
+import scala.concurrent.{Await, Future}
 
 object DB {
   val db = Database.forConfig("h2mem1")
@@ -11,9 +15,10 @@ object DB {
   val tasks = TableQuery[TaskTable]
 
   def createSchemas() = {
-    db.run(DBIO.seq((
-      users.schema ++
-        tasks.schema
+    db.run(DBIO.seq(
+      tablesNotCreated(
+        users,
+        tasks
       ).create
     ))
   }
@@ -24,6 +29,13 @@ object DB {
         tasks.schema
       ).drop
     ))
+  }
+
+  private def tablesNotCreated(tables: TableQuery[_ <: Table[_]]*) = {
+    tables.filter(table => Await.result(
+      db.run(MTable.getTables(table.baseTableRow.tableName)).flatMap { result => Future(result.isEmpty) },
+      Duration.Inf
+    )).map(table => table.schema).reduceLeft((a, b) => a ++ b)
   }
 
   def populateWithDummyData() = {

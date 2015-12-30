@@ -31,7 +31,12 @@ import spray.json.DefaultJsonProtocol
 trait Routes extends TasksApi {
   val routes = pathPrefix("v1") {
     tasksRoutes
-  } ~ 
+  } ~
+  path("health-check") {
+    get {
+      complete("It's Alive")
+    }
+  } ~
   path("create-schemas") {
     post {
       complete {
