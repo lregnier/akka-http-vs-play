@@ -7,7 +7,6 @@ import slick.driver.H2Driver.api._
 import scala.concurrent.Await
 import scala.concurrent.duration.Duration
 
-
 class HealthCheckSpec extends ApiSpec with Routes {
 
   "The service" should {
@@ -62,10 +61,10 @@ class TasksApiSpec extends ApiSpec with TasksApi with AutoMarshaller {
 
     "delete a task for DELETE request to /task/{idTask} path" in {
       Delete("/tasks/1") ~> tasksRoutes ~> check {
-        val count = Await.result(db.run(DB.tasks.length.result), Duration.Inf)
+        val task = Await.result(db.run(DB.tasks.filter(_.id === 1L).result.headOption), Duration.Inf)
 
         responseAs[String] shouldEqual "Task with id=1 was deleted"
-        count shouldEqual 1
+        task shouldEqual None
       }
     }
   }

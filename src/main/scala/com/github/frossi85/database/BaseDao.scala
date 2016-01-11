@@ -8,7 +8,7 @@ import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
 
 trait BaseDao[T <: EntityWithID[A], A <: WithId] {
-  val db = DB.db
+  val db: Database = DB.db
 
   val repository: TableQuery[T]
 

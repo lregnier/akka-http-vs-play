@@ -3,11 +3,7 @@ package com.github.frossi85.database
 import com.github.frossi85.database.tables.{TaskTable, UserTable}
 import com.github.frossi85.domain.{Task, User}
 import slick.driver.H2Driver.api._
-import slick.jdbc.meta.MTable
 import slick.lifted.TableQuery
-import scala.concurrent.ExecutionContext.Implicits.global
-import scala.concurrent.duration.Duration
-import scala.concurrent.{Await, Future}
 
 object DB {
   val db = Database.forConfig("h2mem1")

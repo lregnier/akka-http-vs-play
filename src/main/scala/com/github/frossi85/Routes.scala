@@ -54,5 +54,3 @@ trait Routes extends TasksApi {
     }
   }
 }
-
-trait TestRoute

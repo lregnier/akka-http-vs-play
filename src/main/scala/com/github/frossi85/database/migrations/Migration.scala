@@ -1,22 +1,16 @@
 package com.github.frossi85.database.migrations
 
-import com.github.frossi85.database.DB
 import org.flywaydb.core.Flyway
-import slick.migration.api.{SqlMigration, TableMigration, H2Dialect}
+import slick.migration.api.{SqlMigration, TableMigration}
 import slick.migration.flyway.flyway._
-
 import scala.util.{Failure, Success, Try}
 
-abstract class Migration {
-  val versionNumber: Int = getVersionNumber()
+abstract class Migration(implicit session : slick.jdbc.JdbcBackend#SessionDef, dialect : slick.migration.api.Dialect[_]) {
+  val versionNumber: String = getVersionNumber().toString
   var versionedMigration: VersionedMigration = VersionedMigration(versionNumber, Seq(): _*)
 
-  implicit val session = DB.db.createSession()
-
-  implicit val dialect = new H2Dialect
-
-  private def getVersionNumber(): Int = {
-    Try(this.getClass.getSimpleName.split("_").last.toInt) match {
+  private def getVersionNumber(): Long = {
+    Try(this.getClass.getSimpleName.split("_").last.toLong) match {
       case Success(version) => version
       case Failure(ex) => throw new MigrationTimeStampException(s"Missing or wrong timestamp in class ${this.getClass.getSimpleName}")
     }
@@ -25,30 +19,25 @@ abstract class Migration {
   def up(): Unit
   def down(): Unit
 
-  def apply(): Unit = {
-    val flyway = new Flyway()
-    flyway.setDataSource("jdbc:h2:mem:$databasename", "", "")
-    flyway.setLocations()
-
-    flyway.setResolvers(Resolver(versionedMigration))
-
-    flyway.migrate()
+  def apply(runner: Flyway): Unit = {
+    runner.setResolvers(Resolver(versionedMigration))
+    runner.migrate()
   }
 
   def schema[T <: slick.driver.JdbcDriver#Table[_]](tableQuery: slick.lifted.TableQuery[T], schemaMigration: slick.migration.api.ReversibleTableMigration[T] => TableMigration[T]): Unit = {
     val seedMigration = TableMigration(tableQuery)
 
-    versionedMigration = VersionedMigration(versionedMigration.version, (versionedMigration.migrations ++ List(schemaMigration(seedMigration))): _*)
+    versionedMigration = VersionedMigration(versionNumber, (versionedMigration.migrations ++ List(schemaMigration(seedMigration))): _*)
   }
 
   def sql(sqlMigration: String): Unit = {
-    versionedMigration = VersionedMigration(versionedMigration.version, (versionedMigration.migrations ++ List(SqlMigration(sqlMigration))): _*)
+    versionedMigration = VersionedMigration(versionNumber, (versionedMigration.migrations ++ List(SqlMigration(sqlMigration))): _*)
   }
 
   def sideEffects(actionsToExecute: () => Unit) = {
     val migration = sideEffect { implicit s =>
       actionsToExecute()
     }
-    versionedMigration = VersionedMigration(versionedMigration.version, (versionedMigration.migrations ++ List(migration)): _*)
+    versionedMigration = VersionedMigration(versionNumber, (versionedMigration.migrations ++ List(migration)): _*)
   }
 }
