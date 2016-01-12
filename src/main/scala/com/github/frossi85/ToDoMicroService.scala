@@ -4,7 +4,7 @@ import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
 import akka.stream.ActorMaterializer
 import com.github.frossi85.database.DB
-import slick.driver.H2Driver
+import slick.jdbc.JdbcBackend
 
 object ToDoMicroService extends App with Routes {
 
@@ -12,7 +12,7 @@ object ToDoMicroService extends App with Routes {
   implicit val materializer = ActorMaterializer()
   implicit val ec = system.dispatcher
 
-  override implicit val db: H2Driver.api.Database = DB.db
+  def getDatabase: JdbcBackend#Database = DB.db
 
   val bindingFuture = Http().bindAndHandle(routes, "0.0.0.0", 8080)
 

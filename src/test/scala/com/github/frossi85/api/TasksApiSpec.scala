@@ -1,25 +1,11 @@
-package com.github.frossi85
+package com.github.frossi85.api
 
-import com.github.frossi85.api.{AutoMarshaller, TasksApi}
 import com.github.frossi85.database.DB
 import com.github.frossi85.domain.Task
-import slick.driver.H2Driver.api._
+import com.github.frossi85.database.tables.AgnosticDriver.api._
+import slick.jdbc.JdbcBackend
 import scala.concurrent.Await
 import scala.concurrent.duration.Duration
-
-class HealthCheckSpec extends ApiSpec with Routes {
-
-  "The service" should {
-
-    "return a greeting for GET requests to the root path 222222" in {
-      // tests:
-      Get("/health-check") ~> routes ~> check {
-        responseAs[String] shouldEqual "It's Alive"
-      }
-    }
-  }
-}
-
 
 class TasksApiSpec extends ApiSpec with TasksApi with AutoMarshaller {
 

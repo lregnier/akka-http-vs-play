@@ -1,12 +1,11 @@
 package com.github.frossi85.database.migrations
 
 import com.github.frossi85.database.tables.{TaskTable, UserTable}
-import org.h2.engine.Database
-import slick.driver.H2Driver
+import slick.jdbc.JdbcBackend
 import slick.lifted.TableQuery
 
 
-class CreateUserAndTaskTable_20150702112900(implicit val db: H2Driver.api.Database, session : slick.jdbc.JdbcBackend#SessionDef, dialect : slick.migration.api.Dialect[_]) extends Migration {
+class CreateUserAndTaskTable_20150702112900(implicit val db: JdbcBackend#Database, session : slick.jdbc.JdbcBackend#SessionDef, dialect : slick.migration.api.Dialect[_]) extends Migration {
   val taskQuery = TableQuery[TaskTable]
   val userQuery = TableQuery[UserTable]
 

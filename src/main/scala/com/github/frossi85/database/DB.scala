@@ -2,8 +2,10 @@ package com.github.frossi85.database
 
 import com.github.frossi85.database.tables.{TaskTable, UserTable}
 import com.github.frossi85.domain.{Task, User}
-import slick.driver.H2Driver.api._
+import com.github.frossi85.database.tables.AgnosticDriver.api._
 import slick.lifted.TableQuery
+import scala.concurrent.Await
+import scala.concurrent.duration.Duration
 
 object DB {
   val db = Database.forConfig("h2mem1")
@@ -11,20 +13,20 @@ object DB {
   val tasks = TableQuery[TaskTable]
 
   def createSchemas() = {
-    db.run(DBIO.seq(
+    Await.result(db.run(DBIO.seq(
       (
         users.schema ++
         tasks.schema
       ).create
-    ))
+    )), Duration.Inf)
   }
 
   def dropSchemas() = {
-    db.run(DBIO.seq((
+    Await.result(db.run(DBIO.seq((
       users.schema ++
         tasks.schema
       ).drop
-    ))
+    )), Duration.Inf)
   }
 
   def populateWithDummyData() = {
@@ -36,6 +38,6 @@ object DB {
         Task("Task.scala 2", "Another description", 1L)
       )
     )
-    db.run(setup)
+    Await.result(db.run(setup), Duration.Inf)
   }
 }

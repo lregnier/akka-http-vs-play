@@ -2,13 +2,14 @@ package com.github.frossi85.database
 
 import com.github.frossi85.database.tables.EntityWithID
 import com.github.frossi85.domain.WithId
-import slick.driver.H2Driver.api._
+import com.github.frossi85.database.tables.AgnosticDriver.api._
+import slick.jdbc.JdbcBackend
 import slick.lifted.TableQuery
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
 
 trait BaseDao[T <: EntityWithID[A], A <: WithId] {
-  val db: Database = DB.db
+  val db: JdbcBackend#Database
 
   val repository: TableQuery[T]
 
@@ -21,7 +22,6 @@ trait BaseDao[T <: EntityWithID[A], A <: WithId] {
 
   def insert(item: A): Future[A] = {
     val result = db.run((repository returning repository.map(_.id)) += item)
-
     result.map(x => copyWithId(item, x))
   }
 

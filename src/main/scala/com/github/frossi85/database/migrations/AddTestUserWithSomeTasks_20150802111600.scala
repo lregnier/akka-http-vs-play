@@ -2,13 +2,12 @@ package com.github.frossi85.database.migrations
 
 import com.github.frossi85.domain.{Task, User}
 import com.github.frossi85.services.{TaskService, UserService}
-import org.h2.engine.Database
-import slick.driver.H2Driver
+import slick.jdbc.JdbcBackend
 import scala.concurrent.Await
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.duration.Duration
 
-class AddTestUserWithSomeTasks_20150802111600(implicit val db: H2Driver.api.Database, session : slick.jdbc.JdbcBackend#SessionDef, dialect : slick.migration.api.Dialect[_]) extends Migration {
+class AddTestUserWithSomeTasks_20150802111600(implicit val db: JdbcBackend#Database, session : slick.jdbc.JdbcBackend#SessionDef, dialect : slick.migration.api.Dialect[_]) extends Migration {
   val userService = new UserService
   val taskService = new TaskService
 

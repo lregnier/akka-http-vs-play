@@ -1,12 +1,13 @@
-package com.github.frossi85.database
+package com.github.frossi85.api
 
+import akka.http.scaladsl.testkit.ScalatestRouteTest
 import com.github.frossi85.DBTest
 import org.scalatest._
-import org.scalatest.concurrent.ScalaFutures
 
-abstract class DBSpec extends FunSuite
+abstract class ApiSpec extends WordSpec
+  with Matchers
+  with ScalatestRouteTest
   with BeforeAndAfterEach
-  with ScalaFutures
   with BeforeAndAfterAll
   with DBTest
 {
@@ -20,8 +21,3 @@ abstract class DBSpec extends FunSuite
     super.afterEach()
   }
 }
-
-
-
-
-

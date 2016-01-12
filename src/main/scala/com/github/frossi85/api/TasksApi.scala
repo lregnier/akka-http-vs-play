@@ -5,12 +5,14 @@ import akka.http.scaladsl.server.Directives._
 import com.github.frossi85.database.DB
 import com.github.frossi85.domain.Task
 import com.github.frossi85.services.TaskService
-import slick.driver.H2Driver
+import slick.jdbc.JdbcBackend
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
 
 trait TasksApi extends AutoMarshaller {
-  implicit val db: H2Driver.api.Database
+  implicit val db: JdbcBackend#Database = getDatabase
+
+  def getDatabase: JdbcBackend#Database
 
   val taskService = new TaskService
 
