@@ -1,7 +1,9 @@
 package com.github.frossi85
 
+import com.github.frossi85.database.migrations.{MigrationsExecutor, CreateUserAndTaskTable_20150702112900, AddTestUserWithSomeTasks_20150802111600}
 import slick.jdbc.JdbcBackend
 import slick.migration.api.H2Dialect
+import com.github.frossi85.database.tables.AgnosticDriver.api._
 
 trait DBTest {
   val databaseName = java.util.UUID.randomUUID.toString

@@ -1,5 +1,6 @@
 package com.github.frossi85.database.migrations
 
+import com.github.frossi85.database.tables.{UserTable, TaskTable}
 import slick.jdbc.JdbcBackend
 import slick.lifted.TableQuery
 

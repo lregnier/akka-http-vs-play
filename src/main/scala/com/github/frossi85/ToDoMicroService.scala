@@ -3,6 +3,7 @@ package com.github.frossi85
 import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
 import akka.stream.ActorMaterializer
+import com.github.frossi85.database.DB
 import slick.jdbc.JdbcBackend
 
 object ToDoMicroService extends App with Routes {

@@ -1,9 +1,12 @@
 package com.github.frossi85.database
 
+import com.github.frossi85.domain.Task
+import com.github.frossi85.services.TaskService
 import org.scalatest.Matchers._
 import slick.jdbc.JdbcBackend
 import scala.concurrent.Await
 import scala.concurrent.duration.Duration
+import com.github.frossi85.database.tables.AgnosticDriver.api._
 
 class TaskServiceSuite extends DBSpec {
   implicit val db: JdbcBackend#Database = getDatabase

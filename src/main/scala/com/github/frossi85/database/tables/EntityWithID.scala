@@ -1,5 +1,7 @@
 package com.github.frossi85.database.tables
 
+import com.github.frossi85.database.tables.AgnosticDriver.api._
+
 abstract class EntityWithID[T](tag: Tag, tableName: String) extends Table[T](tag, tableName) {
   def id = column[Long]("id", O.AutoInc, O.PrimaryKey)
 

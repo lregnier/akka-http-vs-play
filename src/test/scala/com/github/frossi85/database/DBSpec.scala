@@ -1,5 +1,6 @@
 package com.github.frossi85.database
 
+import com.github.frossi85.DBTest
 import org.scalatest._
 import org.scalatest.concurrent.ScalaFutures
 

@@ -1,9 +1,12 @@
 package com.github.frossi85.database
 
+import com.github.frossi85.database.tables.EntityWithID
+import com.github.frossi85.domain.WithId
 import slick.jdbc.JdbcBackend
 import slick.lifted.TableQuery
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
+import com.github.frossi85.database.tables.AgnosticDriver.api._
 
 trait BaseDao[T <: EntityWithID[A], A <: WithId] {
   val db: JdbcBackend#Database

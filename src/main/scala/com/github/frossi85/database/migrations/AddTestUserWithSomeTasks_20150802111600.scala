@@ -1,5 +1,7 @@
 package com.github.frossi85.database.migrations
 
+import com.github.frossi85.domain.{Task, User}
+import com.github.frossi85.services.{TaskService, UserService}
 import slick.jdbc.JdbcBackend
 import scala.concurrent.Await
 import scala.concurrent.ExecutionContext.Implicits.global

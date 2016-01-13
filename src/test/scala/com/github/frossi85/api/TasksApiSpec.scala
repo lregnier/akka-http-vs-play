@@ -1,8 +1,13 @@
 package com.github.frossi85.api
 
-import slick.jdbc.JdbcBackend
+import akka.http.scaladsl.model.StatusCodes
+import com.github.frossi85.database.DB
+import com.github.frossi85.domain.Task
 import scala.concurrent.Await
 import scala.concurrent.duration.Duration
+import com.github.frossi85.database.tables.AgnosticDriver.api._
+import slick.jdbc.JdbcBackend
+
 
 class TasksApiSpec extends ApiSpec with TasksApi with AutoMarshaller {
 
@@ -28,7 +33,8 @@ class TasksApiSpec extends ApiSpec with TasksApi with AutoMarshaller {
 
         task.name shouldEqual "name"
         task.description shouldEqual "desc"
-        responseAs[Task] shouldEqual Task("name", "desc", 1, 3)
+        response.status shouldEqual StatusCodes.Created
+        entityAs[Task] shouldEqual Task("name", "desc", 1, 3)
       }
     }
 

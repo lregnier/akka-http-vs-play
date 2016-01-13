@@ -1,6 +1,6 @@
 package com.github.frossi85.api
 
-import slick.jdbc.JdbcBackend
+import com.github.frossi85.Routes
 
 class HealthCheckSpec extends ApiSpec with Routes {
   "The service" should {

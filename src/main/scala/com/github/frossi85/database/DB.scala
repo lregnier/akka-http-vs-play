@@ -1,8 +1,11 @@
 package com.github.frossi85.database
 
+import com.github.frossi85.database.tables.{TaskTable, UserTable}
+import com.github.frossi85.domain.{Task, User}
 import slick.lifted.TableQuery
 import scala.concurrent.Await
 import scala.concurrent.duration.Duration
+import com.github.frossi85.database.tables.AgnosticDriver.api._
 
 object DB {
   val db = Database.forConfig("h2mem1")
