@@ -1,8 +1,5 @@
 package com.github.frossi85.database
 
-import com.github.frossi85.database.tables.EntityWithID
-import com.github.frossi85.domain.WithId
-import com.github.frossi85.database.tables.AgnosticDriver.api._
 import slick.jdbc.JdbcBackend
 import slick.lifted.TableQuery
 import scala.concurrent.ExecutionContext.Implicits.global

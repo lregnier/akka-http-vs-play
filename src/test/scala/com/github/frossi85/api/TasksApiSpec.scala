@@ -1,8 +1,5 @@
 package com.github.frossi85.api
 
-import com.github.frossi85.database.DB
-import com.github.frossi85.domain.Task
-import com.github.frossi85.database.tables.AgnosticDriver.api._
 import slick.jdbc.JdbcBackend
 import scala.concurrent.Await
 import scala.concurrent.duration.Duration

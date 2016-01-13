@@ -1,9 +1,5 @@
 package com.github.frossi85.services
 
-import com.github.frossi85.database.BaseDao
-import com.github.frossi85.database.tables.UserTable
-import com.github.frossi85.domain.User
-import com.github.frossi85.database.tables.AgnosticDriver.api._
 import slick.jdbc.JdbcBackend
 import slick.lifted.TableQuery
 import scala.concurrent.Future

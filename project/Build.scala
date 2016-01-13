@@ -29,7 +29,7 @@ object Build extends Build {
       "org.json4s"        %% "json4s-native"          % json4s,
       "de.heikoseeberger" %% "akka-http-json4s" % "1.4.1",
 
-
+      "io.gatling.highcharts" % "gatling-charts-highcharts" % "2.1.7",
 
       "com.typesafe.akka" %% "akka-stream-testkit-experimental"     % akkaStreamV % "test",
       "org.scalatest"     %% "scalatest"                            % scalaTestV % "test",

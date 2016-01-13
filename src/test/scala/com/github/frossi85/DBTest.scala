@@ -1,7 +1,5 @@
 package com.github.frossi85
 
-import com.github.frossi85.database.migrations.{AddTestUserWithSomeTasks_20150802111600, CreateUserAndTaskTable_20150702112900, MigrationsExecutor}
-import com.github.frossi85.database.tables.AgnosticDriver.api._
 import slick.jdbc.JdbcBackend
 import slick.migration.api.H2Dialect
 

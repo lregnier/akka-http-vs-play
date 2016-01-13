@@ -1,8 +1,5 @@
 package com.github.frossi85.database
 
-import com.github.frossi85.database.tables.{TaskTable, UserTable}
-import com.github.frossi85.domain.{Task, User}
-import com.github.frossi85.database.tables.AgnosticDriver.api._
 import slick.lifted.TableQuery
 import scala.concurrent.Await
 import scala.concurrent.duration.Duration
