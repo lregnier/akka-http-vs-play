@@ -17,7 +17,6 @@ object Build extends Build {
       "com.typesafe.akka" %% "akka-http-experimental"               % akkaStreamV,
       "com.typesafe.akka" %% "akka-http-spray-json-experimental"    % akkaStreamV,
       "com.typesafe.akka" %% "akka-http-xml-experimental" % akkaStreamV,
-      //"com.hunorkovacs" %% "koauth" % "1.1.0",
       "com.typesafe.akka" %% "akka-http-testkit-experimental"       % akkaStreamV,
 
       "com.typesafe.slick" %% "slick" % "3.1.1",

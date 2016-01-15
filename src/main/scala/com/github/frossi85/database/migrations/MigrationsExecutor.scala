@@ -1,12 +1,12 @@
 package com.github.frossi85.database.migrations
 
+import com.sun.org.apache.xalan.internal.utils.XMLSecurityPropertyManager.Property
 import org.flywaydb.core.Flyway
 
 case class MigrationsExecutor(databaseUrl: String, user: String = "", password: String = "", migrations: Seq[Migration] = Nil)(implicit session : slick.jdbc.JdbcBackend#SessionDef, dialect : slick.migration.api.Dialect[_]) {
 
   private def runner: Flyway = {
     val runner = new Flyway()
-
     runner.setDataSource(databaseUrl, user, password)
     runner.setLocations()
     runner.setValidateOnMigrate(false)

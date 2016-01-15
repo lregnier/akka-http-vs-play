@@ -8,7 +8,6 @@ import scala.concurrent.duration.Duration
 import com.github.frossi85.database.tables.AgnosticDriver.api._
 import slick.jdbc.JdbcBackend
 
-/*
 class TasksApiSpec extends ApiSpec with TasksApi with AutoMarshaller {
 
   "The service" should {
@@ -58,4 +57,3 @@ class TasksApiSpec extends ApiSpec with TasksApi with AutoMarshaller {
     }
   }
 }
-*/

@@ -12,7 +12,7 @@ object TaskTests {
   }"""
 
   private def updatedTask = "{" +
-    "\"id\": \"${id}\", " + s"""
+    "\"id\": \"${taskId}\", " + s"""
     "name": "$randomString",
     "description": "$randomString"
   }"""
@@ -23,8 +23,8 @@ object TaskTests {
       .header("Content-Type", "application/json")
       .body(StringBody(newTask))
       .asJSON
-      .check(jsonPath("$..id").ofType[Int].saveAs("taskId"))
-      //.check(status is 403)
+      .check(jsonPath("$.id").saveAs("taskId"))
+      .check(status is 201)
   )
 
   val viewTask = exec(
@@ -32,7 +32,7 @@ object TaskTests {
       .get("/tasks/${taskId}")
       .header("Content-Type", "application/json")
       .asJSON
-      .check(jsonPath("$..id").ofType[Int])
+      .check(jsonPath("$.id"))
       .check(status is 200)
   )
 
@@ -50,7 +50,7 @@ object TaskTests {
       .header("Content-Type", "application/json")
       .body(StringBody(updatedTask))
       .asJSON
-      .check(jsonPath("$..id").ofType[Int])
+      .check(jsonPath("$.id"))
       .check(status is 200)
   )
 

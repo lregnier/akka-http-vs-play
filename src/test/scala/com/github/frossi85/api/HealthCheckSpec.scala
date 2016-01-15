@@ -2,7 +2,6 @@ package com.github.frossi85.api
 
 import com.github.frossi85.Routes
 
-/*
 class HealthCheckSpec extends ApiSpec with Routes {
   "The service" should {
 
@@ -14,4 +13,3 @@ class HealthCheckSpec extends ApiSpec with Routes {
     }
   }
 }
-*/

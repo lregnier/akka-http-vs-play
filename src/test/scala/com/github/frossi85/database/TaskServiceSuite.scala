@@ -8,7 +8,6 @@ import scala.concurrent.Await
 import scala.concurrent.duration.Duration
 import com.github.frossi85.database.tables.AgnosticDriver.api._
 
-/*
 class TaskServiceSuite extends DBSpec {
   implicit val db: JdbcBackend#Database = getDatabase
 
@@ -75,4 +74,3 @@ class TaskServiceSuite extends DBSpec {
     entity shouldBe empty
   }
 }
-*/
