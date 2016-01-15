@@ -20,5 +20,5 @@ object ToDoMicroService extends App with Routes {
   Console.readLine() // for the future transformations
   bindingFuture
     .flatMap(_.unbind()) // trigger unbinding from the port
-    .onComplete(_ ⇒ system.terminate()) // and shutdown when done
+    .onComplete(_ => system.terminate()) // and shutdown when done
 }
