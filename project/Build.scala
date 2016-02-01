@@ -34,7 +34,32 @@ object Build extends Build {
 
       "com.typesafe.akka" %% "akka-stream-testkit-experimental"     % akkaStreamV % "test",
       "org.scalatest"     %% "scalatest"                            % scalaTestV % "test",
-      "com.github.frossi85" %% "slick-migration-api-flyway" % "0.2.1"
+      "com.github.frossi85" %% "slick-migration-api-flyway" % "0.2.1",
+
+      "io.kamon" %% "kamon-core" % "0.5.2",
+      "io.kamon" %% "kamon-scala" % "0.5.2",
+      "io.kamon" %% "kamon-system-metrics" % "0.5.2",
+      "io.kamon" %% "kamon-jdbc" % "0.5.2",
+      "io.kamon" %% "kamon-annotation" % "0.5.2",
+      "io.kamon" %% "kamon-akka" % "0.5.2",
+      "io.kamon" %% "kamon-akka-remote" % "0.5.2",
+      "io.kamon" %% "kamon-spray" % "0.5.2",
+
+      // [Optional]
+      "io.kamon" %% "kamon-statsd" % "0.5.2",
+      // [Optional]
+      "io.kamon" %% "kamon-datadog" % "0.5.2"
+
+    /*
+    kamon-datadog
+Reports selected metrics information to Datadog. Please note that even while the Datadog agent uses a protocol based on StatsD, there are a few subtle differences that make it necessary to provide a separate reporter for it instead of using the StatsD module.
+
+kamon-newrelic
+Reports trace metrics data to New Relic.
+
+kamon-statsd
+Reports selected metrics information to StatsD.
+     */
     )
   }
 
