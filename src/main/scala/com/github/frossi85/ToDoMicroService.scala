@@ -8,7 +8,7 @@ import kamon.Kamon
 import slick.jdbc.JdbcBackend
 
 object ToDoMicroService extends App with Routes {
-  Kamon.start()
+  //Kamon.start()
 
   implicit val system = ActorSystem("my-system")
   implicit val materializer = ActorMaterializer()
@@ -24,6 +24,6 @@ object ToDoMicroService extends App with Routes {
     .flatMap(_.unbind()) // trigger unbinding from the port
     .onComplete(_ => {
       system.terminate()
-      Kamon.shutdown()
+      //Kamon.shutdown()
     }) // and shutdown when done
 }

@@ -1,3 +1,4 @@
+import com.typesafe.sbt.SbtAspectj._
 import io.gatling.sbt.GatlingPlugin
 import sbt._
 import Keys._
@@ -36,6 +37,7 @@ object Build extends Build {
       "org.scalatest"     %% "scalatest"                            % scalaTestV % "test",
       "com.github.frossi85" %% "slick-migration-api-flyway" % "0.2.1",
 
+      // [For monitoring]
       "io.kamon" %% "kamon-core" % "0.5.2",
       "io.kamon" %% "kamon-scala" % "0.5.2",
       "io.kamon" %% "kamon-system-metrics" % "0.5.2",
@@ -45,21 +47,13 @@ object Build extends Build {
       "io.kamon" %% "kamon-akka-remote" % "0.5.2",
       "io.kamon" %% "kamon-spray" % "0.5.2",
 
-      // [Optional]
-      "io.kamon" %% "kamon-statsd" % "0.5.2",
-      // [Optional]
-      "io.kamon" %% "kamon-datadog" % "0.5.2"
+      // [For reporting monitored data]
+      "io.kamon" %% "kamon-statsd" % "0.5.2" //Read http://kamon.io/backends/statsd/
+      //Follow http://kamon.io/teamblog/2015/10/06/kamon-0.5.2-is-out/
 
-    /*
-    kamon-datadog
-Reports selected metrics information to Datadog. Please note that even while the Datadog agent uses a protocol based on StatsD, there are a few subtle differences that make it necessary to provide a separate reporter for it instead of using the StatsD module.
-
-kamon-newrelic
-Reports trace metrics data to New Relic.
-
-kamon-statsd
-Reports selected metrics information to StatsD.
-     */
+      /*
+  "io.kamon" %% "kamon-play-24" % "0.5.2", //for PLay 2.4 or "io.kamon" %% "kamon-play-23" % "0.5.2", for Play 2.3
+       */
     )
   }
 
@@ -67,7 +61,7 @@ Reports selected metrics information to StatsD.
 
 
   resolvers += "frossi85 bintray" at "http://dl.bintray.com/frossi85/maven"
-  
+
   resolvers += Resolver.bintrayRepo("hseeberger", "maven")
 
   lazy val commonSettings = Seq(
@@ -83,4 +77,18 @@ Reports selected metrics information to StatsD.
       name := "complete-akka-microservice",
       libraryDependencies ++= dependencies
     )
+/*
+  // We need to ensure that the JVM is forked for the
+  // AspectJ Weaver to kick in properly and do it's magic.
+  fork in run := true
+
+  // Bring the sbt-aspectj settings into this build
+  aspectjSettings
+
+  // Here we are effectively adding the `-javaagent` JVM startup
+  // option with the location of the AspectJ Weaver provided by
+  // the sbt-aspectj plugin.
+  javaOptions in run <++= AspectjKeys.weaverOptions in Aspectj
+
+  */
 }
