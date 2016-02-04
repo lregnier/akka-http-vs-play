@@ -1,5 +1,4 @@
-import com.typesafe.sbt.SbtAspectj._
-import io.gatling.sbt.GatlingPlugin
+//import io.gatling.sbt.GatlingPlugin
 import sbt._
 import Keys._
 
@@ -71,24 +70,10 @@ object Build extends Build {
   )
 
   lazy val root = (project in file(".")).
-    enablePlugins(GatlingPlugin).
+    //enablePlugins(GatlingPlugin).
     settings(commonSettings: _*).
     settings(
       name := "complete-akka-microservice",
       libraryDependencies ++= dependencies
     )
-/*
-  // We need to ensure that the JVM is forked for the
-  // AspectJ Weaver to kick in properly and do it's magic.
-  fork in run := true
-
-  // Bring the sbt-aspectj settings into this build
-  aspectjSettings
-
-  // Here we are effectively adding the `-javaagent` JVM startup
-  // option with the location of the AspectJ Weaver provided by
-  // the sbt-aspectj plugin.
-  javaOptions in run <++= AspectjKeys.weaverOptions in Aspectj
-
-  */
 }
