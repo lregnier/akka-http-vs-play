@@ -2,6 +2,8 @@ package com.github.frossi85.database
 
 import com.github.frossi85.database.tables.EntityWithID
 import com.github.frossi85.domain.WithId
+import kamon.Kamon
+import kamon.trace.Tracer
 import slick.jdbc.JdbcBackend
 import slick.lifted.TableQuery
 import scala.concurrent.ExecutionContext.Implicits.global
@@ -17,7 +19,7 @@ trait BaseDao[T <: EntityWithID[A], A <: WithId] {
 
   def byId(id: Long): Future[Option[A]] =  {
     val query = repository.filter(_.id === id)
-    db.run(query.result.headOption)
+    run(query.result.headOption)
   }
 
   def insert(item: A): Future[A] = {
@@ -47,5 +49,13 @@ trait BaseDao[T <: EntityWithID[A], A <: WithId] {
     } yield result
 
     db.run(returningId)
+  }
+
+  final def run[R](a : slick.dbio.DBIOAction[R, slick.dbio.NoStream, scala.Nothing]) : scala.concurrent.Future[R] = {
+    val result= Tracer.withContext(Kamon.tracer.newContext("jdbc-trace")) {
+      db.run(a)
+    }
+    Tracer.currentContext.finish()
+    result
   }
 }

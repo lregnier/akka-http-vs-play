@@ -7,7 +7,6 @@ import com.github.frossi85.services.TaskService
 import slick.jdbc.JdbcBackend
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
-import StatusCodes._
 
 trait TasksApi extends AutoMarshaller {
   implicit val db: JdbcBackend#Database = getDatabase

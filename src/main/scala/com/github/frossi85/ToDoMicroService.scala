@@ -10,7 +10,7 @@ import slick.jdbc.JdbcBackend
 object ToDoMicroService extends App with Routes {
   Kamon.start()
 
-  implicit val system = ActorSystem("my-system")
+  implicit val system = ActorSystem("todo-microservice-actor-system")
   implicit val materializer = ActorMaterializer()
   implicit val ec = system.dispatcher
 
