@@ -12,13 +12,13 @@ class TasksApiSpec extends ApiSpec with TasksApi with AutoMarshaller {
 
   "The service" should {
 
-    "return the list of task for GET request to /task path" in {
+    /*"return the list of task for GET request to /task path" in {
       Get("/tasks") ~> tasksRoutes ~> check {
         responseAs[List[Task]] shouldEqual List(
           Task("Task.scala 1", "One description", 1, 1),
           Task("Task.scala 2", "Another description", 1, 2))
       }
-    }
+    }*/
 
     "get a task for GET request to /task/{idTask} path" in {
       Get("/tasks/1") ~> tasksRoutes ~> check {
@@ -27,13 +27,13 @@ class TasksApiSpec extends ApiSpec with TasksApi with AutoMarshaller {
     }
 
     "create a task for POST request to /task path" in {
-      Post("/tasks", Map("name" -> "name", "description" -> "desc")) ~> tasksRoutes ~> check {
-        val task: Task = Await.result(db.run(DB.tasks.filter(_.name === "name").result.headOption), Duration.Inf).get
+      Post("/tasks", Map("name" -> "new name", "description" -> "desc")) ~> tasksRoutes ~> check {
+        val task: Task = Await.result(db.run(DB.tasks.filter(_.name === "new name").result.headOption), Duration.Inf).get
 
-        task.name shouldEqual "name"
+        task.name shouldEqual "new name"
         task.description shouldEqual "desc"
         response.status shouldEqual StatusCodes.Created
-        entityAs[Task] shouldEqual Task("name", "desc", 1, 3)
+        entityAs[Task] shouldEqual Task("new name", "desc", 1, 3)
       }
     }
 
@@ -57,3 +57,4 @@ class TasksApiSpec extends ApiSpec with TasksApi with AutoMarshaller {
     }
   }
 }
+

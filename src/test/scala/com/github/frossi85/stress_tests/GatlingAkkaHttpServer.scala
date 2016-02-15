@@ -5,6 +5,7 @@ import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
 import akka.http.scaladsl.Http.ServerBinding
 import akka.stream.ActorMaterializer
+import kamon.Kamon
 import slick.jdbc.JdbcBackend
 import scala.concurrent.duration._
 import scala.concurrent.{Await, Future}
@@ -19,11 +20,16 @@ case class GatlingAkkaHttpServer(database: JdbcBackend#Database, host: String, p
   private var bindingFuture: Option[Future[ServerBinding]] = None
 
   def start() = {
+    Kamon.start()
+
     val server = Http().bindAndHandle(routes, host, port)
     Await.result(server, Duration.Inf)
     bindingFuture = Some(server)
   }
 
   def shutdown() = bindingFuture.get.flatMap(_.unbind())
-    .onComplete(_ => system.terminate())
+    .onComplete(_ => {
+      system.terminate()
+      Kamon.shutdown()
+    })
 }

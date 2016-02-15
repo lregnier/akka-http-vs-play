@@ -38,11 +38,11 @@ object Build extends Build {
 
       // [For monitoring]
       "io.kamon" %% "kamon-core" % "0.5.2",
-      "io.kamon" %% "kamon-scala" % "0.5.2",
       "io.kamon" %% "kamon-system-metrics" % "0.5.2",
-      "io.kamon" %% "kamon-jdbc" % "0.5.2",
-      "io.kamon" %% "kamon-akka" % "0.5.2",
-      "io.kamon" %% "kamon-akka-remote" % "0.5.2",
+      "io.kamon" %% "kamon-scala" % "0.5.2" % Runtime,
+      "io.kamon" %% "kamon-jdbc" % "0.5.2" % Runtime,
+      "io.kamon" %% "kamon-akka" % "0.5.2" % Runtime,
+      "io.kamon" %% "kamon-akka-remote" % "0.5.2" % Runtime,
 
       // [For reporting monitored data]
       "io.kamon" %% "kamon-statsd" % "0.5.2" //Read http://kamon.io/backends/statsd/
@@ -74,4 +74,6 @@ object Build extends Build {
       name := "complete-akka-microservice",
       libraryDependencies ++= dependencies
     )
+
+  //javaOptions in Test := Seq("-Dkamon.auto-start=true")
 }
