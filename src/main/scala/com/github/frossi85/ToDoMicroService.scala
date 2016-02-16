@@ -4,12 +4,9 @@ import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
 import akka.stream.ActorMaterializer
 import com.github.frossi85.database.DB
-import kamon.Kamon
 import slick.jdbc.JdbcBackend
 
-object ToDoMicroService extends App with Routes {
-  Kamon.start()
-
+object ToDoMicroService extends App with KamonHandler with Routes {
   implicit val system = ActorSystem("todo-microservice-actor-system")
   implicit val materializer = ActorMaterializer()
   implicit val ec = system.dispatcher
@@ -24,6 +21,7 @@ object ToDoMicroService extends App with Routes {
     .flatMap(_.unbind()) // trigger unbinding from the port
     .onComplete(_ => {
       system.terminate()
-      Kamon.shutdown()
+      stopKamon()
     }) // and shutdown when done
 }
+
