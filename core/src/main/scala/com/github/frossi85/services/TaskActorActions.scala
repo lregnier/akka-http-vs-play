@@ -1,6 +1,5 @@
 package com.github.frossi85.services
 
-import com.github.frossi85.api.TaskRequest
 import com.github.frossi85.domain.Task
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future

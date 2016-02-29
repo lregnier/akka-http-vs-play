@@ -1,9 +1,7 @@
-
 package com.github.frossi85.services
 
 import akka.actor.{Actor, ActorLogging}
 import akka.pattern.pipe
-import com.github.frossi85.api.TaskRequest
 import com.github.frossi85.services.TaskActor._
 import kamon.trace.Tracer
 import scala.concurrent.ExecutionContext.Implicits.global
