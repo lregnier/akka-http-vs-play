@@ -1,6 +1,6 @@
 package com.github.frossi85.stress_tests
 
-import _root_.com.github.frossi85.DBTest
+import com.github.frossi85.test.DBTest
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 import scala.concurrent.duration._
@@ -8,7 +8,7 @@ import scala.concurrent.duration._
 class TasksLoadTestSimulation extends Simulation with DBTest {
   initializeDatabase()
 
-  val server = GatlingAkkaHttpServer(getDatabase, "localhost", 8080)
+  val server = GatlingAkkaHttpServer(getDatabase, "localhost", 8085)
   server.start()
 
   val scenarioName = "CreateUpdateListViewTasks"

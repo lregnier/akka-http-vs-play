@@ -1,9 +1,9 @@
 package com.github.frossi85.api
 
 import akka.http.scaladsl.testkit.ScalatestRouteTest
-import com.github.frossi85.DBTest
 import kamon.Kamon
 import org.scalatest._
+import com.github.frossi85.test.DBTest
 
 abstract class ApiSpec extends WordSpec
   with Matchers

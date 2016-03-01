@@ -75,7 +75,7 @@ lazy val root = (project in file("."))
   .setDescription("Backup DSL")
   .setInitialCommand("_")
   .configureRoot*/
-  .aggregate(core, akka_http_example, play_example)
+  .aggregate(core, akka_http_example, play_example, stress_tests)
 
 lazy val core = (project in file("core"))
   .settings(commonSettings: _*)
@@ -89,6 +89,7 @@ lazy val core = (project in file("core"))
   .configureModule*/
 
 lazy val akka_http_example = (project in file("akka-http-example"))
+  .enablePlugins(GatlingPlugin)
   .settings(commonSettings: _*)
   .settings(
     name := "Akka Http Example",
@@ -117,6 +118,25 @@ lazy val play_example = (project in file("play-example"))
   .configureFunctionalTests
   .configureUnitTests*/
   .dependsOn(core)
+
+
+lazy val stress_tests = (project in file("stress-tests"))
+  .enablePlugins(GatlingPlugin)
+  .settings(commonSettings: _*)
+  .settings(
+    name := "Stress tests",
+    libraryDependencies ++= dependencies
+  )
+  /*.setName("first")
+  .setDescription("First project")
+  .setInitialCommand("first._")
+  .configureModule
+  .configureIntegrationTests
+  .configureFunctionalTests
+  .configureUnitTests*/
+  .dependsOn(core)
+  .dependsOn(akka_http_example)
+
 
 
 //javaOptions in Test := Seq("-Dkamon.auto-start=true")

@@ -1,13 +1,16 @@
-package com.github.frossi85
+package com.github.frossi85.test
 
-import java.util.logging.{Logger, Level, Handler, LogManager}
+import java.util.logging.{Level, LogManager}
 
-import com.github.frossi85.database.migrations.{MigrationsExecutor, CreateUserAndTaskTable_20150702112900, AddTestUserWithSomeTasks_20150802111600}
+import com.github.frossi85.database.migrations.{AddTestUserWithSomeTasks_20150802111600, CreateUserAndTaskTable_20150702112900, MigrationsExecutor}
 import com.typesafe.config.ConfigFactory
 import slick.jdbc.JdbcBackend
 import slick.migration.api.H2Dialect
 import com.github.frossi85.database.tables.AgnosticDriver.api._
 
+/**
+  * Created by facundo on 01/03/16.
+  */
 trait DBTest {
   val conf = ConfigFactory.load()
 
