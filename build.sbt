@@ -14,10 +14,17 @@ val dependencies = {
     "com.typesafe.akka" %% "akka-http-xml-experimental" % akkaStreamV,
     "com.typesafe.akka" %% "akka-http-testkit-experimental"       % akkaStreamV,
 
+
+
+    "com.typesafe.scala-logging" %% "scala-logging" % "3.1.0",
+    "ch.qos.logback" % "logback-classic" % "1.1.2",
+    "com.typesafe.akka" %% "akka-slf4j" % akkaV,
+
+
     "com.typesafe.slick" %% "slick" % "3.1.1",
     "com.h2database" % "h2" % "1.3.170",
     "com.novocode" % "junit-interface" % "0.10" % "test",
-    "org.slf4j" % "slf4j-nop" % "1.6.4",
+    //"org.slf4j" % "slf4j-nop" % "1.6.4",
 
     "org.json4s"        %% "json4s-core"            % json4s,
     "org.json4s"        %% "json4s-jackson"         % json4s,
@@ -52,9 +59,15 @@ val dependencies = {
 scalacOptions := Seq("-unchecked", "-deprecation", "-encoding", "utf8")
 
 
+resolvers += "Typesafe Repository" at "http://repo.typesafe.com/typesafe/releases/"
+
+resolvers += "Typesafe Snapshots" at "http://repo.typesafe.com/typesafe/snapshots/"
+
 resolvers += "frossi85 bintray" at "http://dl.bintray.com/frossi85/maven"
 
 resolvers += Resolver.bintrayRepo("hseeberger", "maven")
+
+resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
 
 lazy val commonSettings = Seq(
   organization := "com.frossi85",
@@ -88,8 +101,7 @@ lazy val core = (project in file("core"))
   .setInitialCommand("_")
   .configureModule*/
 
-lazy val akka_http_example = (project in file("akka-http-example"))
-  .enablePlugins(GatlingPlugin)
+lazy val akka_http_example = (project in file("akka_http_example"))
   .settings(commonSettings: _*)
   .settings(
     name := "Akka Http Example",
@@ -104,11 +116,17 @@ lazy val akka_http_example = (project in file("akka-http-example"))
   .configureUnitTests*/
   .dependsOn(core)
 
-lazy val play_example = (project in file("play-example"))
+lazy val play_example = (project in file("play_example"))
+  .enablePlugins(PlayScala)
   .settings(commonSettings: _*)
   .settings(
     name := "Play Example",
     libraryDependencies ++= dependencies
+  )
+  .settings(
+    // Play provides two styles of routers, one expects its actions to be injected, the
+    // other, legacy style, accesses its actions statically.
+    routesGenerator := InjectedRoutesGenerator
   )
   /*.setName("second")
   .setDescription("Second project")
@@ -120,7 +138,8 @@ lazy val play_example = (project in file("play-example"))
   .dependsOn(core)
 
 
-lazy val stress_tests = (project in file("stress-tests"))
+
+lazy val stress_tests = (project in file("stress_tests"))
   .enablePlugins(GatlingPlugin)
   .settings(commonSettings: _*)
   .settings(
@@ -138,5 +157,6 @@ lazy val stress_tests = (project in file("stress-tests"))
   .dependsOn(akka_http_example)
 
 
+routesGenerator := InjectedRoutesGenerator
 
 //javaOptions in Test := Seq("-Dkamon.auto-start=true")
