@@ -1,14 +1,15 @@
 package com.github.frossi85.services
 
-import akka.actor.{Actor, ActorLogging}
+import akka.actor.{Props, Actor, ActorLogging}
 import akka.pattern.pipe
-import com.github.frossi85.services.TaskActor._
 import kamon.trace.Tracer
 import scala.concurrent.ExecutionContext.Implicits.global
 
 class TaskActor(val taskService: TaskService) extends Actor
   with ActorLogging
   with TaskActorActions {
+
+  import TaskActor._
 
   override def receive: Receive = {
     case GetTasksByUserId(userId) => {
@@ -40,6 +41,8 @@ class TaskActor(val taskService: TaskService) extends Actor
 }
 
 object TaskActor {
+  def props(taskService: TaskService) = Props(classOf[TaskActor], taskService)
+
   case class UpdateTaskFromRequest(taskId: Long, request: TaskRequest)
   case class DeleteTaskById(taskId: Long)
   case class CreateTaskFromRequest(userId: Long, request: TaskRequest)

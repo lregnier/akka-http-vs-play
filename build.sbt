@@ -56,6 +56,8 @@ val dependencies = {
   )
 }
 
+
+
 scalacOptions := Seq("-unchecked", "-deprecation", "-encoding", "utf8")
 
 
@@ -81,8 +83,7 @@ lazy val root = (project in file("."))
   //enablePlugins(GatlingPlugin).
   .settings(commonSettings: _*)
   .settings(
-    name := "Root Project",
-    libraryDependencies ++= dependencies
+    name := "Root Project"
   )
   /*.setName("SBT template")
   .setDescription("Backup DSL")
@@ -94,7 +95,7 @@ lazy val core = (project in file("core"))
   .settings(commonSettings: _*)
   .settings(
     name := "Core",
-    libraryDependencies ++= dependencies
+    libraryDependencies ++= Dependencies.sharedDependencies ++ Dependencies.akkaDependencies
   )
   /*.setName("common")
   .setDescription("Common utilities")
@@ -105,7 +106,7 @@ lazy val akka_http_example = (project in file("akka_http_example"))
   .settings(commonSettings: _*)
   .settings(
     name := "Akka Http Example",
-    libraryDependencies ++= dependencies
+    libraryDependencies ++= Dependencies.sharedDependencies ++ Dependencies.akkaDependencies
   )
   /*.setName("first")
   .setDescription("First project")
@@ -121,7 +122,7 @@ lazy val play_example = (project in file("play_example"))
   .settings(commonSettings: _*)
   .settings(
     name := "Play Example",
-    libraryDependencies ++= dependencies
+    libraryDependencies ++= Dependencies.sharedDependencies ++ Dependencies.kamonPlayDependencies
   )
   .settings(
     // Play provides two styles of routers, one expects its actions to be injected, the
@@ -144,7 +145,7 @@ lazy val stress_tests = (project in file("stress_tests"))
   .settings(commonSettings: _*)
   .settings(
     name := "Stress tests",
-    libraryDependencies ++= dependencies
+    libraryDependencies ++= Dependencies.sharedDependencies ++ Dependencies.gatlingDependencies
   )
   /*.setName("first")
   .setDescription("First project")
