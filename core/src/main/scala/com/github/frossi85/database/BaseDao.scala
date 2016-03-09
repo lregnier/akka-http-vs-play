@@ -15,7 +15,7 @@ trait BaseDao[T <: EntityWithID[A], A <: WithId] {
 
   val repository: TableQuery[T]
 
-  def copyWithId(entity: A, id: Long): A
+  protected def copyWithId(entity: A, id: Long): A
 
   def byId(id: Long): Future[Option[A]] =  {
     val query = repository.filter(_.id === id)
@@ -55,7 +55,6 @@ trait BaseDao[T <: EntityWithID[A], A <: WithId] {
     val result= Tracer.withContext(Kamon.tracer.newContext("jdbc-trace")) {
       db.run(a)
     }
-    Tracer.currentContext.finish()
     result
   }
 }

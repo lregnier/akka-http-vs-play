@@ -1,11 +1,11 @@
 package com.github.frossi85.stress_tests
 
-import com.github.frossi85.test.DBTest
+import com.github.frossi85.database.TestDB
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 import scala.concurrent.duration._
 
-class TasksLoadTestSimulation extends Simulation with DBTest {
+class TasksLoadTestDBSimulation extends Simulation with TestDB {
   initializeDatabase()
 
   val server = GatlingAkkaHttpServer(getDatabase, "localhost", 8085)

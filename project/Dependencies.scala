@@ -13,6 +13,8 @@ object Dependencies {
       "org.json4s" %% "json4s-jackson" % json4s,
       "org.json4s" %% "json4s-native" % json4s,
 
+      "com.google.inject" % "guice" % "4.0",
+
       "org.scalatest" %% "scalatest" % scalaTestV % "test",
       "com.github.frossi85" %% "slick-migration-api-flyway" % "0.2.1",
 

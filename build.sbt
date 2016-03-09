@@ -120,9 +120,13 @@ lazy val akka_http_example = (project in file("akka_http_example"))
 lazy val play_example = (project in file("play_example"))
   .enablePlugins(PlayScala)
   .settings(commonSettings: _*)
+  .settings(routesGenerator := InjectedRoutesGenerator)
   .settings(
     name := "Play Example",
-    libraryDependencies ++= Dependencies.sharedDependencies ++ Dependencies.kamonPlayDependencies
+    libraryDependencies ++=
+      Dependencies.sharedDependencies ++
+      Dependencies.kamonPlayDependencies,
+    libraryDependencies += specs2 % Test
   )
   .settings(
     // Play provides two styles of routers, one expects its actions to be injected, the
@@ -158,6 +162,8 @@ lazy val stress_tests = (project in file("stress_tests"))
   .dependsOn(akka_http_example)
 
 
-routesGenerator := InjectedRoutesGenerator
+
 
 //javaOptions in Test := Seq("-Dkamon.auto-start=true")
+
+scalacOptions in Test ++= Seq("-Yrangepos")

@@ -5,7 +5,7 @@ import akka.pattern.pipe
 import kamon.trace.Tracer
 import scala.concurrent.ExecutionContext.Implicits.global
 
-class TaskActor(val taskService: TaskService) extends Actor
+class TaskActor(val taskService: TaskServiceInterface) extends Actor
   with ActorLogging
   with TaskActorActions {
 
@@ -41,7 +41,7 @@ class TaskActor(val taskService: TaskService) extends Actor
 }
 
 object TaskActor {
-  def props(taskService: TaskService) = Props(classOf[TaskActor], taskService)
+  def props(taskService: TaskServiceInterface) = Props(classOf[TaskActor], taskService)
 
   case class UpdateTaskFromRequest(taskId: Long, request: TaskRequest)
   case class DeleteTaskById(taskId: Long)

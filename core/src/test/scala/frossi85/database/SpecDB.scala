@@ -1,14 +1,14 @@
-package com.github.frossi85.database
+package frossi85.database
 
-import com.github.frossi85.test.DBTest
+import com.github.frossi85.database.TestDB
 import kamon.Kamon
 import org.scalatest._
 import org.scalatest.concurrent.ScalaFutures
 
-abstract class DBSpec extends FunSuite
+abstract class SpecDB extends FunSuite
   with BeforeAndAfterEach
   with ScalaFutures
-  with DBTest
+  with TestDB
 {
   override protected def beforeEach() {
     super.beforeEach()

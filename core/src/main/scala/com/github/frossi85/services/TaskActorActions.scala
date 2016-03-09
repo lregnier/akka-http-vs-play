@@ -5,7 +5,7 @@ import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
 
 trait TaskActorActions {
-  val taskService: TaskService
+  val taskService: TaskServiceInterface
 
   def list(userId: Long): Future[Seq[Task]] = {
     taskService.byUser(userId)

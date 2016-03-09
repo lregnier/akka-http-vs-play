@@ -1,38 +1,38 @@
 package controllers
 
-import akka.actor._
 import javax.inject._
+
+import akka.actor._
+import akka.pattern.ask
 import akka.util.Timeout
-import com.github.frossi85.database.DB
 import com.github.frossi85.domain.Task
-import com.github.frossi85.services.{TaskRequest, TaskActor, TaskService}
+import com.github.frossi85.services.{TaskActor, TaskRequest, TaskService}
+import play.api.data.Forms._
+import play.api.data._
+import play.api.libs.concurrent.Execution.Implicits.defaultContext
 import play.api.libs.json._
 import play.api.mvc._
 import slick.jdbc.JdbcBackend
-import play.api.data._
-import play.api.data.Forms._
 
 import scala.concurrent.Future
+import scala.concurrent.duration._
 
 @Singleton
-class TasksController @Inject() (system: ActorSystem) extends Controller {
+class TasksController @Inject() (system: ActorSystem, /*implicit val */db2: JdbcBackend#Database) extends Controller {
 
-  implicit val db: JdbcBackend#Database = DB.db
+  implicit val db: JdbcBackend#Database = db2//new DatabaseFactory().getDatabase
 
-  import akka.pattern.ask
-  import play.api.libs.concurrent.Execution.Implicits.defaultContext
-
-  import scala.concurrent.duration._
   implicit val timeout = Timeout(5 seconds)
 
   val taskService = new TaskService
+
   val service = system.actorOf(TaskActor.props(taskService), "my-service-actor")
 
 
   val userId = 1L
 
   implicit val taskImplicitWrites = Json.writes[Task]
-  implicit val taskImplicitReads = Json.reads[Task]
+  implicit val taskImplicitReads = Json.reads[TaskRequest]
 
   val taskForm = Form(
     mapping(
@@ -47,11 +47,13 @@ class TasksController @Inject() (system: ActorSystem) extends Controller {
       .map(x => Ok(Json.toJson(x)))
   }
 
-  def byId(id: Long) = Action {
-    Ok(s"byId $id")
+  def byId(id: Long) = Action.async {
+    (service ? TaskActor.GetTaskById(id))
+      .mapTo[Option[Task]]
+      .map(x  => Ok(Json.toJson(x)))
   }
 
-  def create = Action.async { implicit request =>
+  def create = Action.async(BodyParsers.parse.json) { implicit request =>
     taskForm.bindFromRequest.fold(
       formWithErrors => {
         // binding failure, you retrieve the form containing errors:
@@ -60,12 +62,12 @@ class TasksController @Inject() (system: ActorSystem) extends Controller {
       taskRequest => {
         (service ? TaskActor.CreateTaskFromRequest(userId, taskRequest))
           .mapTo[Task]
-          .map(x => Ok(Json.toJson(x)))
+          .map(x => Created(Json.toJson(x)))
       }
     )
   }
 
-  def update(id: Long) = Action.async { implicit request =>
+  def update(id: Long) = Action.async(BodyParsers.parse.json) { implicit request =>
     taskForm.bindFromRequest.fold(
       formWithErrors => {
         // binding failure, you retrieve the form containing errors:

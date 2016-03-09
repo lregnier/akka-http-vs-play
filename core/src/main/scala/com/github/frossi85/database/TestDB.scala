@@ -1,17 +1,16 @@
-package com.github.frossi85.test
+package com.github.frossi85.database
 
 import java.util.logging.{Level, LogManager}
-
-import com.github.frossi85.database.migrations.{AddTestUserWithSomeTasks_20150802111600, CreateUserAndTaskTable_20150702112900, MigrationsExecutor}
+import com.github.frossi85.database.migrations.MigrationsExecutor
+import com.github.frossi85.database.tables.AgnosticDriver.api._
 import com.typesafe.config.ConfigFactory
 import slick.jdbc.JdbcBackend
 import slick.migration.api.H2Dialect
-import com.github.frossi85.database.tables.AgnosticDriver.api._
 
 /**
   * Created by facundo on 01/03/16.
   */
-trait DBTest {
+trait TestDB {
   val conf = ConfigFactory.load()
 
   val log = LogManager.getLogManager().getLogger("")
@@ -25,13 +24,17 @@ trait DBTest {
   implicit val session = db.createSession()
   implicit val dialect = new H2Dialect
 
+  val migrationsExecutor = new DatabaseMigrations(MigrationsExecutor(databaseUrl)).load
+
   def getDatabase: JdbcBackend#Database = db
 
   def initializeDatabase() {
-    MigrationsExecutor(databaseUrl).add(new CreateUserAndTaskTable_20150702112900()).add(new AddTestUserWithSomeTasks_20150802111600()).runAll()
+    migrationsExecutor.runAll()
   }
 
   def shutdownDatabase() {
-    MigrationsExecutor(databaseUrl).add(new CreateUserAndTaskTable_20150702112900()).add(new AddTestUserWithSomeTasks_20150802111600()).revertAll()
+    migrationsExecutor.revertAll()
   }
 }
+
+

@@ -12,7 +12,7 @@ class TasksApiSpec extends ApiSpec with TasksApi with AutoMarshaller {
 
   "The service" should {
 
-    "return the list of task for GET request to /task path" in {
+    "return the list of tasks for GET request to /tasks path" in {
       Get("/tasks") ~> tasksRoutes ~> check {
         responseAs[List[Task]] shouldEqual List(
           Task("Task.scala 1", "One description", 1, 1),
