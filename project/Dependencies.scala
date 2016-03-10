@@ -7,6 +7,7 @@ object Dependencies {
     val json4s = "3.3.0"
     Seq(
       "com.typesafe.slick" %% "slick" % "3.1.1",
+      "org.slf4j" % "slf4j-nop" % "1.6.4",
       "com.h2database" % "h2" % "1.3.170",
       "com.novocode" % "junit-interface" % "0.10" % "test",
       "org.json4s" %% "json4s-core" % json4s,
