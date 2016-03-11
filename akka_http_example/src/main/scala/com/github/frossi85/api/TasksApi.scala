@@ -24,8 +24,6 @@ trait TasksApi extends AutoMarshaller {
 
   val service = servicesActorSystem.actorOf(Props(classOf[TaskActor], taskService), "my-service-actor")
 
-  val userId = 1L
-
   def getDatabase: JdbcBackend#Database
 
   def byIdRoutes(id: Int) =
@@ -53,12 +51,12 @@ trait TasksApi extends AutoMarshaller {
       get {
         complete {
           Tracer.withNewContext("GetUserDetails-MODDD", autoFinish = true) {  
-            (service ? TaskActor.GetTasksByUserId(userId)).mapTo[Seq[Task]]
+            (service ? TaskActor.GetAllTasks()).mapTo[Seq[Task]]
           }
         }
       } ~
       (post & entity(as[TaskRequest])) { taskRequest =>
-        onSuccess((service ? TaskActor.CreateTaskFromRequest(userId, taskRequest)).mapTo[Task]) { task =>
+        onSuccess((service ? TaskActor.CreateTaskFromRequest(taskRequest)).mapTo[Task]) { task =>
           complete(StatusCodes.Created, task)
         }
       }

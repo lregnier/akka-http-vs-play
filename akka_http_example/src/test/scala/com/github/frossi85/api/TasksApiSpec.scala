@@ -15,14 +15,14 @@ class TasksApiSpec extends ApiSpec with TasksApi with AutoMarshaller {
     "return the list of tasks for GET request to /tasks path" in {
       Get("/tasks") ~> tasksRoutes ~> check {
         responseAs[List[Task]] shouldEqual List(
-          Task("Task.scala 1", "One description", 1, 1),
-          Task("Task.scala 2", "Another description", 1, 2))
+          Task("Task.scala 1", "One description", 1L),
+          Task("Task.scala 2", "Another description", 2L))
       }
     }
 
     "get a task for GET request to /task/{idTask} path" in {
       Get("/tasks/1") ~> tasksRoutes ~> check {
-        responseAs[Task] shouldEqual Task("Task.scala 1", "One description", 1, 1)
+        responseAs[Task] shouldEqual Task("Task.scala 1", "One description", 1)
       }
     }
 
@@ -33,7 +33,7 @@ class TasksApiSpec extends ApiSpec with TasksApi with AutoMarshaller {
         task.name shouldEqual "new name"
         task.description shouldEqual "desc"
         response.status shouldEqual StatusCodes.Created
-        entityAs[Task] shouldEqual Task("new name", "desc", 1, 3)
+        entityAs[Task] shouldEqual Task("new name", "desc", 3L)
       }
     }
 
@@ -43,7 +43,7 @@ class TasksApiSpec extends ApiSpec with TasksApi with AutoMarshaller {
 
         task.name shouldEqual "mod"
         task.description shouldEqual "mod2"
-        responseAs[Task] shouldEqual Task("mod", "mod2", 1, 1)
+        responseAs[Task] shouldEqual Task("mod", "mod2", 1L)
       }
     }
 

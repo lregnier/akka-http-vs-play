@@ -8,13 +8,16 @@ import scala.concurrent.duration._
 class TasksLoadTestDBSimulation extends Simulation with TestDB {
   initializeDatabase()
 
-  val server = GatlingAkkaHttpServer(getDatabase, "localhost", 8085)
+  val host = "localhost"
+  val port = 8085
+
+  val server = GatlingAkkaHttpServer(getDatabase, host, port)
   server.start()
 
   val scenarioName = "CreateUpdateListViewTasks"
 
 	val httpProtocol = http
-		.baseURL("http://localhost:8080/v1")
+		.baseURL(s"http://$host:$port/v1")
 
 	val scn = scenario(scenarioName)
 		.exec(

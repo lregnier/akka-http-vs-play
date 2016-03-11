@@ -28,9 +28,6 @@ class TasksController @Inject() (system: ActorSystem, /*implicit val */db2: Jdbc
 
   val service = system.actorOf(TaskActor.props(taskService), "my-service-actor")
 
-
-  val userId = 1L
-
   implicit val taskImplicitWrites = Json.writes[Task]
   implicit val taskImplicitReads = Json.reads[TaskRequest]
 
@@ -42,7 +39,7 @@ class TasksController @Inject() (system: ActorSystem, /*implicit val */db2: Jdbc
   )
 
   def list = Action.async {
-    (service ? TaskActor.GetTasksByUserId(userId))
+    (service ? TaskActor.GetAllTasks())
       .mapTo[Seq[Task]]
       .map(x => Ok(Json.toJson(x)))
   }
@@ -60,7 +57,7 @@ class TasksController @Inject() (system: ActorSystem, /*implicit val */db2: Jdbc
         Future(BadRequest("Something went wrong!!!"))
       },
       taskRequest => {
-        (service ? TaskActor.CreateTaskFromRequest(userId, taskRequest))
+        (service ? TaskActor.CreateTaskFromRequest(taskRequest))
           .mapTo[Task]
           .map(x => Created(Json.toJson(x)))
       }

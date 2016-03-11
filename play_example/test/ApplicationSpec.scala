@@ -25,13 +25,11 @@ class ApplicationSpec extends Specification {
           Json.obj(
             "name" -> "Task.scala 1",
             "description" -> "One description",
-            "userId" -> 1,
             "id" -> 1
           ),
           Json.obj(
             "name" -> "Task.scala 2",
             "description" -> "Another description",
-            "userId" -> 1,
             "id" -> 2
           )
         )
@@ -48,7 +46,6 @@ class ApplicationSpec extends Specification {
         val expectedJson = Json.obj(
           "name" -> "Task.scala 1",
           "description" -> "One description",
-          "userId" -> 1,
           "id" -> 1
         )
 
@@ -69,7 +66,6 @@ class ApplicationSpec extends Specification {
         val expectedJson = Json.obj(
           "name" -> "new name",
           "description" -> "desc",
-          "userId" -> 1,
           "id" -> 3
         )
 
@@ -90,7 +86,6 @@ class ApplicationSpec extends Specification {
         val expectedJson = Json.obj(
           "name" -> "mod",
           "description" -> "mod2",
-          "userId" -> 1,
           "id" -> 1
         )
 

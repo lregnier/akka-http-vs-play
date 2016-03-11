@@ -8,7 +8,7 @@ class DatabaseMigrations(migrationsExecutor: MigrationsExecutor)(implicit val db
   def load: MigrationsExecutor = getMigrations.foldLeft(migrationsExecutor)((executor, migration) => executor.add(migration))
 
   private def getMigrations: List[Migration] = List(
-    new CreateUserAndTaskTable_20150702112900(),
-    new AddTestUserWithSomeTasks_20150802111600()
+    new CreateTaskTable_20150702112900(),
+    new AddSomeTasks_20150802111600()
   )
 }

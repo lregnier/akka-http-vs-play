@@ -22,8 +22,8 @@ class TaskServiceSuite extends SpecDB {
     }
   }
 
-  test("Get tasks by User id must return non empty value") {
-    val result = taskService.byUser(1L)
+  test("Get tasks must return non empty value") {
+    val result = taskService.all
 
     whenReady(result) { entity =>
       entity should not be empty
@@ -34,23 +34,20 @@ class TaskServiceSuite extends SpecDB {
     val oldCount = Await.result(db.run(taskService.repository.length.result), Duration.Inf)
     val name = "new task"
     val description = "description"
-    val userId = 1L
-    val result = Await.result(taskService.insert(Task(name, description, userId)), Duration.Inf)
+    val result = Await.result(taskService.insert(Task(name, description)), Duration.Inf)
     val newCount = Await.result(db.run(taskService.repository.length.result), Duration.Inf)
 
     newCount should equal (oldCount + 1)
     result.id should be > 0L
     result.name should equal (name)
     result.description should equal (description)
-    result.userId should equal (userId)
   }
 
   test("Update exiting entity must update the fields") {
     val name = "updated task"
     val description = "updated description"
-    val userId = 1L
 
-    Await.result(taskService.update(Task(name, description, userId, 1L)), Duration.Inf)
+    Await.result(taskService.update(Task(name, description, 1L)), Duration.Inf)
 
     val result = taskService.byId(1)
 

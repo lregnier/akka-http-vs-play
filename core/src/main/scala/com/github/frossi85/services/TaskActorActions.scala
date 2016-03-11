@@ -7,16 +7,16 @@ import scala.concurrent.Future
 trait TaskActorActions {
   val taskService: TaskServiceInterface
 
-  def list(userId: Long): Future[Seq[Task]] = {
-    taskService.byUser(userId)
+  def list: Future[Seq[Task]] = {
+    taskService.all
   }
 
   def get(taskId: Long): Future[Option[Task]] = {
     taskService.byId(taskId)
   }
 
-  def create(userId: Long, request: TaskRequest): Future[Task] = {
-    taskService.insert(Task(request.name, request.description, userId))
+  def create(request: TaskRequest): Future[Task] = {
+    taskService.insert(Task(request.name, request.description))
   }
 
   def update(taskId: Long, request: TaskRequest): Future[Option[Task]] = {

@@ -12,14 +12,14 @@ class TaskActor(val taskService: TaskServiceInterface) extends Actor
   import TaskActor._
 
   override def receive: Receive = {
-    case GetTasksByUserId(userId) => {
+    case GetAllTasks() => {
       Tracer.withNewContext("GetTasksByUserId", autoFinish = true) {
-      	list(userId) pipeTo sender
+      	list pipeTo sender
 	    }
     }
-    case CreateTaskFromRequest(userId, request) => {
+    case CreateTaskFromRequest(request) => {
       Tracer.withNewContext("CreateTaskFromRequest", autoFinish = true) {
-        create(userId, request) pipeTo sender
+        create(request) pipeTo sender
       }
     }
     case UpdateTaskFromRequest(taskId, request) => {
@@ -45,9 +45,9 @@ object TaskActor {
 
   case class UpdateTaskFromRequest(taskId: Long, request: TaskRequest)
   case class DeleteTaskById(taskId: Long)
-  case class CreateTaskFromRequest(userId: Long, request: TaskRequest)
+  case class CreateTaskFromRequest(request: TaskRequest)
   case class GetTaskById(taskId: Long)
-  case class GetTasksByUserId(userId: Long)
+  case class GetAllTasks()
 }
 
 
