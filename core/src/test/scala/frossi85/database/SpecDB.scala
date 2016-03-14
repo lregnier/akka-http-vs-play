@@ -1,7 +1,7 @@
 package frossi85.database
 
 import com.github.frossi85.database.TestDB
-import com.github.frossi85.{ServicesModule, TestDatabaseModule, ConfigModule}
+import com.github.frossi85.{ServicesModule, ConfigModule}
 import com.google.inject.{Guice, Injector}
 import kamon.Kamon
 import org.scalatest._
@@ -14,19 +14,18 @@ abstract class SpecDB extends FunSuite
 {
   val injector: Injector = Guice.createInjector(
     new ConfigModule(),
-    new TestDatabaseModule(),
     new ServicesModule()
   )
 
   override protected def beforeEach() {
     super.beforeEach()
+    initializeRepository()
     Kamon.start()
-    initializeDatabase()
   }
 
   override protected def afterEach() {
-    shutdownDatabase()
     Kamon.shutdown()
+    cleanUpRepository()
     super.afterEach()
   }
 }

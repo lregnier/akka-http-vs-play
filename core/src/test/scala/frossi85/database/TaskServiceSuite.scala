@@ -1,29 +1,16 @@
 package frossi85.database
 
-import com.github.frossi85.database.DB
-import com.github.frossi85.database.tables.AgnosticDriver.api._
+import com.github.frossi85.database.Repository
 import com.github.frossi85.domain.Task
-import com.github.frossi85.services.{TaskServiceInterface, TaskService}
-import org.scalatest.Matchers._
-import slick.jdbc.JdbcBackend
-import akka.actor.{ActorSystem, Props}
-import akka.http.scaladsl.model.StatusCodes
-import akka.http.scaladsl.server.Directives._
-import akka.pattern.ask
-import akka.util.Timeout
-import com.github.frossi85.domain.Task
-import com.github.frossi85.services.{TaskActor, TaskServiceInterface, _}
-import com.google.inject.Injector
-import kamon.trace.Tracer
+import com.github.frossi85.services.TaskServiceInterface
 import net.codingwell.scalaguice.InjectorExtensions._
-import scala.concurrent.ExecutionContext.Implicits.global
-import scala.concurrent.Future
-import scala.concurrent.duration._
+import org.scalatest.Matchers._
 import scala.concurrent.Await
 import scala.concurrent.duration.Duration
 
 class TaskServiceSuite extends SpecDB {
   val taskService: TaskServiceInterface = injector.instance[TaskServiceInterface]
+  val repository: Repository[Task] = injector.instance[Repository[Task]]
 
   test("Get task by id must return non empty value") {
     val result = taskService.byId(1)
@@ -42,11 +29,11 @@ class TaskServiceSuite extends SpecDB {
   }
 
   test("Insert new task must increment the count") {
-    val oldCount = Await.result(db.run(DB.tasks.length.result), Duration.Inf)
+    val oldCount = repository.store.size
     val name = "new task"
     val description = "description"
     val result = Await.result(taskService.insert(Task(name, description)), Duration.Inf)
-    val newCount = Await.result(db.run(DB.tasks.length.result), Duration.Inf)
+    val newCount = repository.store.size
 
     newCount should equal (oldCount + 1)
     result.id should be > 0L
@@ -72,11 +59,11 @@ class TaskServiceSuite extends SpecDB {
   }
 
   test("Delete exiting entity must decrement the count") {
-    val oldCount = Await.result(db.run(DB.tasks.length.result), Duration.Inf)
+    val oldCount = repository.store.size
 
     Await.result(taskService.delete(1L), Duration.Inf)
 
-    val newCount = Await.result(db.run(DB.tasks.length.result), Duration.Inf)
+    val newCount = repository.store.size
     val entity = Await.result(taskService.byId(1), Duration.Inf)
 
     newCount should equal (oldCount - 1)

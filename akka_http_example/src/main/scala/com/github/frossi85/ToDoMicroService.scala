@@ -14,7 +14,6 @@ object ToDoMicroService extends App with KamonHandler with Endpoints {
 
   val injector: Injector = Guice.createInjector(
     new ConfigModule(),
-    new DatabaseModule(),
     new ServicesModule()
   )
 

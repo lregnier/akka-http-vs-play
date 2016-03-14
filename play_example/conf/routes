@@ -4,9 +4,6 @@
 
 # Utils
 GET      /health-check                           controllers.Application.healthCheck
-POST     /create-schemas                         controllers.Application.createSchemas
-POST     /populate-database                      controllers.Application.populateDatabase
-
 
 # Tasks
 GET      /v1/tasks                               controllers.TasksController.list

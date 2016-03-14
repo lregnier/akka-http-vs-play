@@ -1,4 +1,6 @@
-import modules.TestDatabaseProvider
+import com.github.frossi85.database.{Repository, TestDB}
+import com.github.frossi85.domain.Task
+import com.github.frossi85.services.{TaskService, TaskServiceInterface}
 import org.junit.runner.RunWith
 import org.specs2.mutable.Specification
 import org.specs2.runner._
@@ -8,17 +10,37 @@ import play.api.libs.json.Json
 import play.api.test.Helpers._
 import play.api.test._
 
-@RunWith(classOf[JUnitRunner])
-class ApplicationSpec extends Specification {
 
+@RunWith(classOf[JUnitRunner])
+class ApplicationSpec extends Specification with TestDB {
 
   def app = new GuiceApplicationBuilder()
-    .overrides(bind(classOf[slick.jdbc.JdbcBackend.Database]).toProvider(classOf[TestDatabaseProvider]))
+    .overrides(bind[TaskServiceInterface].to[TaskService])
     .build
 
+  def repository: Repository[Task]  = app.injector.instanceOf[TaskServiceInterface].asInstanceOf[Repository[Task]]
+
+ /* def runningWithDatabase[T](app : play.api.Application)(block : => T) : T = {
+
+    running(app)({
+      //initializeRepository()
+      //repository.store.put(1L, Task("dsdsds", "dsdsds", 1L))
+      val result = block
+      //cleanUpRepository()
+      result
+    })
+  }
+*/
+  
   "Play Task Api" should {
     "return the list of tasks for GET request to /tasks path" in {
       running(app) {
+        val repository = app.injector.instanceOf[TaskServiceInterface].asInstanceOf[Repository[Task]]
+
+        repository.store.put(1, Task("Task.scala 1", "One description", 1))
+        repository.store.put(2, Task("Task.scala 2", "Another description", 2))
+
+
         val tasks = route(FakeRequest(GET, "/v1/tasks")).get
 
         val expectedJson = Json.arr(
@@ -38,9 +60,9 @@ class ApplicationSpec extends Specification {
         Json.parse(contentAsString(tasks)) must be equalTo(expectedJson)
       }
     }
-
+/*
     "get a task for GET request to /task/{idTask} path" in {
-      running(app) {
+      runningWithDatabase(app) {
         val task = route(FakeRequest(GET, "/v1/tasks/1")).get
 
         val expectedJson = Json.obj(
@@ -55,7 +77,7 @@ class ApplicationSpec extends Specification {
     }
 
     "create a task for POST request to /task path" in {
-      running(app) {
+      runningWithDatabase(app) {
         val jsonRequest = Json.obj(
           "name" -> "new name",
           "description" -> "desc"
@@ -76,7 +98,7 @@ class ApplicationSpec extends Specification {
 
 
     "update a task for PUT request to /task/{idTask} path" in {
-      running(app) {
+      runningWithDatabase(app) {
         val jsonRequest = Json.obj(
           "name" -> "mod",
           "description" -> "mod2"
@@ -95,12 +117,13 @@ class ApplicationSpec extends Specification {
     }
 
     "delete a task for DELETE request to /task/{idTask} path" in {
-      running(app) {
+      runningWithDatabase(app) {
         val task = route(FakeRequest(Helpers.DELETE, "/v1/tasks/1")).get
 
         status(task) must equalTo(OK)
         contentAsString(task) must be equalTo("Task with id=1 was deleted")
       }
     }
+    */
   }
 }

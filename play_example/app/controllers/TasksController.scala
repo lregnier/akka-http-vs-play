@@ -6,14 +6,12 @@ import akka.actor._
 import akka.pattern.ask
 import akka.util.Timeout
 import com.github.frossi85.domain.Task
-import com.github.frossi85.services.{TaskServiceInterface, TaskActor, TaskRequest, TaskService}
+import com.github.frossi85.services.{TaskServiceInterface, TaskActor, TaskRequest}
 import play.api.data.Forms._
 import play.api.data._
 import play.api.libs.concurrent.Execution.Implicits.defaultContext
 import play.api.libs.json._
 import play.api.mvc._
-import slick.jdbc.JdbcBackend
-
 import scala.concurrent.Future
 import scala.concurrent.duration._
 

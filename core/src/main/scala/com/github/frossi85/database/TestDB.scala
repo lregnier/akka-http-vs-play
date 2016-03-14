@@ -1,36 +1,17 @@
 package com.github.frossi85.database
 
-import java.util.logging.{Level, LogManager}
-
-import com.github.frossi85.database.migrations.MigrationsExecutor
-import com.google.inject.Injector
-import com.typesafe.config.ConfigFactory
-import net.codingwell.scalaguice.InjectorExtensions._
-import slick.jdbc.JdbcBackend
-import slick.migration.api.H2Dialect
+import com.github.frossi85.domain.Task
 
 trait TestDB {
-  val injector: Injector
+  def repository: Repository[Task]
 
-  implicit lazy val db: JdbcBackend#Database = injector.instance[JdbcBackend#Database]
-
-  val conf = ConfigFactory.load()
-
-  val log = LogManager.getLogManager().getLogger("")
-  log.getHandlers().foreach(h =>h.setLevel(Level.parse(conf.getString("migrations.logLevel"))))
-
-  lazy val migrationsExecutor = {
-    implicit val session = db.createSession()
-    implicit val dialect = new H2Dialect
-    new DatabaseMigrations(MigrationsExecutor(session.metaData.getURL)).load
+  def initializeRepository() = {
+    repository.store.put(1, Task("Task.scala 1", "One description", 1))
+    repository.store.put(2, Task("Task.scala 2", "Another description", 2))
   }
 
-  def initializeDatabase() {
-    migrationsExecutor.runAll()
-  }
-
-  def shutdownDatabase() {
-    migrationsExecutor.revertAll()
+  def cleanUpRepository() = {
+    repository.store.clear()
   }
 }
 
