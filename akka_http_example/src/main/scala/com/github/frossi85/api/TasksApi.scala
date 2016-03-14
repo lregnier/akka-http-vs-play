@@ -1,30 +1,29 @@
 package com.github.frossi85.api
 
-import akka.actor.{Props, ActorSystem}
+import akka.actor.{ActorSystem, Props}
 import akka.http.scaladsl.model.StatusCodes
 import akka.http.scaladsl.server.Directives._
+import akka.pattern.ask
+import akka.util.Timeout
 import com.github.frossi85.domain.Task
-import com.github.frossi85.services._
+import com.github.frossi85.services.{TaskActor, TaskServiceInterface, _}
+import com.google.inject.Injector
 import kamon.trace.Tracer
-import slick.jdbc.JdbcBackend
+import net.codingwell.scalaguice.InjectorExtensions._
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
-import akka.util.Timeout
 import scala.concurrent.duration._
-import akka.pattern.ask
 
 trait TasksApi extends AutoMarshaller {
-  implicit val db: JdbcBackend#Database = getDatabase
-
   implicit val timeout = Timeout(5 seconds)
 
-  val servicesActorSystem = ActorSystem("FACU-actor-system")
+  val injector: Injector
 
-  val taskService = new TaskService
-
-  val service = servicesActorSystem.actorOf(Props(classOf[TaskActor], taskService), "my-service-actor")
-
-  def getDatabase: JdbcBackend#Database
+  lazy val service = {
+    val taskService: TaskServiceInterface = injector.instance[TaskServiceInterface]
+    val serviceSystem: ActorSystem = ActorSystem("tasks-actor")
+    serviceSystem.actorOf(Props(classOf[TaskActor], taskService), "my-service-actor")
+  }
 
   def byIdRoutes(id: Int) =
     get {

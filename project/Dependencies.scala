@@ -15,6 +15,7 @@ object Dependencies {
       "org.json4s" %% "json4s-native" % json4s,
 
       "com.google.inject" % "guice" % "4.0",
+      "net.codingwell" %% "scala-guice" % "4.0.1",
 
       "org.scalatest" %% "scalatest" % scalaTestV % "test",
       "com.github.frossi85" %% "slick-migration-api-flyway" % "0.2.1",
@@ -51,7 +52,9 @@ object Dependencies {
 
       "de.heikoseeberger" %% "akka-http-json4s" % "1.4.1",
 
-      "com.typesafe.akka" %% "akka-stream-testkit-experimental" % akkaStreamV % "test"
+      "com.typesafe.akka" %% "akka-stream-testkit-experimental" % akkaStreamV % "test"/*,
+
+      "com.sandinh" %% "akka-guice" % "2.0.0"*/ //View this later
     )
   }
 

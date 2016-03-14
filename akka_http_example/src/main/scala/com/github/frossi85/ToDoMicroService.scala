@@ -3,25 +3,31 @@ package com.github.frossi85
 import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
 import akka.stream.ActorMaterializer
-import com.github.frossi85.database.DB
-import slick.jdbc.JdbcBackend
+import com.google.inject.{Guice, Injector}
+import scala.io.StdIn
 
 object ToDoMicroService extends App with KamonHandler with Routes {
-  implicit val system = ActorSystem("todo-microservice-actor-system")
+  implicit val system: ActorSystem = ActorSystem("todo-microservice-actor-system")
   implicit val materializer = ActorMaterializer()
   implicit val ec = system.dispatcher
 
-  def getDatabase: JdbcBackend#Database = DB.db
+  val injector: Injector = Guice.createInjector(
+    new ConfigModule(),
+    new DatabaseModule(),
+    new ServicesModule()
+  )
 
   val bindingFuture = Http().bindAndHandle(routes, "0.0.0.0", 8080)
 
   println(s"Server online at http://localhost:8080/\nPress RETURN to stop...")
-  Console.readLine() // for the future transformations
+  StdIn.readLine() // for the future transformations
   bindingFuture
     .flatMap(_.unbind()) // trigger unbinding from the port
     .onComplete(_ => {
-      system.terminate()
       stopKamon()
+      system.terminate()
+      System.exit(0)
     }) // and shutdown when done
+
 }
 

@@ -8,8 +8,10 @@ import slick.jdbc.JdbcBackend
 import slick.lifted.TableQuery
 import scala.collection.mutable
 import scala.concurrent.{ExecutionContext, Future}
+import javax.inject._
 
-class TaskService(implicit val db: JdbcBackend#Database) extends BaseDao[TaskTable, Task] with TaskServiceInterface {
+@Singleton
+class TaskService @Inject() (val db: JdbcBackend#Database) extends BaseDao[TaskTable, Task] with TaskServiceInterface {
   override val repository = TableQuery[TaskTable]
 
   override def copyWithId(entity: Task, id: Long) = entity.copy(id = id)
@@ -20,7 +22,8 @@ class TaskService(implicit val db: JdbcBackend#Database) extends BaseDao[TaskTab
   }
 }
 
-class TaskServiceInHashMap(implicit val executionContext: ExecutionContext) extends Repository[Task] with CRUDOps[Task] with TaskServiceInterface {
+@Singleton
+class TaskServiceInHashMap @Inject() (implicit val executionContext: ExecutionContext) extends Repository[Task] with CRUDOps[Task] with TaskServiceInterface {
   val store = mutable.HashMap[Long, Task]()
 
   def all: Future[Seq[Task]] = Future(store.values.toSeq)

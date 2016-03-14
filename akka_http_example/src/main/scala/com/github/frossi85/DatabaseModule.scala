@@ -1,44 +1,39 @@
-package modules
+package com.github.frossi85
 
 import java.util.logging.{Level, LogManager}
 import javax.inject.{Inject, Provider, Singleton}
 import com.github.frossi85.database.DatabaseMigrations
 import com.github.frossi85.database.migrations.MigrationsExecutor
-import com.github.frossi85.database.tables.AgnosticDriver.api._
 import com.google.inject.AbstractModule
-import com.typesafe.config.{Config, ConfigFactory}
-import play.api.inject.ApplicationLifecycle
-import play.api.{Configuration, Environment}
+import com.typesafe.config.Config
 import slick.jdbc.JdbcBackend
 import slick.migration.api.H2Dialect
 
-import scala.concurrent.Future
-
-class DatabaseModule(environment: Environment, configuration: Configuration)
+class DatabaseModule()
   extends AbstractModule {
   override def configure(): Unit = {
-    bind(classOf[Config]).toInstance(configuration.underlying)
     bind(classOf[slick.jdbc.JdbcBackend.Database]).toProvider(classOf[DatabaseProvider])
   }
 }
 
-@Singleton
-class DatabaseProvider @Inject() (config: Config, lifecycle: ApplicationLifecycle) extends Provider[slick.jdbc.JdbcBackend.Database] {
-  private val db = slick.jdbc.JdbcBackend.Database.forConfig("h2mem1", config)
-
-  lifecycle.addStopHook { () =>
-    Future.successful(db.close())
+class TestDatabaseModule()
+  extends AbstractModule {
+  override def configure(): Unit = {
+    bind(classOf[slick.jdbc.JdbcBackend.Database]).toProvider(classOf[TestDatabaseProvider])
   }
+}
+
+@Singleton
+class DatabaseProvider @Inject() (config: Config) extends Provider[slick.jdbc.JdbcBackend.Database] {
+  private val db = slick.jdbc.JdbcBackend.Database.forConfig("h2mem1", config)
 
   override def get(): JdbcBackend.DatabaseDef = db
 }
 
 @Singleton
-class TestDatabaseProvider @Inject() (config: Config, lifecycle: ApplicationLifecycle) extends Provider[slick.jdbc.JdbcBackend.Database] {
-  val conf = ConfigFactory.load()
-
+class TestDatabaseProvider @Inject() (config: Config) extends Provider[slick.jdbc.JdbcBackend.Database] {
   val log = LogManager.getLogManager().getLogger("")
-  log.getHandlers().foreach(h =>h.setLevel(Level.parse(conf.getString("migrations.logLevel"))))
+  log.getHandlers().foreach(h =>h.setLevel(Level.parse(config.getString("migrations.logLevel"))))
 
   val databaseName = java.util.UUID.randomUUID.toString
   val databaseUrl = s"jdbc:h2:mem:$databaseName"
@@ -51,11 +46,6 @@ class TestDatabaseProvider @Inject() (config: Config, lifecycle: ApplicationLife
   val migrationsExecutor = new DatabaseMigrations(MigrationsExecutor(databaseUrl)).load
 
   migrationsExecutor.runAll()
-
-  lifecycle.addStopHook { () =>
-    migrationsExecutor.revertAll()
-    Future.successful(db.close())
-  }
 
   override def get(): JdbcBackend.DatabaseDef = db.asInstanceOf[JdbcBackend.DatabaseDef]
 }

@@ -8,7 +8,7 @@ import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.duration.Duration
 
 class AddSomeTasks_20150802111600(implicit val db: JdbcBackend#Database, session : slick.jdbc.JdbcBackend#SessionDef, dialect : slick.migration.api.Dialect[_]) extends Migration {
-  val taskService = new TaskService
+  val taskService = new TaskService(db)
 
   override def up(): Unit = {
     sideEffects(() => {

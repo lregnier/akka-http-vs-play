@@ -18,7 +18,7 @@ import scala.concurrent.Future
 import scala.concurrent.duration._
 
 @Singleton
-class TasksController @Inject() (system: ActorSystem, /*implicit val */db2: JdbcBackend#Database) extends Controller {
+class TasksController @Inject() (system: ActorSystem, db2: JdbcBackend#Database) extends Controller {
 
   implicit val db: JdbcBackend#Database = db2//new DatabaseFactory().getDatabase
 
