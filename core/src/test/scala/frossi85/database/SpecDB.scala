@@ -1,7 +1,7 @@
 package frossi85.database
 
-import com.github.frossi85.{ServicesModule, TestDatabaseModule, ConfigModule}
 import com.github.frossi85.database.TestDB
+import com.github.frossi85.{ServicesModule, TestDatabaseModule, ConfigModule}
 import com.google.inject.{Guice, Injector}
 import kamon.Kamon
 import org.scalatest._

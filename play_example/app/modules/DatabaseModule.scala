@@ -2,9 +2,9 @@ package modules
 
 import java.util.logging.{Level, LogManager}
 import javax.inject.{Inject, Provider, Singleton}
+
 import com.github.frossi85.database.DatabaseMigrations
 import com.github.frossi85.database.migrations.MigrationsExecutor
-import com.github.frossi85.database.tables.AgnosticDriver.api._
 import com.google.inject.AbstractModule
 import com.typesafe.config.{Config, ConfigFactory}
 import play.api.inject.ApplicationLifecycle
@@ -35,10 +35,8 @@ class DatabaseProvider @Inject() (config: Config, lifecycle: ApplicationLifecycl
 
 @Singleton
 class TestDatabaseProvider @Inject() (config: Config, lifecycle: ApplicationLifecycle) extends Provider[slick.jdbc.JdbcBackend.Database] {
-  val conf = ConfigFactory.load()
-
-  val log = LogManager.getLogManager().getLogger("")
-  log.getHandlers().foreach(h =>h.setLevel(Level.parse(conf.getString("migrations.logLevel"))))
+    val log = LogManager.getLogManager().getLogger("")
+  log.getHandlers().foreach(h =>h.setLevel(Level.parse(config.getString("migrations.logLevel"))))
 
   val databaseName = java.util.UUID.randomUUID.toString
   val databaseUrl = s"jdbc:h2:mem:$databaseName"

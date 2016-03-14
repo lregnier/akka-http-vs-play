@@ -1,8 +1,8 @@
 package com.github.frossi85.api
 
 import akka.http.scaladsl.testkit.ScalatestRouteTest
-import com.github.frossi85.{TestDatabaseModule, ServicesModule, ConfigModule}
 import com.github.frossi85.database.TestDB
+import com.github.frossi85.{TestDatabaseModule, ServicesModule, ConfigModule}
 import com.google.inject.{Guice, Injector}
 import kamon.Kamon
 import org.scalatest._

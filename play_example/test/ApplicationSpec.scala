@@ -1,16 +1,16 @@
-import com.github.frossi85.domain.Task
 import modules.TestDatabaseProvider
 import org.junit.runner.RunWith
 import org.specs2.mutable.Specification
 import org.specs2.runner._
+import play.api.inject.bind
+import play.api.inject.guice.GuiceApplicationBuilder
 import play.api.libs.json.Json
 import play.api.test.Helpers._
 import play.api.test._
 
 @RunWith(classOf[JUnitRunner])
 class ApplicationSpec extends Specification {
-  import play.api.inject.bind
-  import play.api.inject.guice.GuiceApplicationBuilder
+
 
   def app = new GuiceApplicationBuilder()
     .overrides(bind(classOf[slick.jdbc.JdbcBackend.Database]).toProvider(classOf[TestDatabaseProvider]))

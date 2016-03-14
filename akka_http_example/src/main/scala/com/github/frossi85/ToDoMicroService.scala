@@ -3,10 +3,11 @@ package com.github.frossi85
 import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
 import akka.stream.ActorMaterializer
+import com.github.frossi85.api.Endpoints
 import com.google.inject.{Guice, Injector}
 import scala.io.StdIn
 
-object ToDoMicroService extends App with KamonHandler with Routes {
+object ToDoMicroService extends App with KamonHandler with Endpoints {
   implicit val system: ActorSystem = ActorSystem("todo-microservice-actor-system")
   implicit val materializer = ActorMaterializer()
   implicit val ec = system.dispatcher

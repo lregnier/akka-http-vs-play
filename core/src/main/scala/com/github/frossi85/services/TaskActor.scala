@@ -1,10 +1,10 @@
 package com.github.frossi85.services
 
+import javax.inject.Inject
 import akka.actor.{Actor, ActorLogging, Props}
 import akka.pattern.pipe
-import com.github.frossi85.guice.NamedActor
-import javax.inject.{Named, Singleton, Inject}
 import kamon.trace.Tracer
+
 import scala.concurrent.ExecutionContext.Implicits.global
 
 class TaskActor @Inject() (val taskService: TaskServiceInterface) extends Actor
@@ -42,11 +42,7 @@ class TaskActor @Inject() (val taskService: TaskServiceInterface) extends Actor
   }
 }
 
-object TaskActor extends NamedActor {
-  // this (and the NamedActor trait) is not required here -- it is simply a convenience so that the name
-  // can be defined and referenced from one place
-  override final val name = "TaskActor"
-
+object TaskActor {
   def props(taskService: TaskServiceInterface) = Props(classOf[TaskActor], taskService)
 
   case class UpdateTaskFromRequest(taskId: Long, request: TaskRequest)

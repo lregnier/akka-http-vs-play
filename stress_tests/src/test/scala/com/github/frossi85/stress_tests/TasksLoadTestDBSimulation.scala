@@ -1,17 +1,19 @@
 package com.github.frossi85.stress_tests
 
 import com.github.frossi85.database.TestDB
+import com.google.inject.Injector
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 import scala.concurrent.duration._
 
 class TasksLoadTestDBSimulation extends Simulation with TestDB {
-  initializeDatabase()
-
   val host = "localhost"
   val port = 8085
 
-  val server = GatlingAkkaHttpServer(getDatabase, host, port)
+  val server = GatlingAkkaHttpServer(host, port)
+  val injector: Injector = server.injector
+
+  initializeDatabase()
   server.start()
 
   val scenarioName = "CreateUpdateListViewTasks"

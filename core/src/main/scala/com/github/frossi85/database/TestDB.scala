@@ -1,6 +1,7 @@
 package com.github.frossi85.database
 
 import java.util.logging.{Level, LogManager}
+
 import com.github.frossi85.database.migrations.MigrationsExecutor
 import com.google.inject.Injector
 import com.typesafe.config.ConfigFactory
