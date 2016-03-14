@@ -6,7 +6,7 @@ import akka.actor._
 import akka.pattern.ask
 import akka.util.Timeout
 import com.github.frossi85.domain.Task
-import com.github.frossi85.services.{TaskActor, TaskRequest, TaskService}
+import com.github.frossi85.services.{TaskServiceInterface, TaskActor, TaskRequest, TaskService}
 import play.api.data.Forms._
 import play.api.data._
 import play.api.libs.concurrent.Execution.Implicits.defaultContext
@@ -18,13 +18,8 @@ import scala.concurrent.Future
 import scala.concurrent.duration._
 
 @Singleton
-class TasksController @Inject() (system: ActorSystem, db2: JdbcBackend#Database) extends Controller {
-
-  implicit val db: JdbcBackend#Database = db2//new DatabaseFactory().getDatabase
-
+class TasksController @Inject() (system: ActorSystem, taskService: TaskServiceInterface) extends Controller {
   implicit val timeout = Timeout(5 seconds)
-
-  val taskService = new TaskService
 
   val service = system.actorOf(TaskActor.props(taskService), "my-service-actor")
 

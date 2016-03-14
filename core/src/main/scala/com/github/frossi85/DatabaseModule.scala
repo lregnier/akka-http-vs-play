@@ -2,6 +2,7 @@ package com.github.frossi85
 
 import java.util.logging.{Level, LogManager}
 import javax.inject.{Inject, Provider, Singleton}
+
 import com.github.frossi85.database.DatabaseMigrations
 import com.github.frossi85.database.migrations.MigrationsExecutor
 import com.google.inject.AbstractModule

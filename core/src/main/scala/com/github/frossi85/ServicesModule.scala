@@ -1,10 +1,8 @@
 package com.github.frossi85
 
-import akka.actor.Actor
-import com.github.frossi85.services.{TaskService, TaskServiceInterface, TaskActor}
-import net.codingwell.scalaguice.ScalaModule
+import com.github.frossi85.services.{TaskService, TaskServiceInterface}
 import com.google.inject.AbstractModule
-import com.google.inject.name.Names
+import net.codingwell.scalaguice.ScalaModule
 
 class ServicesModule extends AbstractModule with ScalaModule {
   override def configure() {

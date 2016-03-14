@@ -18,10 +18,11 @@ trait TestDB {
   val log = LogManager.getLogManager().getLogger("")
   log.getHandlers().foreach(h =>h.setLevel(Level.parse(conf.getString("migrations.logLevel"))))
 
-  implicit val session = db.createSession()
-  implicit val dialect = new H2Dialect
-
-  val migrationsExecutor = new DatabaseMigrations(MigrationsExecutor(session.metaData.getURL)).load
+  lazy val migrationsExecutor = {
+    implicit val session = db.createSession()
+    implicit val dialect = new H2Dialect
+    new DatabaseMigrations(MigrationsExecutor(session.metaData.getURL)).load
+  }
 
   def initializeDatabase() {
     migrationsExecutor.runAll()
