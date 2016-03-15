@@ -5,8 +5,6 @@ resolvers += "Typesafe Repository" at "http://repo.typesafe.com/typesafe/release
 
 resolvers += "Typesafe Snapshots" at "http://repo.typesafe.com/typesafe/snapshots/"
 
-resolvers += "frossi85 bintray" at "http://dl.bintray.com/frossi85/maven"
-
 resolvers += Resolver.bintrayRepo("hseeberger", "maven")
 
 resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
@@ -16,8 +14,6 @@ lazy val commonSettings = Seq(
   version := "0.1.0",
   scalaVersion := "2.11.7"
 )
-
-
 
 lazy val root = (project in file("."))
   //enablePlugins(GatlingPlugin).

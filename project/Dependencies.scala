@@ -18,7 +18,6 @@ object Dependencies {
       "net.codingwell" %% "scala-guice" % "4.0.1",
 
       "org.scalatest" %% "scalatest" % scalaTestV % "test",
-      "com.github.frossi85" %% "slick-migration-api-flyway" % "0.2.1",
 
       // [For monitoring]
       "io.kamon" %% "kamon-core" % "0.5.2",
@@ -54,7 +53,7 @@ object Dependencies {
 
       "com.typesafe.akka" %% "akka-stream-testkit-experimental" % akkaStreamV % "test"/*,
 
-      "com.sandinh" %% "akka-guice" % "2.0.0"*/ //View this later
+      "com.sandinh" %% "akka-guice" % "2.0.0"*/ //See this later
     )
   }
 
