@@ -5,10 +5,6 @@ resolvers += "Typesafe Repository" at "http://repo.typesafe.com/typesafe/release
 
 resolvers += "Typesafe Snapshots" at "http://repo.typesafe.com/typesafe/snapshots/"
 
-resolvers += Resolver.bintrayRepo("hseeberger", "maven")
-
-resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
-
 lazy val commonSettings = Seq(
   organization := "com.frossi85",
   version := "0.1.0",
