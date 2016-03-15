@@ -5,8 +5,6 @@ resolvers += "Typesafe Repository" at "http://repo.typesafe.com/typesafe/release
 
 resolvers += "Typesafe Snapshots" at "http://repo.typesafe.com/typesafe/snapshots/"
 
-resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
-
 lazy val commonSettings = Seq(
   organization := "com.frossi85",
   version := "0.1.0",
@@ -43,7 +41,7 @@ lazy val play_example = (project in file("play_example"))
     name := "Play Example",
     libraryDependencies ++=
       Dependencies.sharedDependencies ++
-      Dependencies.kamonPlayDependencies
+      Dependencies.playDependencies
   )
   .settings(
     routesGenerator := InjectedRoutesGenerator
@@ -59,7 +57,6 @@ lazy val stress_tests = (project in file("stress_tests"))
     libraryDependencies ++= Dependencies.sharedDependencies ++ Dependencies.gatlingDependencies
   )
   .dependsOn(core)
-  .dependsOn(akka_http_example)
 
 
 //javaOptions in Test := Seq("-Dkamon.auto-start=true")
