@@ -11,7 +11,7 @@ import ExecutionContext.Implicits.global
 class TaskService @Inject() () extends Repository[Task] with CRUDOps[Task] with TaskServiceInterface {
   val store = mutable.HashMap[Long, Task]()
 
-  def all: Future[Seq[Task]] = Future(store.values.toSeq)
+  def all: Future[Seq[Task]] = Future(store.values.toSeq.sortWith(_.id < _.id))
 
   override def cloneWithId(toClone: Task, id: Long): Task = toClone.copy(id = id)
 }

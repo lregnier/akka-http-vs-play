@@ -4,11 +4,10 @@ import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
 import akka.http.scaladsl.Http.ServerBinding
 import akka.stream.ActorMaterializer
-import com.github.frossi85.{ServicesModule, DatabaseModule, ConfigModule}
 import com.github.frossi85.api.Endpoints
+import com.github.frossi85.{ConfigModule, ServicesModule}
 import com.google.inject.{Guice, Injector}
 import kamon.Kamon
-import slick.jdbc.JdbcBackend
 import scala.concurrent.duration._
 import scala.concurrent.{Await, Future}
 
@@ -19,10 +18,8 @@ case class GatlingAkkaHttpServer(host: String, port: Int) extends Endpoints {
 
   val injector: Injector = Guice.createInjector(
     new ConfigModule(),
-    new DatabaseModule(),
     new ServicesModule()
   )
-
 
   private var bindingFuture: Option[Future[ServerBinding]] = None
 

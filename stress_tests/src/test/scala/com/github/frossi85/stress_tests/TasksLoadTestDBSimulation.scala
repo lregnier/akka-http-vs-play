@@ -1,9 +1,12 @@
 package com.github.frossi85.stress_tests
 
-import com.github.frossi85.database.TestDB
+import com.github.frossi85.database.{Repository, TestDB}
+import com.github.frossi85.domain.Task
+import com.github.frossi85.services.TaskServiceInterface
 import com.google.inject.Injector
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
+import net.codingwell.scalaguice.InjectorExtensions._
 import scala.concurrent.duration._
 
 class TasksLoadTestDBSimulation extends Simulation with TestDB {
@@ -13,7 +16,9 @@ class TasksLoadTestDBSimulation extends Simulation with TestDB {
   val server = GatlingAkkaHttpServer(host, port)
   val injector: Injector = server.injector
 
-  initializeDatabase()
+  override def repository: Repository[Task] = injector.instance[TaskServiceInterface].asInstanceOf[Repository[Task]]
+
+  initializeRepository()
   server.start()
 
   val scenarioName = "CreateUpdateListViewTasks"
