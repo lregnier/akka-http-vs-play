@@ -9,7 +9,7 @@ import play.api.inject.guice.GuiceApplicationBuilder
 import play.api.libs.json.Json
 import play.api.test.Helpers._
 import play.api.test._
-
+/*
 
 @RunWith(classOf[JUnitRunner])
 class ApplicationSpec extends Specification with TestDB {
@@ -118,3 +118,4 @@ class ApplicationSpec extends Specification with TestDB {
     }
   }
 }
+*/
