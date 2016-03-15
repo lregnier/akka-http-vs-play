@@ -18,7 +18,7 @@ lazy val root = (project in file("."))
   .settings(
     name := "Root Project"
   )
-  .aggregate(core, akka_http_example, play_example, stress_tests)
+  .aggregate(core, apiAkkaHttp, play_example, stress_tests)
 
 lazy val core = (project in file("core"))
   .settings(commonSettings: _*)
@@ -27,13 +27,15 @@ lazy val core = (project in file("core"))
     libraryDependencies ++= Dependencies.sharedDependencies ++ Dependencies.akkaDependencies
   )
 
-lazy val akka_http_example = (project in file("akka_http_example"))
-  .settings(commonSettings: _*)
-  .settings(
-    name := "Akka Http Example",
+lazy val apiAkkaHttp = Project(
+  "api-akka-http",
+  file("api-akka-http"),
+  settings = Seq(
+    name := "API Akka-Http",
     libraryDependencies ++= Dependencies.sharedDependencies ++ Dependencies.akkaDependencies
   )
-  .dependsOn(core)
+) dependsOn (core)
+
 
 lazy val play_example = (project in file("play_example"))
   .enablePlugins(PlayScala)
@@ -59,7 +61,7 @@ lazy val stress_tests = (project in file("stress_tests"))
     libraryDependencies ++= Dependencies.sharedDependencies ++ Dependencies.gatlingDependencies
   )
   .dependsOn(core)
-  .dependsOn(akka_http_example)
+  .dependsOn(apiAkkaHttp)
 
 
 //javaOptions in Test := Seq("-Dkamon.auto-start=true")
