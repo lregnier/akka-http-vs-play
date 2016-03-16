@@ -33,12 +33,10 @@ object Dependencies {
     val akkaStreamV = "2.0-M2"
     Seq(
       "com.typesafe.akka" %% "akka-actor" % akkaV,
-      "com.typesafe.akka" %% "akka-stream-experimental" % akkaStreamV,
       "com.typesafe.akka" %% "akka-http-core-experimental" % akkaStreamV,
       "com.typesafe.akka" %% "akka-http-experimental" % akkaStreamV,
       "com.typesafe.akka" %% "akka-http-spray-json-experimental" % akkaStreamV,
       "com.typesafe.akka" %% "akka-http-testkit-experimental" % akkaStreamV,
-
 
       "com.typesafe.scala-logging" %% "scala-logging" % "3.1.0",
       "ch.qos.logback" % "logback-classic" % "1.1.2",

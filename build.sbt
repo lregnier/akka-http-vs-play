@@ -6,7 +6,7 @@ resolvers += "Typesafe Repository" at "http://repo.typesafe.com/typesafe/release
 resolvers += "Typesafe Snapshots" at "http://repo.typesafe.com/typesafe/snapshots/"
 
 lazy val commonSettings = Seq(
-  organization := "com.frossi85",
+  organization := "com.whiteprompt",
   version := "0.1.0",
   scalaVersion := "2.11.7"
 )
@@ -16,40 +16,48 @@ lazy val root = (project in file("."))
   .settings(
     name := "Root Project"
   )
-  .aggregate(core, akka_http_example, play_example, stress_tests)
+  .aggregate(core, apiAkkaHttp, apiPlay, test)
 
-lazy val core = (project in file("core"))
+lazy val core = Project(
+  "core",
+  file("core"))
   .settings(commonSettings: _*)
   .settings(
     name := "Core",
     libraryDependencies ++= Dependencies.sharedDependencies ++ Dependencies.akkaDependencies
   )
 
-lazy val akka_http_example = (project in file("akka_http_example"))
+lazy val apiAkkaHttp = Project(
+  "api-akka-http",
+  file("api-akka-http"))
   .settings(commonSettings: _*)
   .settings(
-    name := "Akka Http Example",
+    name := "API Akka-Http",
     libraryDependencies ++= Dependencies.sharedDependencies ++ Dependencies.akkaDependencies
   )
   .dependsOn(core)
 
-lazy val play_example = (project in file("play_example"))
+
+lazy val apiPlay = Project(
+  "api-play",
+  file("api-play"))
   .enablePlugins(PlayScala)
   .settings(commonSettings: _*)
   .settings(routesGenerator := InjectedRoutesGenerator)
   .settings(
-    name := "Play Example",
+    name := "API Play",
     libraryDependencies ++=
       Dependencies.sharedDependencies ++
-      Dependencies.playDependencies
+        Dependencies.playDependencies
   )
   .settings(
     routesGenerator := InjectedRoutesGenerator
   )
   .dependsOn(core)
 
-
-lazy val stress_tests = (project in file("stress_tests"))
+lazy val test = Project(
+  "test",
+  file("test"))
   .enablePlugins(GatlingPlugin)
   .settings(commonSettings: _*)
   .settings(
@@ -57,8 +65,6 @@ lazy val stress_tests = (project in file("stress_tests"))
     libraryDependencies ++= Dependencies.sharedDependencies ++ Dependencies.gatlingDependencies
   )
   .dependsOn(core)
-
-
-//javaOptions in Test := Seq("-Dkamon.auto-start=true")
+  .dependsOn(apiAkkaHttp)
 
 scalacOptions in Test ++= Seq("-Yrangepos")
