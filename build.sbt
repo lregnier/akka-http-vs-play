@@ -8,7 +8,7 @@ resolvers += "Typesafe Snapshots" at "http://repo.typesafe.com/typesafe/snapshot
 resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
 
 lazy val commonSettings = Seq(
-  organization := "com.frossi85",
+  organization := "com.whiteprompt",
   version := "0.1.0",
   scalaVersion := "2.11.7"
 )
@@ -18,9 +18,11 @@ lazy val root = (project in file("."))
   .settings(
     name := "Root Project"
   )
-  .aggregate(core, apiAkkaHttp, play_example, stress_tests)
+  .aggregate(core, apiAkkaHttp, apiPlay, test)
 
-lazy val core = (project in file("core"))
+lazy val core = Project(
+  "core",
+  file("core"))
   .settings(commonSettings: _*)
   .settings(
     name := "Core",
@@ -29,41 +31,42 @@ lazy val core = (project in file("core"))
 
 lazy val apiAkkaHttp = Project(
   "api-akka-http",
-  file("api-akka-http"),
-  settings = Seq(
-    name := "API Akka-Http",
-    libraryDependencies ++= Dependencies.sharedDependencies ++ Dependencies.akkaDependencies
-  )
-) dependsOn (core)
+  file("api-akka-http"))
+    .settings(commonSettings: _*)
+    .settings(
+      name := "Akka Http Example",
+      libraryDependencies ++= Dependencies.sharedDependencies ++ Dependencies.akkaDependencies
+    )
+    .dependsOn(core)
 
 
-lazy val play_example = (project in file("play_example"))
-  .enablePlugins(PlayScala)
-  .settings(commonSettings: _*)
-  .settings(routesGenerator := InjectedRoutesGenerator)
-  .settings(
-    name := "Play Example",
-    libraryDependencies ++=
-      Dependencies.sharedDependencies ++
-      Dependencies.kamonPlayDependencies
-  )
-  .settings(
-    routesGenerator := InjectedRoutesGenerator
-  )
-  .dependsOn(core)
+lazy val apiPlay = Project(
+  "api-play",
+  file("api-play"))
+    .enablePlugins(PlayScala)
+    .settings(commonSettings: _*)
+    .settings(routesGenerator := InjectedRoutesGenerator)
+    .settings(
+      name := "Play Example",
+      libraryDependencies ++=
+        Dependencies.sharedDependencies ++
+        Dependencies.kamonPlayDependencies
+    )
+    .settings(
+      routesGenerator := InjectedRoutesGenerator
+    )
+    .dependsOn(core)
 
-
-lazy val stress_tests = (project in file("stress_tests"))
-  .enablePlugins(GatlingPlugin)
-  .settings(commonSettings: _*)
-  .settings(
-    name := "Stress tests",
-    libraryDependencies ++= Dependencies.sharedDependencies ++ Dependencies.gatlingDependencies
-  )
-  .dependsOn(core)
-  .dependsOn(apiAkkaHttp)
-
-
-//javaOptions in Test := Seq("-Dkamon.auto-start=true")
+lazy val test = Project(
+  "test",
+  file("test"))
+    .enablePlugins(GatlingPlugin)
+    .settings(commonSettings: _*)
+    .settings(
+      name := "Stress tests",
+      libraryDependencies ++= Dependencies.sharedDependencies ++ Dependencies.gatlingDependencies
+    )
+    .dependsOn(core)
+    .dependsOn(apiAkkaHttp)
 
 scalacOptions in Test ++= Seq("-Yrangepos")
