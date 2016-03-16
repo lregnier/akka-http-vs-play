@@ -17,7 +17,7 @@ object ToDoMicroService extends App with KamonHandler with Endpoints {
     new ServicesModule()
   )
 
-  val bindingFuture = Http().bindAndHandle(routes, "0.0.0.0", 8080)
+  val bindingFuture = Http().bindAndHandle(routes, "0.0.0.0", 9000)
 
   println(s"Server online at http://localhost:8080/\nPress RETURN to stop...")
   StdIn.readLine() // for the future transformations
