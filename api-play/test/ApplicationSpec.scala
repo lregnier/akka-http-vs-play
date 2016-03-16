@@ -1,15 +1,21 @@
+import com.whiteprompt.database.{Repository, TestDB}
+import com.whiteprompt.domain.Task
+import com.whiteprompt.services.{TaskServiceInterface, TaskService}
+import play.api.inject.bind
+import play.api.inject.guice.GuiceApplicationBuilder
+import play.api.libs.json.Json
+import play.api.test.Helpers._
+import play.api.test._
+import org.scalatestplus.play._
 
-/*
-
-@RunWith(classOf[JUnitRunner])
-class ApplicationSpec extends Specification with TestDB {
+class ApplicationSpec extends PlaySpec with TestDB {
   val service = new TaskService
 
   def app = new GuiceApplicationBuilder()
     .overrides(bind[TaskServiceInterface].to(service))
     .build
 
-  def repository: Repository[Task]  = service
+  def repository: Repository[Task] = service
 
   def runningWithRepository[T](app : play.api.Application)(block : => T) : T = {
     running(app)({
@@ -20,7 +26,7 @@ class ApplicationSpec extends Specification with TestDB {
     })
   }
 
-  "Play Task Api" should {
+  "Play Task Api" must {
     "return the list of tasks for GET request to /tasks path" in {
       runningWithRepository(app) {
         val tasks = route(FakeRequest(GET, "/v1/tasks")).get
@@ -38,8 +44,8 @@ class ApplicationSpec extends Specification with TestDB {
           )
         )
 
-        status(tasks) must equalTo(OK)
-        Json.parse(contentAsString(tasks)) must be equalTo(expectedJson)
+        status(tasks) mustBe OK
+        Json.parse(contentAsString(tasks)) mustBe expectedJson
       }
     }
 
@@ -53,8 +59,8 @@ class ApplicationSpec extends Specification with TestDB {
           "id" -> 1
         )
 
-        status(task) must equalTo(OK)
-        Json.parse(contentAsString(task)) must be equalTo(expectedJson)
+        status(task) mustBe OK
+        Json.parse(contentAsString(task)) mustBe expectedJson
       }
     }
 
@@ -73,8 +79,8 @@ class ApplicationSpec extends Specification with TestDB {
           "id" -> 3
         )
 
-        status(task) must equalTo(CREATED)
-        Json.parse(contentAsString(task)) must be equalTo(expectedJson)
+        status(task) mustBe CREATED
+        Json.parse(contentAsString(task)) mustBe expectedJson
       }
     }
 
@@ -93,8 +99,8 @@ class ApplicationSpec extends Specification with TestDB {
           "id" -> 1
         )
 
-        status(task) must equalTo(OK)
-        Json.parse(contentAsString(task)) must be equalTo(expectedJson)
+        status(task) mustBe OK
+        Json.parse(contentAsString(task)) mustBe expectedJson
       }
     }
 
@@ -102,10 +108,9 @@ class ApplicationSpec extends Specification with TestDB {
       runningWithRepository(app) {
         val task = route(FakeRequest(Helpers.DELETE, "/v1/tasks/1")).get
 
-        status(task) must equalTo(OK)
-        contentAsString(task) must be equalTo("Task with id=1 was deleted")
+        status(task) mustBe OK
+        contentAsString(task) mustBe "Task with id=1 was deleted"
       }
     }
   }
 }
-*/

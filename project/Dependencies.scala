@@ -46,8 +46,9 @@ object Dependencies {
     )
   }
 
-  val kamonPlayDependencies = Seq(
-    "io.kamon" %% "kamon-play-24" % "0.5.2"
+  val playDependencies = Seq(
+    "io.kamon" %% "kamon-play-24" % "0.5.2",
+    "org.scalatestplus" %% "play" % "1.4.0" % "test"
   )
 
   val gatlingDependencies = Seq(

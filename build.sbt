@@ -5,8 +5,6 @@ resolvers += "Typesafe Repository" at "http://repo.typesafe.com/typesafe/release
 
 resolvers += "Typesafe Snapshots" at "http://repo.typesafe.com/typesafe/snapshots/"
 
-resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
-
 lazy val commonSettings = Seq(
   organization := "com.whiteprompt",
   version := "0.1.0",
@@ -32,41 +30,41 @@ lazy val core = Project(
 lazy val apiAkkaHttp = Project(
   "api-akka-http",
   file("api-akka-http"))
-    .settings(commonSettings: _*)
-    .settings(
-      name := "Akka Http Example",
-      libraryDependencies ++= Dependencies.sharedDependencies ++ Dependencies.akkaDependencies
-    )
-    .dependsOn(core)
+  .settings(commonSettings: _*)
+  .settings(
+    name := "API Akka-Http",
+    libraryDependencies ++= Dependencies.sharedDependencies ++ Dependencies.akkaDependencies
+  )
+  .dependsOn(core)
 
 
 lazy val apiPlay = Project(
   "api-play",
   file("api-play"))
-    .enablePlugins(PlayScala)
-    .settings(commonSettings: _*)
-    .settings(routesGenerator := InjectedRoutesGenerator)
-    .settings(
-      name := "Play Example",
-      libraryDependencies ++=
-        Dependencies.sharedDependencies ++
-        Dependencies.kamonPlayDependencies
-    )
-    .settings(
-      routesGenerator := InjectedRoutesGenerator
-    )
-    .dependsOn(core)
+  .enablePlugins(PlayScala)
+  .settings(commonSettings: _*)
+  .settings(routesGenerator := InjectedRoutesGenerator)
+  .settings(
+    name := "API Play",
+    libraryDependencies ++=
+      Dependencies.sharedDependencies ++
+        Dependencies.playDependencies
+  )
+  .settings(
+    routesGenerator := InjectedRoutesGenerator
+  )
+  .dependsOn(core)
 
 lazy val test = Project(
   "test",
   file("test"))
-    .enablePlugins(GatlingPlugin)
-    .settings(commonSettings: _*)
-    .settings(
-      name := "Stress tests",
-      libraryDependencies ++= Dependencies.sharedDependencies ++ Dependencies.gatlingDependencies
-    )
-    .dependsOn(core)
-    .dependsOn(apiAkkaHttp)
+  .enablePlugins(GatlingPlugin)
+  .settings(commonSettings: _*)
+  .settings(
+    name := "Stress tests",
+    libraryDependencies ++= Dependencies.sharedDependencies ++ Dependencies.gatlingDependencies
+  )
+  .dependsOn(core)
+  .dependsOn(apiAkkaHttp)
 
 scalacOptions in Test ++= Seq("-Yrangepos")
