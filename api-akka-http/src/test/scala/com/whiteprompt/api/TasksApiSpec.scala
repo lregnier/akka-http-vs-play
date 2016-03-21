@@ -1,11 +1,11 @@
 package com.whiteprompt.api
 
 import akka.http.scaladsl.model.StatusCodes
-import com.whiteprompt.database.Repository
+import com.whiteprompt.persistence.Repository
 import com.whiteprompt.domain.Task
 import net.codingwell.scalaguice.InjectorExtensions._
 
-class TasksApiSpec extends ApiSpec with TasksApi with AutoMarshaller {
+class TasksApiSpec extends ApiSpec with TasksRoutes with AutoMarshaller {
   override val repository: Repository[Task] = injector.instance[Repository[Task]]
 
   "The service" should {
