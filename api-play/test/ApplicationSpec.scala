@@ -1,4 +1,4 @@
-import com.whiteprompt.database.{Repository, TestDB}
+import com.whiteprompt.persistence.{Repository, TestDB}
 import com.whiteprompt.domain.Task
 import com.whiteprompt.services.{TaskServiceInterface, TaskService}
 import play.api.inject.bind

@@ -3,6 +3,7 @@ package com.whiteprompt.api
 import akka.http.scaladsl.model.StatusCodes
 import com.whiteprompt.persistence.Repository
 import com.whiteprompt.domain.Task
+import com.whiteprompt.utils.AutoMarshaller
 import net.codingwell.scalaguice.InjectorExtensions._
 
 class TasksApiSpec extends ApiSpec with TasksRoutes with AutoMarshaller {

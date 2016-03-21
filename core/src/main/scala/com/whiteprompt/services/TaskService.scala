@@ -1,33 +1,37 @@
 package com.whiteprompt.services
 
-import javax.inject._
+import com.whiteprompt.domain.{Task, TaskRequest}
+import com.whiteprompt.persistence.TaskRepository
 
-import com.whiteprompt.database.{CRUDOps, Repository}
-import com.whiteprompt.domain.Task
+import scala.concurrent.{ExecutionContext, Future}
 
-import scala.collection.mutable
-import scala.concurrent.ExecutionContext.Implicits.global
-import scala.concurrent.Future
+trait TaskService {
 
-@Singleton
-class TaskService @Inject() () extends Repository[Task] with CRUDOps[Task] with TaskServiceInterface {
-  val store = mutable.HashMap[Long, Task]()
+  implicit val executionContext: ExecutionContext
+  val taskRepository: TaskRepository
 
-  def all: Future[Seq[Task]] = Future(store.values.toSeq.sortWith(_.id < _.id))
+  def create(task: TaskRequest): Future[Task] = {
+    for {
+      id <- list().map(_.reverse.headOption.map(_.id + 1).getOrElse(0L))
+      result <- taskRepository.create(Task(id, task.name, task.description))
+    } yield result
+  }
 
-  override def cloneWithId(toClone: Task, id: Long): Task = toClone.copy(id = id)
-}
+  def retrieve(id: Long): Future[Option[Task]] = {
+    taskRepository.retrieve(id)
+  }
 
-trait TaskServiceInterface {
-  def all: Future[Seq[Task]]
+  def update(id: Long, toUpdate: TaskRequest): Future[Option[Task]] = {
+    taskRepository.update(Task(id, toUpdate.name, toUpdate.description))
+  }
 
-  def byId(id: Long): Future[Option[Task]]
+  def delete(id: Long): Future[Option[Task]] = {
+    taskRepository.delete(id)
+  }
 
-  def insert(item: Task): Future[Task]
-
-  def update(item: Task): Future[Task]
-
-  def delete(id: Long): Future[Long]
+  def list(): Future[Seq[Task]] = {
+    taskRepository.list()
+  }
 }
 
 

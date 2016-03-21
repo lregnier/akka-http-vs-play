@@ -6,11 +6,11 @@
 GET      /health-check                           controllers.Application.healthCheck
 
 # Tasks
-GET      /v1/tasks                               controllers.TasksController.list
-GET      /v1/tasks/:id                           controllers.TasksController.byId(id: Long)
 POST     /v1/tasks                               controllers.TasksController.create
+GET      /v1/tasks/:id                           controllers.TasksController.retrieve(id: Long)
 PUT      /v1/tasks/:id                           controllers.TasksController.update(id: Long)
 DELETE   /v1/tasks/:id                           controllers.TasksController.delete(id: Long)
+GET      /v1/tasks                               controllers.TasksController.list
 
 
 # Map static resources from the /public folder to the /assets URL path

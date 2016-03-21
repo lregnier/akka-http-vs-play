@@ -2,7 +2,7 @@ package com.whiteprompt.api
 
 import akka.http.scaladsl.testkit.ScalatestRouteTest
 import com.google.inject.{Guice, Injector}
-import com.whiteprompt.{ConfigModule, ServicesModule}
+import com.whiteprompt.ConfigModule
 import com.whiteprompt.persistence.TestDB
 import kamon.Kamon
 import org.scalatest._

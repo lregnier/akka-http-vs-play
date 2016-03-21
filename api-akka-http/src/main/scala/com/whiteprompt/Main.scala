@@ -4,8 +4,8 @@ import akka.actor.ActorSystem
 import akka.event.Logging
 import akka.http.scaladsl.Http
 import akka.stream.ActorMaterializer
-import com.google.inject.{Guice, Injector}
 import com.whiteprompt.api.Routes
+import com.whiteprompt.services.TaskServiceActor
 import com.whiteprompt.utils.{Config, KamonHandler}
 
 import scala.io.StdIn
@@ -17,10 +17,8 @@ object Main extends App with Config with KamonHandler with Routes {
   implicit val materializer = ActorMaterializer()
   val log = Logging(system, getClass)
 
-
-  val injector: Injector = Guice.createInjector(
-    new ServicesModule()
-  )
+  // Initialize service actor
+  val taskService = system.actorOf(TaskServiceActor.props(), "task-service")
 
   val serverBinding = Http().bindAndHandle(routes, httpInterface, httpPort)
 

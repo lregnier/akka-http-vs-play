@@ -1,5 +1,5 @@
 package com.whiteprompt.domain
 
-import com.whiteprompt.database.Entity
+import com.whiteprompt.persistence.Entity
 
-case class Task(name: String, description: String, id: Long = 0) extends Entity
+case class Task(id: Long, name: String, description: String) extends Entity

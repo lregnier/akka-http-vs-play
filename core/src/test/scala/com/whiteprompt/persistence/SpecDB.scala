@@ -1,7 +1,7 @@
-package com.whiteprompt.database
+package com.whiteprompt.persistence
 
 import com.google.inject.{Guice, Injector}
-import com.whiteprompt.{ConfigModule, ServicesModule}
+import com.whiteprompt.ConfigModule
 import kamon.Kamon
 import org.scalatest._
 import org.scalatest.concurrent.ScalaFutures

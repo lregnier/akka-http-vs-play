@@ -1,4 +1,4 @@
-package com.whiteprompt.database
+package com.whiteprompt.persistence
 
 import com.whiteprompt.domain.Task
 import com.whiteprompt.services.TaskServiceInterface
