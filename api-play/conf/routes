@@ -3,7 +3,7 @@
 # ~~~~
 
 # Utils
-GET      /health-check                           controllers.Application.healthCheck
+GET      /health-check                           controllers.HealthCheckController.healthCheck
 
 # Tasks
 POST     /v1/tasks                               controllers.TasksController.create
