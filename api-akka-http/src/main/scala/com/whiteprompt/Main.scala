@@ -7,7 +7,6 @@ import akka.stream.ActorMaterializer
 import com.whiteprompt.api.Routes
 import com.whiteprompt.services.TaskServiceActor
 import com.whiteprompt.utils.{Config, KamonHandler}
-
 import scala.io.StdIn
 
 object Main extends App with Config with KamonHandler with Routes {
@@ -16,6 +15,7 @@ object Main extends App with Config with KamonHandler with Routes {
   implicit val executor = system.dispatcher
   implicit val materializer = ActorMaterializer()
   val log = Logging(system, getClass)
+
 
   // Initialize service actor
   val taskService = system.actorOf(TaskServiceActor.props(), "task-service")
@@ -30,6 +30,5 @@ object Main extends App with Config with KamonHandler with Routes {
       system.terminate()
       System.exit(0)
     }) // and shutdown when done
-
 }
 
