@@ -12,7 +12,7 @@ trait TaskService {
 
   def create(task: TaskRequest): Future[Task] = {
     for {
-      id <- list().map(_.reverse.headOption.map(_.id + 1).getOrElse(0L))
+      id <- list().map(_.reverse.headOption.map(_.id + 1).getOrElse(1L))
       result <- taskRepository.create(Task(id, task.name, task.description))
     } yield result
   }

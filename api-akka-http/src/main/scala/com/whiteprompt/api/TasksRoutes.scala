@@ -2,13 +2,13 @@ package com.whiteprompt.api
 
 import akka.actor.ActorRef
 import akka.http.scaladsl.model.StatusCodes
+import akka.http.scaladsl.model.headers.Location
 import akka.http.scaladsl.server.Directives._
 import akka.util.Timeout
 import com.whiteprompt.domain.{Task, TaskRequest}
 import com.whiteprompt.services.TaskServiceActor
 import com.whiteprompt.utils.AutoMarshaller
 import akka.pattern.ask
-
 import scala.concurrent.duration._
 
 trait TasksRoutes extends AutoMarshaller {
@@ -21,8 +21,12 @@ trait TasksRoutes extends AutoMarshaller {
 
   def create =
     (pathEnd & post & entity(as[TaskRequest])) { task =>
-      onSuccess((taskService ? CreateTask(task)).mapTo[Task]) { task =>
-        complete(StatusCodes.Created, task)
+      extractUri { uri =>
+        onSuccess((taskService ? CreateTask(task)).mapTo[Task]) { task =>
+          respondWithHeader(Location(s"$uri/${task.id}")) {
+            complete(StatusCodes.Created)
+          }
+        }
       }
     }
 
