@@ -1,16 +1,16 @@
 package com.whiteprompt.persistence
 
 import akka.actor.ActorSystem
+import akka.pattern.ask
 import akka.util.Timeout
 import com.whiteprompt.domain.{Task, TaskRequest}
 import com.whiteprompt.services.TaskServiceActor
 import com.whiteprompt.services.TaskServiceActor._
 import kamon.Kamon
 import org.scalatest.concurrent.ScalaFutures
-import org.scalatest.{Matchers, BeforeAndAfterEach, WordSpec}
+import org.scalatest.{Matchers, WordSpec}
 import scala.concurrent.Await
 import scala.concurrent.duration._
-import akka.pattern.ask
 
 class TaskServiceSuite extends WordSpec with Matchers with ScalaFutures {
 

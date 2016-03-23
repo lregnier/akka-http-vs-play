@@ -1,7 +1,6 @@
 package controllers
 
 import javax.inject._
-
 import akka.actor._
 import akka.pattern.ask
 import akka.util.Timeout
@@ -12,7 +11,6 @@ import play.api.data._
 import play.api.libs.concurrent.Execution.Implicits.defaultContext
 import play.api.libs.json._
 import play.api.mvc._
-
 import scala.concurrent.Future
 import scala.concurrent.duration._
 
@@ -70,7 +68,7 @@ class TasksController @Inject() (system: ActorSystem) extends Controller {
 
   def delete(id: Long) = Action.async { implicit request =>
     (service ? DeleteTask(id))
-      .map(x => Ok(s"Task with id=$id was deleted"))
+      .map(x => NoContent)
   }
 
   def list = Action.async {
