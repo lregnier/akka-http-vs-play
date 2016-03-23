@@ -41,6 +41,8 @@ class ApplicationSpec extends PlaySpec with OneAppPerTest {
       val result = Json.parse(contentAsString(task))
 
       status(task) mustBe CREATED
+      header(LOCATION, task) mustBe defined
+
       (result \ "name").get mustBe (jsonRequest \ "name").get
       (result \ "description").get mustBe (jsonRequest \ "description").get
     }

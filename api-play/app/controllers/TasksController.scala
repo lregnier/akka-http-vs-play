@@ -40,7 +40,11 @@ class TasksController @Inject() (system: ActorSystem) extends Controller {
       taskRequest => {
         (service ? CreateTask(taskRequest))
           .mapTo[Task]
-          .map(x => Created(Json.toJson(x)))
+          .map(task => Created(Json.toJson(task))
+            .withHeaders(
+              LOCATION -> s"${request.uri}/${task.id}"
+            )
+          )
       }
     )
   }
