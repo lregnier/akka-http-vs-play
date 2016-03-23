@@ -1,72 +1,93 @@
 package com.whiteprompt.persistence
 
-import com.whiteprompt.domain.Task
-import com.whiteprompt.services.TaskServiceInterface
-import net.codingwell.scalaguice.InjectorExtensions._
-import org.scalatest.Matchers._
-
+import akka.actor.ActorSystem
+import akka.util.Timeout
+import com.whiteprompt.domain.{Task, TaskRequest}
+import com.whiteprompt.services.TaskServiceActor
+import com.whiteprompt.services.TaskServiceActor._
+import kamon.Kamon
+import org.scalatest.concurrent.ScalaFutures
+import org.scalatest.{Matchers, BeforeAndAfterEach, WordSpec}
 import scala.concurrent.Await
-import scala.concurrent.duration.Duration
+import scala.concurrent.duration._
+import akka.pattern.ask
 
-class TaskServiceSuite extends SpecDB {
-  val taskService: TaskServiceInterface = injector.instance[TaskServiceInterface]
-  val repository: Repository[Task] = injector.instance[Repository[Task]]
+class TaskServiceSuite extends WordSpec with Matchers with ScalaFutures {
 
-  test("Get task by id must return non empty value") {
-    val result = taskService.byId(1)
+  Kamon.start()
 
-    whenReady(result) { entity =>
-      entity should not be empty
+  trait Context {
+    implicit val system = ActorSystem("my-actor-system")
+    implicit val timeout = Timeout(5 seconds)
+
+    val taskService = system.actorOf(TaskServiceActor.props())
+    val task1 = Await.result((taskService ? CreateTask(TaskRequest("Task.scala 1", "One description"))).mapTo[Task], Duration.Inf)
+    val task2 = Await.result((taskService ? CreateTask(TaskRequest("Task.scala 2", "Another description"))).mapTo[Task], Duration.Inf)
+
+    def repositoryItems: Seq[Task] = Await.result((taskService ? ListTasks).mapTo[Seq[Task]], Duration.Inf)
+  }
+
+  "The service" should {
+    "create a task and increment the count" in new Context {
+      val oldCount = repositoryItems.size
+      val name = "new task"
+      val description = "description"
+      val result = (taskService ? CreateTask(TaskRequest(name, description))).mapTo[Task]
+
+      whenReady(result) { entity =>
+        val newCount = repositoryItems.size
+
+        newCount shouldEqual oldCount + 1
+        entity.id should be > 0L
+        entity.name shouldEqual name
+        entity.description shouldEqual description
+      }
     }
-  }
 
-  test("Get tasks must return non empty value") {
-    val result = taskService.all
+    "get a task by id and the returned value is no empty" in new Context {
+      val result = (taskService ? RetrieveTask(task1.id)).mapTo[Option[Task]]
 
-    whenReady(result) { entity =>
-      entity should not be empty
+      whenReady(result) { entity =>
+        entity shouldBe Some(task1)
+      }
     }
-  }
 
-  test("Insert new task must increment the count") {
-    val oldCount = repository.store.size
-    val name = "new task"
-    val description = "description"
-    val result = Await.result(taskService.insert(Task(name, description)), Duration.Inf)
-    val newCount = repository.store.size
+    "update existing task with new field values" in new Context {
+      val name = "updated task"
+      val description = "updated description"
+      val result = (taskService ? UpdateTask(task1.id, TaskRequest(name, description))).mapTo[Option[Task]]
 
-    newCount should equal (oldCount + 1)
-    result.id should be > 0L
-    result.name should equal (name)
-    result.description should equal (description)
-  }
+      whenReady(result) { entity =>
+        val updatedTask = repositoryItems.find(x => x.id == task1.id)
 
-  test("Update exiting entity must update the fields") {
-    val name = "updated task"
-    val description = "updated description"
-
-    Await.result(taskService.update(Task(name, description, 1L)), Duration.Inf)
-
-    val result = taskService.byId(1)
-
-    whenReady(result) { entity =>
-      entity should not be empty
-      entity.map(x => {
-        x.name should equal(name)
-        x.description should equal(description)
-      })
+        updatedTask should not be empty
+        updatedTask.map(x => {
+          x.name shouldEqual name
+          x.description shouldEqual description
+        })
+      }
     }
-  }
 
-  test("Delete exiting entity must decrement the count") {
-    val oldCount = repository.store.size
+    "delete a task decrement the count" in new Context {
+      val oldCount = repositoryItems.size
+      val result = (taskService ? DeleteTask(task1.id)).mapTo[Option[Task]]
 
-    Await.result(taskService.delete(1L), Duration.Inf)
+      whenReady(result) { entity =>
+        val newCount = repositoryItems.size
+        val entity = repositoryItems.find(x => x.id == task1.id)
 
-    val newCount = repository.store.size
-    val entity = Await.result(taskService.byId(1), Duration.Inf)
+        newCount shouldEqual oldCount - 1
+        entity shouldBe empty
+      }
 
-    newCount should equal (oldCount - 1)
-    entity shouldBe empty
+    }
+
+    "return the list of tasks for GET request to /tasks path" in new Context {
+      val result = (taskService ? ListTasks).mapTo[Seq[Task]]
+
+      whenReady(result) { entities =>
+        entities shouldEqual List(task1, task2)
+      }
+    }
   }
 }
