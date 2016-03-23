@@ -10,7 +10,6 @@ import com.whiteprompt.services.TaskServiceActor.CreateTask
 import com.whiteprompt.utils.AutoMarshaller
 import kamon.Kamon
 import org.scalatest.{Matchers, WordSpec}
-
 import scala.concurrent.Await
 import scala.concurrent.duration.Duration
 
@@ -26,7 +25,10 @@ class TasksRoutesSpec extends WordSpec with Matchers with ScalatestRouteTest {
 
   "The service" should {
     "create a task for POST request to /task path" in new Context {
-      Post(s"/tasks", Map("name" -> "new name", "description" -> "desc")) ~> tasksRoutes ~> check {
+      val name = "new name"
+      val description = "desc"
+
+      Post("/tasks", TaskRequest(name, description)) ~> tasksRoutes ~> check {
         response.status shouldEqual StatusCodes.Created
         header[Location] shouldBe defined
       }
@@ -42,7 +44,7 @@ class TasksRoutesSpec extends WordSpec with Matchers with ScalatestRouteTest {
       val updatedName = "fooName"
       val updatedDescription = "fooDescription"
 
-      Put(s"/tasks/${task1.id}", Map("name" -> updatedName, "description" -> updatedDescription)) ~> tasksRoutes ~> check {
+      Put(s"/tasks/${task1.id}", TaskRequest(updatedName, updatedDescription)) ~> tasksRoutes ~> check {
         responseAs[Task] shouldEqual Task(task1.id, updatedName, updatedDescription)
       }
     }
