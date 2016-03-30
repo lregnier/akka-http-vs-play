@@ -2,7 +2,7 @@ package com.whiteprompt.services
 
 import akka.actor.{Actor, Props}
 import akka.pattern.pipe
-import com.whiteprompt.domain.TaskRequest
+import com.whiteprompt.domain.Task
 import com.whiteprompt.persistence.TaskRepository
 import kamon.trace.Tracer
 
@@ -45,9 +45,9 @@ class TaskServiceActor extends Actor with TaskService {
 object TaskServiceActor {
   def props(): Props = Props[TaskServiceActor]
 
-  case class CreateTask(request: TaskRequest)
+  case class CreateTask(request: Task)
   case class RetrieveTask(taskId: Long)
-  case class UpdateTask(taskId: Long, request: TaskRequest)
+  case class UpdateTask(taskId: Long, request: Task)
   case class DeleteTask(taskId: Long)
   object ListTasks
 }

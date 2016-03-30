@@ -4,7 +4,7 @@ import javax.inject._
 import akka.actor._
 import akka.pattern.ask
 import akka.util.Timeout
-import com.whiteprompt.domain.{Task, TaskRequest}
+import com.whiteprompt.domain.{TaskEntity}
 import com.whiteprompt.services.TaskServiceActor
 import play.api.data.Forms._
 import play.api.data._
@@ -19,7 +19,7 @@ class TasksController @Inject() (system: ActorSystem) extends Controller {
   import TaskServiceActor._
   implicit val timeout = Timeout(5 seconds)
 
-  implicit val taskImplicitWrites = Json.writes[Task]
+  implicit val taskImplicitWrites = Json.writes[TaskEntity]
   implicit val taskImplicitReads = Json.reads[TaskRequest]
 
   val service = system.actorOf(TaskServiceActor.props(), "task-service")
@@ -39,8 +39,8 @@ class TasksController @Inject() (system: ActorSystem) extends Controller {
       },
       taskRequest => {
         (service ? CreateTask(taskRequest))
-          .mapTo[Task]
-          .map(task => Created(Json.toJson(task))
+          .mapTo[TaskEntity]
+          .map(task => Created("{}")
             .withHeaders(
               LOCATION -> s"${request.uri}/${task.id}"
             )
@@ -51,7 +51,7 @@ class TasksController @Inject() (system: ActorSystem) extends Controller {
 
   def retrieve(id: Long) = Action.async {
     (service ? RetrieveTask(id))
-      .mapTo[Option[Task]]
+      .mapTo[Option[TaskEntity]]
       .map(x  => Ok(Json.toJson(x)))
   }
 
@@ -62,7 +62,7 @@ class TasksController @Inject() (system: ActorSystem) extends Controller {
         Future(BadRequest("Something went wrong!!!"))
       },
       taskRequest => {
-        (service ? UpdateTask(id, taskRequest)).mapTo[Option[Task]].map{
+        (service ? UpdateTask(id, taskRequest)).mapTo[Option[TaskEntity]].map{
           case Some(task) => Ok(Json.toJson(task))
           case None => NotFound("There is no task with this id")
         }
@@ -77,7 +77,7 @@ class TasksController @Inject() (system: ActorSystem) extends Controller {
 
   def list = Action.async {
     (service ? ListTasks)
-      .mapTo[Seq[Task]]
+      .mapTo[Seq[TaskEntity]]
       .map(x  => Ok(Json.toJson(x)))
   }
 }

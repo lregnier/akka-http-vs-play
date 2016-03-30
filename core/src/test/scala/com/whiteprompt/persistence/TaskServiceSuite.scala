@@ -3,7 +3,7 @@ package com.whiteprompt.persistence
 import akka.actor.ActorSystem
 import akka.pattern.ask
 import akka.util.Timeout
-import com.whiteprompt.domain.{Task, TaskRequest}
+import com.whiteprompt.domain.{TaskEntity, Task}
 import com.whiteprompt.services.TaskServiceActor
 import com.whiteprompt.services.TaskServiceActor._
 import kamon.Kamon
@@ -21,10 +21,23 @@ class TaskServiceSuite extends WordSpec with Matchers with ScalaFutures {
     implicit val timeout = Timeout(5 seconds)
 
     val taskService = system.actorOf(TaskServiceActor.props())
-    val task1 = Await.result((taskService ? CreateTask(TaskRequest("Task.scala 1", "One description"))).mapTo[Task], Duration.Inf)
-    val task2 = Await.result((taskService ? CreateTask(TaskRequest("Task.scala 2", "Another description"))).mapTo[Task], Duration.Inf)
 
-    def repositoryItems: Seq[Task] = Await.result((taskService ? ListTasks).mapTo[Seq[Task]], Duration.Inf)
+    val task1 = Await.result(
+      (taskService ? CreateTask(task("Task.scala 1", "One description")))
+        .mapTo[TaskEntity]
+      , Duration.Inf)
+
+    val task2 = Await.result(
+      (taskService ? CreateTask(task("Task.scala 2", "Another description")))
+        .mapTo[TaskEntity]
+      , Duration.Inf)
+
+    def task(_name: String, _description: String) = new Task {
+      val name = _name
+      val description = _description
+    }
+
+    def repositoryItems: Seq[TaskEntity] = Await.result((taskService ? ListTasks).mapTo[Seq[TaskEntity]], Duration.Inf)
   }
 
   "The service" should {
@@ -32,7 +45,7 @@ class TaskServiceSuite extends WordSpec with Matchers with ScalaFutures {
       val oldCount = repositoryItems.size
       val name = "new task"
       val description = "description"
-      val result = (taskService ? CreateTask(TaskRequest(name, description))).mapTo[Task]
+      val result = (taskService ? CreateTask(task(name, description))).mapTo[TaskEntity]
 
       whenReady(result) { entity =>
         val newCount = repositoryItems.size
@@ -45,7 +58,7 @@ class TaskServiceSuite extends WordSpec with Matchers with ScalaFutures {
     }
 
     "get a task by id and the returned value is no empty" in new Context {
-      val result = (taskService ? RetrieveTask(task1.id)).mapTo[Option[Task]]
+      val result = (taskService ? RetrieveTask(task1.id)).mapTo[Option[TaskEntity]]
 
       whenReady(result) { entity =>
         entity shouldBe Some(task1)
@@ -55,7 +68,7 @@ class TaskServiceSuite extends WordSpec with Matchers with ScalaFutures {
     "update existing task with new field values" in new Context {
       val name = "updated task"
       val description = "updated description"
-      val result = (taskService ? UpdateTask(task1.id, TaskRequest(name, description))).mapTo[Option[Task]]
+      val result = (taskService ? UpdateTask(task1.id, task(name, description))).mapTo[Option[TaskEntity]]
 
       whenReady(result) { entity =>
         val updatedTask = repositoryItems.find(x => x.id == task1.id)
@@ -70,7 +83,7 @@ class TaskServiceSuite extends WordSpec with Matchers with ScalaFutures {
 
     "delete a task decrement the count" in new Context {
       val oldCount = repositoryItems.size
-      val result = (taskService ? DeleteTask(task1.id)).mapTo[Option[Task]]
+      val result = (taskService ? DeleteTask(task1.id)).mapTo[Option[TaskEntity]]
 
       whenReady(result) { entity =>
         val newCount = repositoryItems.size
@@ -83,7 +96,7 @@ class TaskServiceSuite extends WordSpec with Matchers with ScalaFutures {
     }
 
     "return the list of tasks for GET request to /tasks path" in new Context {
-      val result = (taskService ? ListTasks).mapTo[Seq[Task]]
+      val result = (taskService ? ListTasks).mapTo[Seq[TaskEntity]]
 
       whenReady(result) { entities =>
         entities shouldEqual List(task1, task2)

@@ -5,7 +5,7 @@ import akka.http.scaladsl.model.StatusCodes
 import akka.http.scaladsl.model.headers.Location
 import akka.http.scaladsl.server.Directives._
 import akka.util.Timeout
-import com.whiteprompt.domain.{Task, TaskRequest}
+import com.whiteprompt.domain.{TaskEntity, Task}
 import com.whiteprompt.services.TaskServiceActor
 import com.whiteprompt.utils.AutoMarshaller
 import akka.pattern.ask
@@ -22,7 +22,7 @@ trait TasksRoutes extends AutoMarshaller {
   def create =
     (pathEnd & post & entity(as[TaskRequest])) { task =>
       extractUri { uri =>
-        onSuccess((taskService ? CreateTask(task)).mapTo[Task]) { task =>
+        onSuccess((taskService ? CreateTask(task)).mapTo[TaskEntity]) { task =>
           respondWithHeader(Location(s"$uri/${task.id}")) {
             complete(StatusCodes.Created)
           }
@@ -32,7 +32,7 @@ trait TasksRoutes extends AutoMarshaller {
 
   def retrieve =
     (path(LongNumber) & get) { id =>
-      onSuccess((taskService ? RetrieveTask(id)).mapTo[Option[Task]]) {
+      onSuccess((taskService ? RetrieveTask(id)).mapTo[Option[TaskEntity]]) {
         case Some(task) => complete(task)
         case _ => complete(StatusCodes.NotFound)
       }
@@ -40,7 +40,7 @@ trait TasksRoutes extends AutoMarshaller {
 
   def update =
     (path(LongNumber) & put & entity(as[TaskRequest])) { (id, task)  =>
-      onSuccess((taskService ? TaskServiceActor.UpdateTask(id, task)).mapTo[Option[Task]]) {
+      onSuccess((taskService ? TaskServiceActor.UpdateTask(id, task)).mapTo[Option[TaskEntity]]) {
         case Some(task) => complete(task)
         case _ => complete(StatusCodes.NotFound)
       }
@@ -48,7 +48,7 @@ trait TasksRoutes extends AutoMarshaller {
 
   def remove =
     (path(LongNumber) & delete) { id =>
-      onSuccess((taskService ? DeleteTask(id)).mapTo[Option[Task]]) {
+      onSuccess((taskService ? DeleteTask(id)).mapTo[Option[TaskEntity]]) {
         case Some(task) => complete(StatusCodes.NoContent)
         case _ => complete(StatusCodes.NotFound)
       }
@@ -56,7 +56,7 @@ trait TasksRoutes extends AutoMarshaller {
 
   def list =
     (pathEnd & get) {
-      onSuccess((taskService ? ListTasks).mapTo[Seq[Task]]) { tasks =>
+      onSuccess((taskService ? ListTasks).mapTo[Seq[TaskEntity]]) { tasks =>
         complete(tasks)
       }
     }
