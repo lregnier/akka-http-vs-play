@@ -16,7 +16,7 @@ lazy val root = (project in file("."))
   .settings(
     name := "Root Project"
   )
-  .aggregate(core, apiAkkaHttp, apiPlay, test)
+  .aggregate(core, apiAkkaHttp, apiPlay, loadTest)
 
 lazy val core = Project(
   "core",
@@ -57,9 +57,9 @@ lazy val apiPlay = Project(
   )
   .dependsOn(core)
 
-lazy val test = Project(
-  "test",
-  file("test"))
+lazy val loadTest = Project(
+  "load-test",
+  file("load-test"))
   .enablePlugins(GatlingPlugin)
   .settings(commonSettings: _*)
   .settings(
