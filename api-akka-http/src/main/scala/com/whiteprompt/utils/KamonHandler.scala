@@ -1,4 +1,4 @@
-package com.whiteprompt
+package com.whiteprompt.utils
 
 import kamon.Kamon
 

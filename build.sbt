@@ -24,7 +24,8 @@ lazy val core = Project(
   .settings(commonSettings: _*)
   .settings(
     name := "Core",
-    libraryDependencies ++= Dependencies.sharedDependencies ++ Dependencies.akkaDependencies
+    libraryDependencies ++= Dependencies.commonDependencies ++ Dependencies.akkaDependencies ++
+      Dependencies.kamonDependencies
   )
 
 lazy val apiAkkaHttp = Project(
@@ -33,7 +34,9 @@ lazy val apiAkkaHttp = Project(
   .settings(commonSettings: _*)
   .settings(
     name := "API Akka-Http",
-    libraryDependencies ++= Dependencies.sharedDependencies ++ Dependencies.akkaDependencies
+    libraryDependencies ++= Dependencies.commonDependencies ++ Dependencies.akkaDependencies ++
+      Dependencies.akkaStreamDependencies ++ Dependencies.kamonDependencies ++ Dependencies.loggingDependencies ++
+        Dependencies.kamonDependencies
   )
   .dependsOn(core)
 
@@ -46,9 +49,8 @@ lazy val apiPlay = Project(
   .settings(routesGenerator := InjectedRoutesGenerator)
   .settings(
     name := "API Play",
-    libraryDependencies ++=
-      Dependencies.sharedDependencies ++
-        Dependencies.playDependencies
+    libraryDependencies ++= Dependencies.commonDependencies ++ Dependencies.playDependencies ++
+      Dependencies.akkaDependencies ++ Dependencies.kamonDependencies ++ Dependencies.loggingDependencies
   )
   .settings(
     routesGenerator := InjectedRoutesGenerator
@@ -62,7 +64,7 @@ lazy val test = Project(
   .settings(commonSettings: _*)
   .settings(
     name := "Stress tests",
-    libraryDependencies ++= Dependencies.sharedDependencies ++ Dependencies.gatlingDependencies
+    libraryDependencies ++= Dependencies.commonDependencies ++ Dependencies.gatlingDependencies
   )
   .dependsOn(core)
   .dependsOn(apiAkkaHttp)
