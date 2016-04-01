@@ -23,3 +23,13 @@ $ sbt
 > aspectj-runner:run
 ```
 
+To run load-test:
+
+First get an api server running (play or akka-http), then in other terminal:
+
+```sh
+$ sbt
+
+> project load-test
+> test
+```
