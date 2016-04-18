@@ -1,4 +1,4 @@
-package com.whiteprompt.utils
+package com.whiteprompt.api.utils
 
 import de.heikoseeberger.akkahttpjson4s._
 import org.json4s.{DefaultFormats, jackson}

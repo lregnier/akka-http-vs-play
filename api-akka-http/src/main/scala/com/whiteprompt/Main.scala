@@ -5,8 +5,11 @@ import akka.event.Logging
 import akka.http.scaladsl.Http
 import akka.stream.ActorMaterializer
 import com.whiteprompt.api.Routes
+import com.whiteprompt.conf.Config
+import com.whiteprompt.persistence.TaskRepository
 import com.whiteprompt.services.TaskServiceActor
-import com.whiteprompt.utils.{Config, KamonHandler}
+import kamon.Kamon
+
 import scala.io.StdIn
 
 object Main extends App with Config with KamonHandler with Routes {
@@ -16,9 +19,8 @@ object Main extends App with Config with KamonHandler with Routes {
   implicit val materializer = ActorMaterializer()
   val log = Logging(system, getClass)
 
-
   // Initialize service actor
-  val taskService = system.actorOf(TaskServiceActor.props(), "task-service")
+  val taskService = system.actorOf(TaskServiceActor.props(TaskRepository()), "task-service")
 
   val serverBinding = Http().bindAndHandle(routes, httpInterface, httpPort)
 
@@ -30,5 +32,13 @@ object Main extends App with Config with KamonHandler with Routes {
       system.terminate()
       System.exit(0)
     }) // and shutdown when done
+}
+
+trait KamonHandler {
+  Kamon.start()
+
+  def stopKamon() = {
+    Kamon.shutdown()
+  }
 }
 

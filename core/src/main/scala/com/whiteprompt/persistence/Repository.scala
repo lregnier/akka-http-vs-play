@@ -14,7 +14,7 @@ trait Repository[T <: Entity] {
 trait CRUDOps[T <: Entity] {
     self: Repository[T] =>
 
-  implicit val executionContext: ExecutionContext
+  implicit val ec: ExecutionContext
 
   def create(e: T): Future[T] = Future {
     store += (e.id -> e)

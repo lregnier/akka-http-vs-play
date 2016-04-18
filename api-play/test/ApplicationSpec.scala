@@ -1,6 +1,6 @@
 import com.whiteprompt.domain.TaskEntity
 import org.scalatestplus.play._
-import play.api.libs.json.{JsObject, JsValue, Json}
+import play.api.libs.json.Json
 import play.api.test.Helpers._
 import play.api.test._
 

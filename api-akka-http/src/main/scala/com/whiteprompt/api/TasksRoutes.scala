@@ -4,12 +4,17 @@ import akka.actor.ActorRef
 import akka.http.scaladsl.model.StatusCodes
 import akka.http.scaladsl.model.headers.Location
 import akka.http.scaladsl.server.Directives._
-import akka.util.Timeout
-import com.whiteprompt.domain.{TaskEntity, Task}
-import com.whiteprompt.services.TaskServiceActor
-import com.whiteprompt.utils.AutoMarshaller
 import akka.pattern.ask
+import akka.util.Timeout
+import com.whiteprompt.api.utils.AutoMarshaller
+import com.whiteprompt.domain.{Task, TaskEntity}
+import com.whiteprompt.services.TaskServiceActor
+
 import scala.concurrent.duration._
+
+case class TaskRequest(name: String, description: String) extends Task {
+  require(name.length >= 3 && name.length <= 25)
+}
 
 trait TasksRoutes extends AutoMarshaller {
 

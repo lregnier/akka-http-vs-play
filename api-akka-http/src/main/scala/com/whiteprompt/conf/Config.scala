@@ -1,4 +1,4 @@
-package com.whiteprompt.utils
+package com.whiteprompt.conf
 
 import com.typesafe.config.ConfigFactory
 
