@@ -6,36 +6,33 @@ import com.whiteprompt.domain.Task
 import com.whiteprompt.persistence.TaskRepository
 import kamon.trace.Tracer
 
-class TaskServiceActor extends Actor with TaskService {
-
+class TaskServiceActor(val taskRepository: TaskRepository) extends Actor with TaskService {
   import TaskServiceActor._
-  implicit val executionContext = context.dispatcher
-
-  val taskRepository = TaskRepository()
+  implicit val ec = context.dispatcher
 
   override def receive: Receive = {
-    case CreateTask(request) => {
-      Tracer.withNewContext("CreateTaskFromRequest", autoFinish = true) {
-        create(request) pipeTo sender
+    case CreateTask(task) => {
+      Tracer.withNewContext("Create Task", autoFinish = true) {
+        create(task) pipeTo sender
       }
     }
-    case UpdateTask(id, toUpdate) => {
-      Tracer.withNewContext("UpdateTaskFromRequest", autoFinish = true) {
-        update(id, toUpdate) pipeTo sender
+    case UpdateTask(id, task) => {
+      Tracer.withNewContext("Update Task", autoFinish = true) {
+        update(id, task) pipeTo sender
       }
     }
     case RetrieveTask(taskId) => {
-      Tracer.withNewContext("GetTaskById", autoFinish = true) {
+      Tracer.withNewContext("Retrieve Task", autoFinish = true) {
         retrieve(taskId) pipeTo sender
       }
     }
     case DeleteTask(taskId) => {
-      Tracer.withNewContext("DeleteTaskById", autoFinish = true) {
+      Tracer.withNewContext("Delete Task", autoFinish = true) {
         delete(taskId) pipeTo sender
       }
     }
     case ListTasks => {
-      Tracer.withNewContext("GetTasksByUserId", autoFinish = true) {
+      Tracer.withNewContext("List Tasks", autoFinish = true) {
         list pipeTo sender
       }
     }
@@ -43,11 +40,13 @@ class TaskServiceActor extends Actor with TaskService {
 }
 
 object TaskServiceActor {
-  def props(): Props = Props[TaskServiceActor]
+  def props(taskRepository: TaskRepository): Props = {
+    Props(classOf[TaskServiceActor], taskRepository)
+  }
 
-  case class CreateTask(request: Task)
+  case class CreateTask(task: Task)
   case class RetrieveTask(taskId: Long)
-  case class UpdateTask(taskId: Long, request: Task)
+  case class UpdateTask(taskId: Long, task: Task)
   case class DeleteTask(taskId: Long)
   object ListTasks
 }

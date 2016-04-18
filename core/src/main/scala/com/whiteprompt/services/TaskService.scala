@@ -1,13 +1,13 @@
 package com.whiteprompt.services
 
-import com.whiteprompt.domain.{TaskEntity, Task}
+import com.whiteprompt.domain.{Task, TaskEntity}
 import com.whiteprompt.persistence.TaskRepository
 
 import scala.concurrent.{ExecutionContext, Future}
 
 trait TaskService {
 
-  implicit val executionContext: ExecutionContext
+  implicit val ec: ExecutionContext
   val taskRepository: TaskRepository
 
   def create(task: Task): Future[TaskEntity] = {

@@ -38,7 +38,7 @@ lazy val apiAkkaHttp = Project(
       Dependencies.akkaStreamDependencies ++ Dependencies.kamonDependencies ++ Dependencies.loggingDependencies ++
         Dependencies.kamonDependencies
   )
-  .dependsOn(core)
+  .dependsOn(core % "compile->compile;test->test")
 
 
 lazy val apiPlay = Project(
@@ -55,7 +55,7 @@ lazy val apiPlay = Project(
   .settings(
     routesGenerator := InjectedRoutesGenerator
   )
-  .dependsOn(core)
+  .dependsOn(core % "compile->compile;test->test")
 
 lazy val loadTest = Project(
   "load-test",

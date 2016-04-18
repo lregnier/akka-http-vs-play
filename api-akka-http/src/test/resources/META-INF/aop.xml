@@ -1,6 +1,0 @@
-<aspectj>
-    <weaver options="-Xlint:ignore">
-        <include within="*"/>
-        <exclude within="org.aspectj.*"/>
-    </weaver>
-</aspectj>
