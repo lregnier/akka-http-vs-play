@@ -17,7 +17,7 @@ import scala.concurrent.duration._
 case class TaskRequest(name: String, description: String) extends Task
 
 @Singleton
-class TasksController @Inject() (system: ActorSystem) extends Controller {
+class TaskController @Inject()(system: ActorSystem) extends Controller {
   import TaskServiceActor._
   implicit val timeout = Timeout(5 seconds)
   implicit val ec = system.dispatcher
@@ -25,25 +25,24 @@ class TasksController @Inject() (system: ActorSystem) extends Controller {
   implicit val taskImplicitWrites = Json.writes[TaskEntity]
   implicit val taskImplicitReads = Json.reads[TaskRequest]
 
-  val service = system.actorOf(TaskServiceActor.props(TaskRepository()), "task-service")
+  val taskService = system.actorOf(TaskServiceActor.props(TaskRepository()), "task-service")
 
   val taskForm = Form(
     mapping(
-      "name" -> text,
-      "description" -> text
+      "name" -> nonEmptyText,
+      "description" -> nonEmptyText
     )(TaskRequest.apply)(TaskRequest.unapply)
   )
 
   def create = Action.async(BodyParsers.parse.json) { implicit request =>
     taskForm.bindFromRequest.fold(
       formWithErrors => {
-        // binding failure, you retrieve the form containing errors:
-        Future(BadRequest("Something went wrong!!!"))
+        Future(BadRequest)
       },
       taskRequest => {
-        (service ? CreateTask(taskRequest))
+        (taskService ? CreateTask(taskRequest))
           .mapTo[TaskEntity]
-          .map(task => Created("{}")
+          .map(task => Created
             .withHeaders(
               LOCATION -> s"${request.uri}/${task.id}"
             )
@@ -53,33 +52,37 @@ class TasksController @Inject() (system: ActorSystem) extends Controller {
   }
 
   def retrieve(id: Long) = Action.async {
-    (service ? RetrieveTask(id))
-      .mapTo[Option[TaskEntity]]
-      .map(x  => Ok(Json.toJson(x)))
+    (taskService ? RetrieveTask(id))
+      .mapTo[Option[TaskEntity]].map {
+        case Some(task) => Ok(Json.toJson(task))
+        case None => NotFound
+    }
   }
 
   def update(id: Long) = Action.async(BodyParsers.parse.json) { implicit request =>
     taskForm.bindFromRequest.fold(
       formWithErrors => {
-        // binding failure, you retrieve the form containing errors:
-        Future(BadRequest("Something went wrong!!!"))
+        Future(BadRequest)
       },
       taskRequest => {
-        (service ? UpdateTask(id, taskRequest)).mapTo[Option[TaskEntity]].map{
+        (taskService ? UpdateTask(id, taskRequest)).mapTo[Option[TaskEntity]].map{
           case Some(task) => Ok(Json.toJson(task))
-          case None => NotFound("There is no task with this id")
+          case None => NotFound
         }
       }
     )
   }
 
   def delete(id: Long) = Action.async { implicit request =>
-    (service ? DeleteTask(id))
-      .map(x => NoContent)
+    (taskService ? DeleteTask(id))
+      .mapTo[Option[TaskEntity]].map {
+        case Some(task) => NoContent
+        case None => NotFound
+    }
   }
 
   def list = Action.async {
-    (service ? ListTasks)
+    (taskService ? ListTasks)
       .mapTo[Seq[TaskEntity]]
       .map(x  => Ok(Json.toJson(x)))
   }

@@ -24,9 +24,7 @@ trait TestData {
       store += taskEntity2.id -> taskEntity2
     }
 
-    def clear(): Unit = {
-      store.empty
-    }
+    def clear(): Unit = store.empty
 
     def size(): Int = store.size
   }

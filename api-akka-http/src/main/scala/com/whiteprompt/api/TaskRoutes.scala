@@ -13,11 +13,11 @@ import com.whiteprompt.services.TaskServiceActor
 import scala.concurrent.duration._
 
 case class TaskRequest(name: String, description: String) extends Task {
-  require(name.length >= 3 && name.length <= 25)
+  require(!name.isEmpty)
+  require(!description.isEmpty)
 }
 
-trait TasksRoutes extends AutoMarshaller {
-
+trait TaskRoutes extends AutoMarshaller {
   import TaskServiceActor._
 
   implicit val timeout = Timeout(5 seconds)
@@ -39,7 +39,7 @@ trait TasksRoutes extends AutoMarshaller {
     (path(LongNumber) & get) { id =>
       onSuccess((taskService ? RetrieveTask(id)).mapTo[Option[TaskEntity]]) {
         case Some(task) => complete(task)
-        case _ => complete(StatusCodes.NotFound)
+        case None => complete(StatusCodes.NotFound)
       }
     }
 
@@ -47,7 +47,7 @@ trait TasksRoutes extends AutoMarshaller {
     (path(LongNumber) & put & entity(as[TaskRequest])) { (id, task)  =>
       onSuccess((taskService ? TaskServiceActor.UpdateTask(id, task)).mapTo[Option[TaskEntity]]) {
         case Some(task) => complete(task)
-        case _ => complete(StatusCodes.NotFound)
+        case None => complete(StatusCodes.NotFound)
       }
     }
 
@@ -55,7 +55,7 @@ trait TasksRoutes extends AutoMarshaller {
     (path(LongNumber) & delete) { id =>
       onSuccess((taskService ? DeleteTask(id)).mapTo[Option[TaskEntity]]) {
         case Some(task) => complete(StatusCodes.NoContent)
-        case _ => complete(StatusCodes.NotFound)
+        case None => complete(StatusCodes.NotFound)
       }
     }
 

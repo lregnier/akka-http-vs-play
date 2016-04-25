@@ -6,11 +6,11 @@
 GET      /health-check                           controllers.HealthCheckController.healthCheck
 
 # Tasks
-POST     /v1/tasks                               controllers.TasksController.create
-GET      /v1/tasks/:id                           controllers.TasksController.retrieve(id: Long)
-PUT      /v1/tasks/:id                           controllers.TasksController.update(id: Long)
-DELETE   /v1/tasks/:id                           controllers.TasksController.delete(id: Long)
-GET      /v1/tasks                               controllers.TasksController.list
+POST     /v1/tasks                               controllers.TaskController.create
+GET      /v1/tasks/:id                           controllers.TaskController.retrieve(id: Long)
+PUT      /v1/tasks/:id                           controllers.TaskController.update(id: Long)
+DELETE   /v1/tasks/:id                           controllers.TaskController.delete(id: Long)
+GET      /v1/tasks                               controllers.TaskController.list
 
 
 # Map static resources from the /public folder to the /assets URL path
