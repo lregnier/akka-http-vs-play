@@ -73,7 +73,6 @@ class TaskServiceSpec extends TestKit(ActorSystem("TaskServiceSpec"))
     }
   }
 
-
   "When sending a DeleteTask msg, the service" should {
     "respond with the deleted Task if it exists" in new Scope {
       val id = taskEntity1.id

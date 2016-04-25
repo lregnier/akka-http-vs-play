@@ -21,7 +21,7 @@ class TasksRoutesSpec extends WordSpec with Matchers with ScalatestRouteTest wit
     Kamon.shutdown()
   }
 
-  trait Scope extends TasksRoutes with AutoMarshaller with TestData {
+  trait Scope extends TaskRoutes with AutoMarshaller with TestData {
     val context = system.dispatcher
     taskRepository.init()
     val taskService = system.actorOf(TaskServiceActor.props(taskRepository))

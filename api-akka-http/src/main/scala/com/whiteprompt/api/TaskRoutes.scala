@@ -16,8 +16,7 @@ case class TaskRequest(name: String, description: String) extends Task {
   require(name.length >= 3 && name.length <= 25)
 }
 
-trait TasksRoutes extends AutoMarshaller {
-
+trait TaskRoutes extends AutoMarshaller {
   import TaskServiceActor._
 
   implicit val timeout = Timeout(5 seconds)
