@@ -29,21 +29,20 @@ class TaskController @Inject()(system: ActorSystem) extends Controller {
 
   val taskForm = Form(
     mapping(
-      "name" -> text,
-      "description" -> text
+      "name" -> nonEmptyText,
+      "description" -> nonEmptyText
     )(TaskRequest.apply)(TaskRequest.unapply)
   )
 
   def create = Action.async(BodyParsers.parse.json) { implicit request =>
     taskForm.bindFromRequest.fold(
       formWithErrors => {
-        // binding failure, you retrieve the form containing errors:
-        Future(BadRequest("Something went wrong!!!"))
+        Future(BadRequest)
       },
       taskRequest => {
         (taskService ? CreateTask(taskRequest))
           .mapTo[TaskEntity]
-          .map(task => Created("{}")
+          .map(task => Created
             .withHeaders(
               LOCATION -> s"${request.uri}/${task.id}"
             )
@@ -63,13 +62,12 @@ class TaskController @Inject()(system: ActorSystem) extends Controller {
   def update(id: Long) = Action.async(BodyParsers.parse.json) { implicit request =>
     taskForm.bindFromRequest.fold(
       formWithErrors => {
-        // binding failure, you retrieve the form containing errors:
-        Future(BadRequest("Something went wrong!!!"))
+        Future(BadRequest)
       },
       taskRequest => {
         (taskService ? UpdateTask(id, taskRequest)).mapTo[Option[TaskEntity]].map{
           case Some(task) => Ok(Json.toJson(task))
-          case None => NotFound("There is no task with this id")
+          case None => NotFound
         }
       }
     )

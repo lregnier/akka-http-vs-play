@@ -14,6 +14,7 @@ import scala.concurrent.duration._
 
 case class TaskRequest(name: String, description: String) extends Task {
   require(!name.isEmpty)
+  require(!description.isEmpty)
 }
 
 trait TaskRoutes extends AutoMarshaller {
