@@ -48,6 +48,7 @@ class TasksRoutesSpec extends WordSpec with Matchers with ScalatestRouteTest wit
   "When sending a GET request, the Task API" should {
     "return a 200 Response with the requested Task if it exists" in new Scope {
       Get(s"/tasks/${taskEntity1.id}") ~> tasksRoutes ~> check {
+        response.status shouldEqual StatusCodes.Success
         responseAs[TaskEntity] shouldEqual taskEntity1
       }
     }
@@ -64,13 +65,22 @@ class TasksRoutesSpec extends WordSpec with Matchers with ScalatestRouteTest wit
       val updatedName = "Updated name"
       val updatedDescription = "Updated description"
       Put(s"/tasks/$updatedId", TaskRequest(updatedName, updatedDescription)) ~> tasksRoutes ~> check {
+        response.status shouldEqual StatusCodes.Success
         responseAs[TaskEntity] shouldEqual TaskEntity(updatedId, updatedName, updatedDescription)
+      }
+    }
+    "not update the Task and return a 400 Response if the request is not valid" in new Scope {
+      val updatedId = taskEntity1.id
+      val name = "" // Name must not be empty
+      val description = "Updated description"
+      Put(s"/tasks/$updatedId", Map("name" -> name, "description" -> description)) ~> Route.seal(tasksRoutes) ~> check {
+        response.status shouldEqual StatusCodes.BadRequest
       }
     }
     "return a 404 Response if the requested Task does not exist" in new Scope {
       val updatedId = nonExistentTaskId
-      val updatedName = "fooName"
-      val updatedDescription = "fooDescription"
+      val updatedName = "Updated name"
+      val updatedDescription = "Updated description"
       Put(s"/tasks/$updatedId", TaskRequest(updatedName, updatedDescription)) ~> Route.seal(tasksRoutes) ~> check {
         response.status shouldEqual StatusCodes.NotFound
       }
@@ -94,8 +104,9 @@ class TasksRoutesSpec extends WordSpec with Matchers with ScalatestRouteTest wit
   "When sending a GET request, the Task API" should {
     "return a list of all Tasks" in new Scope {
       Get("/tasks") ~> tasksRoutes ~> check {
-        val result = responseAs[List[TaskEntity]]
-        result should have size taskRepository.size
+        response.status shouldEqual StatusCodes.Success
+        val tasks = responseAs[List[TaskEntity]]
+        tasks should have size taskRepository.size
       }
     }
   }
