@@ -48,7 +48,7 @@ class TasksRoutesSpec extends WordSpec with Matchers with ScalatestRouteTest wit
   "When sending a GET request, the Task API" should {
     "return a 200 Response with the requested Task if it exists" in new Scope {
       Get(s"/tasks/${taskEntity1.id}") ~> tasksRoutes ~> check {
-        response.status shouldEqual StatusCodes.Success
+        response.status shouldEqual StatusCodes.OK
         responseAs[TaskEntity] shouldEqual taskEntity1
       }
     }
@@ -65,7 +65,7 @@ class TasksRoutesSpec extends WordSpec with Matchers with ScalatestRouteTest wit
       val updatedName = "Updated name"
       val updatedDescription = "Updated description"
       Put(s"/tasks/$updatedId", TaskRequest(updatedName, updatedDescription)) ~> tasksRoutes ~> check {
-        response.status shouldEqual StatusCodes.Success
+        response.status shouldEqual StatusCodes.OK
         responseAs[TaskEntity] shouldEqual TaskEntity(updatedId, updatedName, updatedDescription)
       }
     }
@@ -104,7 +104,7 @@ class TasksRoutesSpec extends WordSpec with Matchers with ScalatestRouteTest wit
   "When sending a GET request, the Task API" should {
     "return a list of all Tasks" in new Scope {
       Get("/tasks") ~> tasksRoutes ~> check {
-        response.status shouldEqual StatusCodes.Success
+        response.status shouldEqual StatusCodes.OK
         val tasks = responseAs[List[TaskEntity]]
         tasks should have size taskRepository.size
       }
