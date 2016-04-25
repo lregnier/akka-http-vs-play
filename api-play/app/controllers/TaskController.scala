@@ -54,8 +54,10 @@ class TaskController @Inject()(system: ActorSystem) extends Controller {
 
   def retrieve(id: Long) = Action.async {
     (taskService ? RetrieveTask(id))
-      .mapTo[Option[TaskEntity]]
-      .map(x  => Ok(Json.toJson(x)))
+      .mapTo[Option[TaskEntity]].map {
+        case Some(task) => Ok(Json.toJson(task))
+        case None => NotFound
+    }
   }
 
   def update(id: Long) = Action.async(BodyParsers.parse.json) { implicit request =>
@@ -75,7 +77,10 @@ class TaskController @Inject()(system: ActorSystem) extends Controller {
 
   def delete(id: Long) = Action.async { implicit request =>
     (taskService ? DeleteTask(id))
-      .map(x => NoContent)
+      .mapTo[Option[TaskEntity]].map {
+        case Some(task) => NoContent
+        case None => NotFound
+    }
   }
 
   def list = Action.async {
