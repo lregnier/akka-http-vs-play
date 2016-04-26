@@ -14,7 +14,7 @@ import play.api.mvc._
 import scala.concurrent.Future
 import scala.concurrent.duration._
 
-case class TaskRequest(name: String, description: String) extends Task
+case class TaskData(name: String, description: String) extends Task
 
 @Singleton
 class TaskController @Inject()(system: ActorSystem) extends Controller {
@@ -23,7 +23,7 @@ class TaskController @Inject()(system: ActorSystem) extends Controller {
   implicit val ec = system.dispatcher
 
   implicit val taskImplicitWrites = Json.writes[TaskEntity]
-  implicit val taskImplicitReads = Json.reads[TaskRequest]
+  implicit val taskImplicitReads = Json.reads[TaskData]
 
   val taskService = system.actorOf(TaskServiceActor.props(TaskRepository()), "task-service")
 
@@ -31,7 +31,7 @@ class TaskController @Inject()(system: ActorSystem) extends Controller {
     mapping(
       "name" -> nonEmptyText,
       "description" -> nonEmptyText
-    )(TaskRequest.apply)(TaskRequest.unapply)
+    )(TaskData.apply)(TaskData.unapply)
   )
 
   def create = Action.async(BodyParsers.parse.json) { implicit request =>
@@ -39,12 +39,12 @@ class TaskController @Inject()(system: ActorSystem) extends Controller {
       formWithErrors => {
         Future(BadRequest)
       },
-      taskRequest => {
-        (taskService ? CreateTask(taskRequest))
+      taskData => {
+        (taskService ? CreateTask(taskData))
           .mapTo[TaskEntity]
-          .map(task => Created
+          .map(taskEntity => Created
             .withHeaders(
-              LOCATION -> s"${request.uri}/${task.id}"
+              LOCATION -> s"${request.uri}/${taskEntity.id}"
             )
           )
       }
@@ -64,19 +64,19 @@ class TaskController @Inject()(system: ActorSystem) extends Controller {
       formWithErrors => {
         Future(BadRequest)
       },
-      taskRequest => {
-        (taskService ? UpdateTask(id, taskRequest)).mapTo[Option[TaskEntity]].map{
-          case Some(task) => Ok(Json.toJson(task))
+      taskData => {
+        (taskService ? UpdateTask(id, taskData)).mapTo[Option[TaskEntity]].map{
+          case Some(taskEntity) => Ok(Json.toJson(taskEntity))
           case None => NotFound
         }
       }
     )
   }
 
-  def delete(id: Long) = Action.async { implicit request =>
+  def delete(id: Long) = Action.async {
     (taskService ? DeleteTask(id))
       .mapTo[Option[TaskEntity]].map {
-        case Some(task) => NoContent
+        case Some(taskEntity) => NoContent
         case None => NotFound
     }
   }
@@ -84,6 +84,6 @@ class TaskController @Inject()(system: ActorSystem) extends Controller {
   def list = Action.async {
     (taskService ? ListTasks)
       .mapTo[Seq[TaskEntity]]
-      .map(x  => Ok(Json.toJson(x)))
+      .map(tasks => Ok(Json.toJson(tasks)))
   }
 }
