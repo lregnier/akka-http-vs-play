@@ -12,7 +12,7 @@ import com.whiteprompt.services.TaskServiceActor
 
 import scala.concurrent.duration._
 
-case class TaskRequest(name: String, description: String) extends Task {
+case class TaskData(name: String, description: String) extends Task {
   require(!name.isEmpty)
   require(!description.isEmpty)
 }
@@ -25,7 +25,7 @@ trait TaskRoutes extends AutoMarshaller {
   val taskService: ActorRef
 
   def create =
-    (pathEnd & post & entity(as[TaskRequest])) { task =>
+    (pathEnd & post & entity(as[TaskData])) { task =>
       extractUri { uri =>
         onSuccess((taskService ? CreateTask(task)).mapTo[TaskEntity]) { task =>
           respondWithHeader(Location(s"$uri/${task.id}")) {
@@ -44,7 +44,7 @@ trait TaskRoutes extends AutoMarshaller {
     }
 
   def update =
-    (path(LongNumber) & put & entity(as[TaskRequest])) { (id, task)  =>
+    (path(LongNumber) & put & entity(as[TaskData])) { (id, task)  =>
       onSuccess((taskService ? TaskServiceActor.UpdateTask(id, task)).mapTo[Option[TaskEntity]]) {
         case Some(task) => complete(task)
         case None => complete(StatusCodes.NotFound)

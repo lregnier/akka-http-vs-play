@@ -31,7 +31,7 @@ class TasksRoutesSpec extends WordSpec with Matchers with ScalatestRouteTest wit
     "create a new Task and return a 201 Response if the request is valid" in new Scope {
       val name = "Create name"
       val description = "Create description"
-      Post("/tasks", TaskRequest(name, description)) ~> tasksRoutes ~> check {
+      Post("/tasks", TaskData(name, description)) ~> tasksRoutes ~> check {
         response.status shouldEqual StatusCodes.Created
         header[Location] shouldBe defined
       }
@@ -64,7 +64,7 @@ class TasksRoutesSpec extends WordSpec with Matchers with ScalatestRouteTest wit
       val updatedId = taskEntity1.id
       val updatedName = "Updated name"
       val updatedDescription = "Updated description"
-      Put(s"/tasks/$updatedId", TaskRequest(updatedName, updatedDescription)) ~> tasksRoutes ~> check {
+      Put(s"/tasks/$updatedId", TaskData(updatedName, updatedDescription)) ~> tasksRoutes ~> check {
         response.status shouldEqual StatusCodes.OK
         responseAs[TaskEntity] shouldEqual TaskEntity(updatedId, updatedName, updatedDescription)
       }
@@ -81,7 +81,7 @@ class TasksRoutesSpec extends WordSpec with Matchers with ScalatestRouteTest wit
       val updatedId = nonExistentTaskId
       val updatedName = "Updated name"
       val updatedDescription = "Updated description"
-      Put(s"/tasks/$updatedId", TaskRequest(updatedName, updatedDescription)) ~> Route.seal(tasksRoutes) ~> check {
+      Put(s"/tasks/$updatedId", TaskData(updatedName, updatedDescription)) ~> Route.seal(tasksRoutes) ~> check {
         response.status shouldEqual StatusCodes.NotFound
       }
     }
@@ -94,7 +94,6 @@ class TasksRoutesSpec extends WordSpec with Matchers with ScalatestRouteTest wit
       }
     }
     "return a 404 Response if the requested Task does not exist" in new Scope {
-      val nonExisentTaskId = 1234L
       Delete(s"/tasks/$nonExistentTaskId") ~> Route.seal(tasksRoutes) ~> check {
         response.status shouldEqual StatusCodes.NotFound
       }

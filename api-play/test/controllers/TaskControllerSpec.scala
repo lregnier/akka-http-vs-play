@@ -109,8 +109,7 @@ class TaskControllerSpec extends PlaySpec with OneAppPerTest {
       status(response) mustBe NO_CONTENT
     }
     "return a 404 Response if the requested Task does not exist" in new Scope {
-      val nonExisentTaskId = 1234L
-      val response = route(FakeRequest(Helpers.DELETE, s"/v1/tasks/$nonExisentTaskId")).get
+      val response = route(FakeRequest(Helpers.DELETE, s"/v1/tasks/$nonExistentTaskId")).get
       status(response) mustBe NOT_FOUND
     }
   }
