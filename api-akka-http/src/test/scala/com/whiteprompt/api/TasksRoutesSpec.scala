@@ -22,9 +22,7 @@ class TasksRoutesSpec extends WordSpec with Matchers with ScalatestRouteTest wit
   }
 
   trait Scope extends TaskRoutes with AutoMarshaller with TestData {
-    val context = system.dispatcher
-    taskRepository.init()
-    val taskService = system.actorOf(TaskServiceActor.props(taskRepository))
+    val taskService = system.actorOf(TaskServiceActor.props(taskRepository()))
   }
 
   "When sending a POST request, the Task API" should {
@@ -105,7 +103,7 @@ class TasksRoutesSpec extends WordSpec with Matchers with ScalatestRouteTest wit
       Get("/tasks") ~> tasksRoutes ~> check {
         response.status shouldEqual StatusCodes.OK
         val tasks = responseAs[List[TaskEntity]]
-        tasks should have size taskRepository.size
+        tasks should have size allTaskEntities.size
       }
     }
   }

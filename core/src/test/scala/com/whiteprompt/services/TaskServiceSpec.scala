@@ -22,8 +22,7 @@ class TaskServiceSpec extends TestKit(ActorSystem("TaskServiceSpec"))
 
   trait Scope extends TestData {
     implicit val context = system.dispatcher
-    taskRepository.init()
-    val taskService = system.actorOf(TaskServiceActor.props(taskRepository))
+    val taskService = system.actorOf(TaskServiceActor.props(taskRepository()))
 
     def task(_name: String, _description: String): Task = new Task {
       val name = _name
@@ -93,7 +92,7 @@ class TaskServiceSpec extends TestKit(ActorSystem("TaskServiceSpec"))
       taskService ! ListTasks
       expectMsgPF() {
         case tasks: Seq[TaskEntity] =>
-          tasks.size shouldBe(taskRepository.size)
+          tasks.size shouldBe(allTaskEntities.size)
       }
     }
   }
