@@ -1,31 +1,26 @@
 package controllers
 
-import javax.inject._
 import akka.actor._
 import akka.pattern.ask
 import akka.util.Timeout
 import com.whiteprompt.domain.{Task, TaskEntity}
-import com.whiteprompt.persistence.TaskRepository
 import com.whiteprompt.services.TaskServiceActor
 import play.api.data.Forms._
 import play.api.data._
 import play.api.libs.json._
 import play.api.mvc._
-import scala.concurrent.Future
+
 import scala.concurrent.duration._
+import scala.concurrent.{ExecutionContext, Future}
 
 case class TaskData(name: String, description: String) extends Task
 
-@Singleton
-class TaskController @Inject()(system: ActorSystem) extends Controller {
+class TaskController(val taskService: ActorRef)(implicit val ec: ExecutionContext) extends Controller {
   import TaskServiceActor._
   implicit val timeout = Timeout(5 seconds)
-  implicit val ec = system.dispatcher
 
   implicit val taskImplicitWrites = Json.writes[TaskEntity]
   implicit val taskImplicitReads = Json.reads[TaskData]
-
-  val taskService = system.actorOf(TaskServiceActor.props(TaskRepository()), "task-service")
 
   val taskForm = Form(
     mapping(

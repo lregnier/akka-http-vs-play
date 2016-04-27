@@ -37,7 +37,7 @@ lazy val apiAkkaHttp = Project(
     libraryDependencies ++= Dependencies.commonDependencies ++ Dependencies.akkaDependencies ++
       Dependencies.akkaStreamDependencies ++ Dependencies.kamonDependencies ++ Dependencies.kamonDependencies
   )
-  .dependsOn(core % "compile->compile;test->test")
+  .dependsOn(core % "compile -> compile; test -> test")
 
 
 lazy val apiPlay = Project(
@@ -45,16 +45,13 @@ lazy val apiPlay = Project(
   file("api-play"))
   .enablePlugins(PlayScala)
   .settings(commonSettings: _*)
-  .settings(routesGenerator := InjectedRoutesGenerator)
   .settings(
     name := "API Play",
+    routesGenerator := InjectedRoutesGenerator,
     libraryDependencies ++= Dependencies.commonDependencies ++ Dependencies.playDependencies ++
       Dependencies.akkaDependencies ++ Dependencies.kamonDependencies
   )
-  .settings(
-    routesGenerator := InjectedRoutesGenerator
-  )
-  .dependsOn(core % "compile->compile;test->test")
+  .dependsOn(core % "compile -> compile; test -> test")
 
 lazy val loadTest = Project(
   "load-test",

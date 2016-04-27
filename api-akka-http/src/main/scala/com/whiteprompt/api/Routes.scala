@@ -10,7 +10,7 @@ trait Routes extends TaskRoutes {
     } ~
     path("health-check"){
       get {
-        complete("It's Alive")
+        complete("Akka HTTP API: up and running!")
       }
     }
 }
