@@ -13,8 +13,8 @@ import com.whiteprompt.services.TaskServiceActor
 import scala.concurrent.duration._
 
 case class TaskData(name: String, description: String) extends Task {
-  require(!name.isEmpty)
-  require(!description.isEmpty)
+  require(name.nonEmpty)
+  require(description.nonEmpty)
 }
 
 trait TaskRoutes extends AutoMarshaller {

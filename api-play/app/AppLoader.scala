@@ -16,10 +16,11 @@ class AppLoader extends ApplicationLoader {
 }
 
 class ApplicationComponents(context: Context) extends BuiltInComponentsFromContext(context) with KamonHandler {
-
+  // Services
   implicit val ec = actorSystem.dispatcher
   val taskService = actorSystem.actorOf(TaskServiceActor.props(TaskRepository()), "task-service")
 
+  // Controllers
   lazy val healthCheckController = new HealthCheckController()
   lazy val taskController = new TaskController(taskService)
   lazy val assets = new Assets(httpErrorHandler)

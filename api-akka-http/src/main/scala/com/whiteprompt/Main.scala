@@ -14,14 +14,14 @@ import scala.io.StdIn
 
 object Main extends App with Config with Routes with KamonHandler {
   implicit val system = ActorSystem("api-akka-http-system")
-
   implicit val executor = system.dispatcher
   implicit val materializer = ActorMaterializer()
   val log = Logging(system, getClass)
 
-  // Initialize service actor
+  // Services
   val taskService = system.actorOf(TaskServiceActor.props(TaskRepository()), "task-service")
 
+  // Server
   val serverBinding = Http().bindAndHandle(routes, httpInterface, httpPort)
 
   StdIn.readLine() // for the future transformations
