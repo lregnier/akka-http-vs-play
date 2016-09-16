@@ -8,7 +8,7 @@ trait Entity {
 }
 
 trait Repository[T <: Entity] {
-  val store: mutable.HashMap[Long, T]
+  val store: mutable.Map[Long, T]
 }
 
 trait CRUDOps[T <: Entity] {

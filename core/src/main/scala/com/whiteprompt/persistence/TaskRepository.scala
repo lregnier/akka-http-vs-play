@@ -2,11 +2,13 @@ package com.whiteprompt.persistence
 
 import com.whiteprompt.domain.TaskEntity
 
-import scala.collection.mutable
 import scala.concurrent.{ExecutionContext, Future}
 
+import java.util.concurrent.ConcurrentHashMap
+import scala.collection.JavaConverters._
+
 class TaskRepositoryImpl(implicit val ec: ExecutionContext) extends TaskRepository {
-  override val store = new mutable.HashMap[Long, TaskEntity]()
+  override val store = new ConcurrentHashMap[Long, TaskEntity] asScala
 }
 
 trait TaskRepository extends Repository[TaskEntity] with CRUDOps[TaskEntity] {

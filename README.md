@@ -32,5 +32,7 @@ Before running the load tests either the Akka HTTP or the Play API must be runni
 sbt 'project load-test' test
 ```
 
+If you wanna check how the load test went just copy and paste the final path coming out from the run, or grab the `index.html` of any of the files under `/gatling-reports`
+
 [Akka HTTP]: <http://doc.akka.io/docs/akka/2.4.4/scala/http/>
 [Play Framework]: <https://playframework.com/>

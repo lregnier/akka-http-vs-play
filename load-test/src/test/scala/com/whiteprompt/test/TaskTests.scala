@@ -1,3 +1,5 @@
+package com.whiteprompt.test
+
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 import scala.concurrent.duration._
@@ -63,7 +65,7 @@ object Create {
 
   val create =
     exec(
-      listTasks    pause 3,
+      listTasks    pause 3, // This step is for setting up the update
       createTask   pause 5,
       listTasks    pause 3,
       retrieveTask pause 5
@@ -96,12 +98,6 @@ object Delete {
 
 /**
  * This flow attempts to simulate common user behavior:
- *
- * - He creates a task.
- * - He want to see the details of the task just created.
- * - He waits and sees that it needs an update.
- * - He lists all tasks to see how they all look.
- * - He waits and decides to delete it.
  */
 class TasksSimulation extends Simulation {
 
