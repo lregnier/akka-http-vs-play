@@ -6,37 +6,31 @@ import scala.util.Random
 /**
  * This object provides the scenario parts of the load tests.
  */
-sealed trait TaskLoadTest extends Simulation {
-  val host = "localhost"
-  val port = 9000
-  val apiVersion = "v1"
-  val baseURL = s"http://$host:$port/$apiVersion"
-  def scenarioName: String
+object TaskRequests {
 
-  val httpProtocol = http.baseURL(s"http://$host:$port/$apiVersion")
+  def taskData(): String =  {
+    val randomString = Random.alphanumeric.take(10).mkString
+    s"""{
+      "name": "$randomString",
+      "description": "$randomString"
+    }"""
+  }
 
-  private def randomString = Random.alphanumeric.take(10).mkString
-  private def taskData =  s"""{
-    "name":"tom",
-    "description":"tomtask"
-  }"""
-
-  val extractTaskIdFromLocation = headerRegex("Location", "http://localhost:9000/v1/tasks/(.*)").ofType[String]
+  val lastUrlSegmentFromLocationHeader = headerRegex("Location", "[^/]+(?=/$|$)").ofType[String]
 
   val createTask = exec(
     http("Create a task")
       .post("/tasks")
       .header("Content-Type", "application/json")
-      .body(StringBody(taskData)).asJSON
-      .check(extractTaskIdFromLocation.saveAs("taskId"))
+      .body(StringBody(taskData))
+      .check(lastUrlSegmentFromLocationHeader.saveAs("taskId"))
       .check(status is 201)
   )
 
   val retrieveTask = exec(
     http("Retrieve a task")
       .get("/tasks/${taskId}")
-      .header("Content-Type", "application/json")
-      .asJSON
+      .header("Accept", "application/json")
       .check(status is 200)
   )
 
@@ -53,17 +47,51 @@ sealed trait TaskLoadTest extends Simulation {
     http("Delete a task")
       .delete("/tasks/${taskId}")
       .header("Content-Type", "application/json")
-      .asJSON
-      .check(status is 200)
+      .check(status is 204)
   )
 
   val listTasks = exec(
     http("List tasks")
       .get("/tasks")
-      .header("Content-Type", "application/json")
-      .asJSON
+      .header("Accept", "application/json")
       .check(status is 200)
   )
+}
+
+object Create {
+  import TaskRequests._
+
+  val create =
+    exec(
+      listTasks    pause 3,
+      createTask   pause 5,
+      listTasks    pause 3,
+      retrieveTask pause 5
+    )
+}
+
+object Update {
+  import TaskRequests._
+
+  val update =
+    exec(
+      createTask   pause 1, // This step is for setting up the update
+      listTasks    pause 3,
+      retrieveTask pause 5,
+      updateTask   pause 5
+    )
+}
+
+object Delete {
+  import TaskRequests._
+
+  val delete =
+    exec(
+      createTask   pause 1, // This step is for setting up the update
+      listTasks    pause 3,
+      retrieveTask pause 5,
+      deleteTask   pause 5
+    )
 }
 
 /**
@@ -75,23 +103,28 @@ sealed trait TaskLoadTest extends Simulation {
  * - He lists all tasks to see how they all look.
  * - He waits and decides to delete it.
  */
-class TaskCommonFlowTest extends TaskLoadTest {
+class TasksSimulation extends Simulation {
 
-  def scenarioName = "CRUD operations and fetching tasks"
+  val host = "localhost"
+  val port = 9000
+  val apiVersion = "v1"
+  val baseURL = s"http://$host:$port/$apiVersion"
+
+  val httpProtocol = http.baseURL(s"http://$host:$port/$apiVersion")
+
+  val scenarioName = "CRUD operations and fetching tasks"
 
   val taskFlowScenario = scenario(scenarioName)
     .exec(
-      createTask   pause 2,
-      retrieveTask pause 2,
-      updateTask   pause 3,
-      listTasks    pause 3,
-      deleteTask   pause 2
+      Create.create,
+      Update.update,
+      Delete.delete
     )
 
   setUp(
     taskFlowScenario.inject(
-      atOnceUsers(25),
-      rampUsers(75) over (10 seconds)
+      atOnceUsers(100),
+      rampUsers(150) over (5 seconds)
     )
   ) maxDuration 5000 protocols httpProtocol
 }
