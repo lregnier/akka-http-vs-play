@@ -9,17 +9,6 @@ object Dependencies {
     )
   }
 
-  val kamonDependencies = Seq(
-    // [For monitoring]
-    "io.kamon" %% "kamon-core" % "0.5.2",
-    "io.kamon" %% "kamon-system-metrics" % "0.5.2",
-    "io.kamon" %% "kamon-scala" % "0.5.2" % Runtime,
-    "io.kamon" %% "kamon-akka" % "0.5.2" % Runtime,
-
-    // [For reporting monitored data]
-    "io.kamon" %% "kamon-statsd" % "0.5.2" // Read http://kamon.io/backends/statsd/
-  )
-
   val akkaDependencies = {
     val akkaVersion = "2.4.1"
     Seq(
@@ -43,7 +32,6 @@ object Dependencies {
   }
 
   val playDependencies = Seq(
-    "io.kamon" %% "kamon-play-24" % "0.5.2",
     "org.scalatestplus" %% "play" % "1.4.0" % "test"
   )
 

@@ -8,18 +8,9 @@ import com.whiteprompt.TestData
 import com.whiteprompt.api.utils.AutoMarshaller
 import com.whiteprompt.domain.TaskEntity
 import com.whiteprompt.services.TaskServiceActor
-import kamon.Kamon
-import org.scalatest.{BeforeAndAfterAll, Matchers, WordSpec}
+import org.scalatest.{Matchers, WordSpec}
 
-class TasksRoutesSpec extends WordSpec with Matchers with ScalatestRouteTest with BeforeAndAfterAll {
-
-  override def beforeAll {
-    Kamon.start()
-  }
-
-  override def afterAll {
-    Kamon.shutdown()
-  }
+class TasksRoutesSpec extends WordSpec with Matchers with ScalatestRouteTest {
 
   trait Scope extends TaskRoutes with AutoMarshaller with TestData {
     val taskService = system.actorOf(TaskServiceActor.props(taskRepository()))
@@ -102,8 +93,7 @@ class TasksRoutesSpec extends WordSpec with Matchers with ScalatestRouteTest wit
     "return a list of all Tasks" in new Scope {
       Get("/tasks") ~> tasksRoutes ~> check {
         response.status shouldEqual StatusCodes.OK
-        val tasks = responseAs[List[TaskEntity]]
-        tasks should have size allTaskEntities.size
+        responseAs[List[TaskEntity]] should contain theSameElementsAs(Seq(taskEntity1, taskEntity2))
       }
     }
   }

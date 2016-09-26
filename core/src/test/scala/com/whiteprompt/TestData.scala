@@ -11,8 +11,6 @@ trait TestData {
   val taskEntity1 = TaskEntity("c698cafa-de48-428d-a13c-949ab893384f", "Foo name", "Foo description")
   val taskEntity2 = TaskEntity("f92bd520-758f-46ff-b3b8-16c503e08777", "Bar name", "Bar description")
 
-  val allTaskEntities = List(taskEntity1, taskEntity2)
-
   val nonExistentTaskId = "cc5909cc-711f-4a0e-bb29-4109cf0f899d"
 
   def taskRepository()(implicit context: ExecutionContext) = new TaskRepository {
