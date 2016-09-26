@@ -11,7 +11,7 @@ class TaskRepositoryImpl(implicit val ec: ExecutionContext) extends TaskReposito
 
 trait TaskRepository extends Repository[TaskEntity] with CRUDOps[TaskEntity] {
   def list(): Future[Seq[TaskEntity]] = Future {
-    store.values.toSeq.sortWith(_.id < _.id)
+    store.values.toSeq
   }
 }
 

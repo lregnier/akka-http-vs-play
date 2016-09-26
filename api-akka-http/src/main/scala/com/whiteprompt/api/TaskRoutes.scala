@@ -36,7 +36,7 @@ trait TaskRoutes extends AutoMarshaller {
     }
 
   def retrieve =
-    (path(LongNumber) & get) { id =>
+    (path(Segment) & get) { id =>
       onSuccess((taskService ? RetrieveTask(id)).mapTo[Option[TaskEntity]]) {
         case Some(task) => complete(task)
         case None => complete(StatusCodes.NotFound)
@@ -44,7 +44,7 @@ trait TaskRoutes extends AutoMarshaller {
     }
 
   def update =
-    (path(LongNumber) & put & entity(as[TaskData])) { (id, task)  =>
+    (path(Segment) & put & entity(as[TaskData])) { (id, task)  =>
       onSuccess((taskService ? TaskServiceActor.UpdateTask(id, task)).mapTo[Option[TaskEntity]]) {
         case Some(task) => complete(task)
         case None => complete(StatusCodes.NotFound)
@@ -52,7 +52,7 @@ trait TaskRoutes extends AutoMarshaller {
     }
 
   def remove =
-    (path(LongNumber) & delete) { id =>
+    (path(Segment) & delete) { id =>
       onSuccess((taskService ? DeleteTask(id)).mapTo[Option[TaskEntity]]) {
         case Some(task) => complete(StatusCodes.NoContent)
         case None => complete(StatusCodes.NotFound)

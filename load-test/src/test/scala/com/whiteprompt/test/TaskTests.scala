@@ -1,80 +1,126 @@
+package com.whiteprompt.test
+
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 import scala.concurrent.duration._
 import scala.util.Random
 
-object TaskTests {
-  private def randomString = Random.alphanumeric.take(10).mkString
-  private def taskData =  s"""{
-    "name": "$randomString",
-    "description": "$randomString"
-  }"""
+/**
+ * This object provides the scenario parts of the load tests.
+ */
+object TaskRequests {
+
+  def taskData(): String =  {
+    val randomString = Random.alphanumeric.take(10).mkString
+    s"""{
+      "name": "$randomString",
+      "description": "$randomString"
+    }"""
+  }
+
+  val lastUrlSegmentFromLocationHeader = headerRegex("Location", "[^/]+(?=/$|$)").ofType[String]
 
   val createTask = exec(
-    http("CreateTask")
+    http("Create a task")
       .post("/tasks")
       .header("Content-Type", "application/json")
       .body(StringBody(taskData))
-      .asJSON
-      .check(jsonPath("$.id").saveAs("taskId"))
+      .check(lastUrlSegmentFromLocationHeader.saveAs("taskId"))
       .check(status is 201)
   )
 
   val retrieveTask = exec(
-    http("RetrieveTask")
+    http("Retrieve a task")
       .get("/tasks/${taskId}")
-      .header("Content-Type", "application/json")
-      .asJSON
-      .check(jsonPath("$.id"))
+      .header("Accept", "application/json")
       .check(status is 200)
   )
 
   val updateTask = exec(
-    http("UpdateTask")
+    http("Update a task")
       .put("/tasks/${taskId}")
       .header("Content-Type", "application/json")
       .body(StringBody(taskData))
       .asJSON
-      .check(jsonPath("$.id"))
       .check(status is 200)
   )
 
   val deleteTask = exec(
-    http("DeleteTask")
+    http("Delete a task")
       .delete("/tasks/${taskId}")
       .header("Content-Type", "application/json")
-      .asJSON
-      .check(status is 200)
+      .check(status is 204)
   )
 
   val listTasks = exec(
-    http("ListTasks")
+    http("List tasks")
       .get("/tasks")
-      .header("Content-Type", "application/json")
-      .asJSON
+      .header("Accept", "application/json")
       .check(status is 200)
   )
 }
 
-class TaskTests extends Simulation {
-  import TaskTests._
+object Create {
+  import TaskRequests._
+
+  val create =
+    exec(
+      listTasks    pause 3, // This step is for setting up the update
+      createTask   pause 5,
+      listTasks    pause 3,
+      retrieveTask pause 5
+    )
+}
+
+object Update {
+  import TaskRequests._
+
+  val update =
+    exec(
+      createTask   pause 1, // This step is for setting up the update
+      listTasks    pause 3,
+      retrieveTask pause 5,
+      updateTask   pause 5
+    )
+}
+
+object Delete {
+  import TaskRequests._
+
+  val delete =
+    exec(
+      createTask   pause 1, // This step is for setting up the update
+      listTasks    pause 3,
+      retrieveTask pause 5,
+      deleteTask   pause 5
+    )
+}
+
+/**
+ * This flow attempts to simulate common user behavior:
+ */
+class TasksSimulation extends Simulation {
 
   val host = "localhost"
   val port = 9000
+  val apiVersion = "v1"
+  val baseURL = s"http://$host:$port/$apiVersion"
 
-  val scenarioName = "CreateUpdateListViewTasks"
+  val httpProtocol = http.baseURL(s"http://$host:$port/$apiVersion")
 
-  val httpProtocol = http
-    .baseURL(s"http://$host:$port/v1")
+  val scenarioName = "CRUD operations and fetching tasks"
 
-  val scn = scenario(scenarioName)
+  val taskFlowScenario = scenario(scenarioName)
     .exec(
-      createTask,
-      retrieveTask,
-      updateTask,
-      listTasks,
-      deleteTask
+      Create.create,
+      Update.update,
+      Delete.delete
     )
 
-  setUp(scn.inject(rampUsers(10) over (10 seconds))).protocols(httpProtocol)
+  setUp(
+    taskFlowScenario.inject(
+      atOnceUsers(100),
+      rampUsers(150) over (5 seconds)
+    )
+  ) maxDuration 5000 protocols httpProtocol
 }

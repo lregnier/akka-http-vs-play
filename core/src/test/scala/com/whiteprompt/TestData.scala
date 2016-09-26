@@ -8,16 +8,16 @@ import scala.concurrent.ExecutionContext
 
 trait TestData {
 
-  val taskEntity1 = TaskEntity(1L, "Foo name", "Foo description")
-  val taskEntity2 = TaskEntity(2L, "Bar name", "Bar description")
+  val taskEntity1 = TaskEntity("c698cafa-de48-428d-a13c-949ab893384f", "Foo name", "Foo description")
+  val taskEntity2 = TaskEntity("f92bd520-758f-46ff-b3b8-16c503e08777", "Bar name", "Bar description")
 
   val allTaskEntities = List(taskEntity1, taskEntity2)
 
-  val nonExistentTaskId = 1234L
+  val nonExistentTaskId = "cc5909cc-711f-4a0e-bb29-4109cf0f899d"
 
   def taskRepository()(implicit context: ExecutionContext) = new TaskRepository {
     implicit lazy val ec = context
-    val store = new mutable.HashMap[Long, TaskEntity]()
+    val store = new mutable.HashMap[String, TaskEntity]()
 
     def init(): Unit = {
       store += taskEntity1.id -> taskEntity1

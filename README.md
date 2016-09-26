@@ -9,14 +9,14 @@ The structure of the project is as follows:
 - load-test: load tests which hit the APIs endpoints
 
 ## Akka HTTP API
-To run the Akka HTTP API execute below command:
+To run the Akka HTTP API execute the following:
 
 ```sh
 sbt 'project api-akka-http' aspectj-runner:run
 ```
 
 ## Play Framework API
-To run the Play Framework API execute below command:
+To run the Play Framework API execute the following:
 
 ```sh
 sbt 'project api-play' aspectj-runner:run
@@ -27,10 +27,12 @@ It contains the domain, persistence and services modules common to both APIs.
 
 
 ## Load Test
-Before running the load tests either the Akka HTTP or the Play API must be running first. Then, execute below command:
+Before running the load tests either the Akka HTTP or the Play API must be running first. Then, execute the following:
 ```sh
 sbt 'project load-test' test
 ```
+
+If you wanna check how the load test went just copy and paste the final path coming out from the run, or grab the `index.html` of any of the files under `/gatling-reports`
 
 [Akka HTTP]: <http://doc.akka.io/docs/akka/2.4.4/scala/http/>
 [Play Framework]: <https://playframework.com/>

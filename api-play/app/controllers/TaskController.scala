@@ -46,7 +46,7 @@ class TaskController(val taskService: ActorRef)(implicit val ec: ExecutionContex
     )
   }
 
-  def retrieve(id: Long) = Action.async {
+  def retrieve(id: String) = Action.async {
     (taskService ? RetrieveTask(id))
       .mapTo[Option[TaskEntity]].map {
         case Some(task) => Ok(Json.toJson(task))
@@ -54,7 +54,7 @@ class TaskController(val taskService: ActorRef)(implicit val ec: ExecutionContex
     }
   }
 
-  def update(id: Long) = Action.async(BodyParsers.parse.json) { implicit request =>
+  def update(id: String) = Action.async(BodyParsers.parse.json) { implicit request =>
     taskForm.bindFromRequest.fold(
       formWithErrors => {
         Future(BadRequest)
@@ -68,7 +68,7 @@ class TaskController(val taskService: ActorRef)(implicit val ec: ExecutionContex
     )
   }
 
-  def delete(id: Long) = Action.async {
+  def delete(id: String) = Action.async {
     (taskService ? DeleteTask(id))
       .mapTo[Option[TaskEntity]].map {
         case Some(taskEntity) => NoContent

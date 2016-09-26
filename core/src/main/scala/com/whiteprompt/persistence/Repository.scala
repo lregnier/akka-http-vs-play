@@ -4,11 +4,11 @@ import scala.collection.mutable
 import scala.concurrent.{ExecutionContext, Future}
 
 trait Entity {
-  val id: Long
+  val id: String
 }
 
 trait Repository[T <: Entity] {
-  val store: mutable.HashMap[Long, T]
+  val store: mutable.Map[String, T]
 }
 
 trait CRUDOps[T <: Entity] {
@@ -21,7 +21,7 @@ trait CRUDOps[T <: Entity] {
     e
   }
 
-  def retrieve(id: Long): Future[Option[T]] = Future {
+  def retrieve(id: String): Future[Option[T]] = Future {
     store.get(id)
   }
 
@@ -32,7 +32,7 @@ trait CRUDOps[T <: Entity] {
     } else None
   }
 
-  def delete(id: Long): Future[Option[T]] = Future {
+  def delete(id: String): Future[Option[T]] = Future {
     store.remove(id)
   }
 }
