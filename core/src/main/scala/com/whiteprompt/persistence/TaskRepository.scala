@@ -8,12 +8,12 @@ import java.util.concurrent.ConcurrentHashMap
 import scala.collection.JavaConverters._
 
 class TaskRepositoryImpl(implicit val ec: ExecutionContext) extends TaskRepository {
-  override val store = new ConcurrentHashMap[Long, TaskEntity] asScala
+  override val store = new ConcurrentHashMap[String, TaskEntity] asScala
 }
 
 trait TaskRepository extends Repository[TaskEntity] with CRUDOps[TaskEntity] {
   def list(): Future[Seq[TaskEntity]] = Future {
-    store.values.toSeq.sortWith(_.id < _.id)
+    store.values.toSeq
   }
 }
 

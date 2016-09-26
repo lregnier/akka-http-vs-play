@@ -7,4 +7,4 @@ trait Task {
   val description: String
 }
 
-case class TaskEntity(id: Long, name: String, description: String) extends Entity with Task
+case class TaskEntity(id: String, name: String, description: String) extends Entity with Task

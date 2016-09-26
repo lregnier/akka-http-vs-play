@@ -45,9 +45,9 @@ object TaskServiceActor {
   }
 
   case class CreateTask(task: Task)
-  case class RetrieveTask(taskId: Long)
-  case class UpdateTask(taskId: Long, task: Task)
-  case class DeleteTask(taskId: Long)
+  case class RetrieveTask(taskId: String)
+  case class UpdateTask(taskId: String, task: Task)
+  case class DeleteTask(taskId: String)
   object ListTasks
 }
 
