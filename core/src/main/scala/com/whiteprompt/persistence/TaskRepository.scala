@@ -6,7 +6,7 @@ import scala.collection.mutable
 import scala.concurrent.{ExecutionContext, Future}
 
 class TaskRepositoryImpl(implicit val ec: ExecutionContext) extends TaskRepository {
-  override val store = new mutable.HashMap[Long, TaskEntity]()
+  override val store = new mutable.HashMap[String, TaskEntity]()
 }
 
 trait TaskRepository extends Repository[TaskEntity] with CRUDOps[TaskEntity] {

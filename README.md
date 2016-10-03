@@ -12,14 +12,14 @@ The structure of the project is as follows:
 To run the Akka HTTP API execute the following:
 
 ```sh
-sbt 'project api-akka-http' aspectj-runner:run
+sbt 'project api-akka-http' run
 ```
 
 ## Play Framework API
 To run the Play Framework API execute the following:
 
 ```sh
-sbt 'project api-play' aspectj-runner:run
+sbt 'project api-play' run
 ```
 
 ## Core

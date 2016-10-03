@@ -24,8 +24,7 @@ lazy val core = Project(
   .settings(commonSettings: _*)
   .settings(
     name := "Core",
-    libraryDependencies ++= Dependencies.commonDependencies ++ Dependencies.akkaDependencies ++
-      Dependencies.kamonDependencies
+    libraryDependencies ++= Dependencies.commonDependencies ++ Dependencies.akkaDependencies
   )
 
 lazy val apiAkkaHttp = Project(
@@ -35,7 +34,7 @@ lazy val apiAkkaHttp = Project(
   .settings(
     name := "API Akka-Http",
     libraryDependencies ++= Dependencies.commonDependencies ++ Dependencies.akkaDependencies ++
-      Dependencies.akkaStreamDependencies ++ Dependencies.kamonDependencies ++ Dependencies.kamonDependencies
+      Dependencies.akkaStreamDependencies
   )
   .dependsOn(core % "compile -> compile; test -> test")
 
@@ -49,7 +48,7 @@ lazy val apiPlay = Project(
     name := "API Play",
     routesGenerator := InjectedRoutesGenerator,
     libraryDependencies ++= Dependencies.commonDependencies ++ Dependencies.playDependencies ++
-      Dependencies.akkaDependencies ++ Dependencies.kamonDependencies
+      Dependencies.akkaDependencies
   )
   .dependsOn(core % "compile -> compile; test -> test")
 

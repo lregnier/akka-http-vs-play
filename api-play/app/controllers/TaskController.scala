@@ -19,8 +19,8 @@ class TaskController(val taskService: ActorRef)(implicit val ec: ExecutionContex
   import TaskServiceActor._
   implicit val timeout = Timeout(5 seconds)
 
-  implicit val taskImplicitWrites = Json.writes[TaskEntity]
   implicit val taskImplicitReads = Json.reads[TaskData]
+  implicit val taskImplicitWrites = Json.writes[TaskEntity]
 
   val taskForm = Form(
     mapping(

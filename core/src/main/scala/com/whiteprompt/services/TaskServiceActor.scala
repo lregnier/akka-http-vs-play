@@ -4,7 +4,6 @@ import akka.actor.{Actor, Props}
 import akka.pattern.pipe
 import com.whiteprompt.domain.Task
 import com.whiteprompt.persistence.TaskRepository
-import kamon.trace.Tracer
 
 class TaskServiceActor(val taskRepository: TaskRepository) extends Actor with TaskService {
   import TaskServiceActor._
@@ -12,29 +11,19 @@ class TaskServiceActor(val taskRepository: TaskRepository) extends Actor with Ta
 
   override def receive: Receive = {
     case CreateTask(task) => {
-      Tracer.withNewContext("Create Task", autoFinish = true) {
-        create(task) pipeTo sender
-      }
+      create(task) pipeTo sender
     }
     case UpdateTask(id, task) => {
-      Tracer.withNewContext("Update Task", autoFinish = true) {
-        update(id, task) pipeTo sender
-      }
+      update(id, task) pipeTo sender
     }
     case RetrieveTask(taskId) => {
-      Tracer.withNewContext("Retrieve Task", autoFinish = true) {
-        retrieve(taskId) pipeTo sender
-      }
+      retrieve(taskId) pipeTo sender
     }
     case DeleteTask(taskId) => {
-      Tracer.withNewContext("Delete Task", autoFinish = true) {
-        delete(taskId) pipeTo sender
-      }
+      delete(taskId) pipeTo sender
     }
     case ListTasks => {
-      Tracer.withNewContext("List Tasks", autoFinish = true) {
-        list pipeTo sender
-      }
+      list pipeTo sender
     }
   }
 }

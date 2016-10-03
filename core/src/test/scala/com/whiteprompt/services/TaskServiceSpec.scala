@@ -5,20 +5,10 @@ import akka.testkit.{DefaultTimeout, ImplicitSender, TestKit}
 import com.whiteprompt.TestData
 import com.whiteprompt.domain.{Task, TaskEntity}
 import com.whiteprompt.services.TaskServiceActor._
-import kamon.Kamon
-import org.scalatest.{BeforeAndAfterAll, Matchers, WordSpecLike}
+import org.scalatest.{Matchers, WordSpecLike}
 
 class TaskServiceSpec extends TestKit(ActorSystem("TaskServiceSpec"))
-  with DefaultTimeout with ImplicitSender with WordSpecLike with Matchers with BeforeAndAfterAll {
-
-  override def beforeAll {
-    Kamon.start()
-  }
-
-  override def afterAll {
-    shutdown()
-    Kamon.shutdown()
-  }
+  with DefaultTimeout with ImplicitSender with WordSpecLike with Matchers {
 
   trait Scope extends TestData {
     implicit val context = system.dispatcher
@@ -92,7 +82,7 @@ class TaskServiceSpec extends TestKit(ActorSystem("TaskServiceSpec"))
       taskService ! ListTasks
       expectMsgPF() {
         case tasks: Seq[TaskEntity] =>
-          tasks.size shouldBe(allTaskEntities.size)
+          tasks should contain theSameElementsAs(Seq(taskEntity1, taskEntity2))
       }
     }
   }
