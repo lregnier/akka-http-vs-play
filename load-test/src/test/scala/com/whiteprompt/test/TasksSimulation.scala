@@ -99,14 +99,10 @@ object Delete {
 /**
  * This flow attempts to simulate common user behavior:
  */
-class TasksSimulation extends Simulation {
+class TasksSimulation extends Simulation with Config {
 
-  val host = "localhost"
-  val port = 9000
   val apiVersion = "v1"
-  val baseURL = s"http://$host:$port/$apiVersion"
-
-  val httpProtocol = http.baseURL(s"http://$host:$port/$apiVersion")
+  val httpProtocol = http.baseURL(s"http://$httpInterface:$httpPort/$apiVersion")
 
   val scenarioName = "CRUD operations and fetching tasks"
 
