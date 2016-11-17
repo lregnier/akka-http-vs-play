@@ -10,6 +10,9 @@ import com.whiteprompt.conf.Config
 import com.whiteprompt.persistence.TaskRepository
 import com.whiteprompt.services.TaskServiceActor
 
+import scala.concurrent.Await
+import scala.concurrent.duration._
+
 object Main extends App with Config with Routes {
   implicit val system = ActorSystem("api-akka-http-system")
   implicit val executor = system.dispatcher
@@ -17,10 +20,15 @@ object Main extends App with Config with Routes {
   val log = Logging(system, getClass)
 
   // Services
-  val taskService = system.actorOf(FromConfig.props(TaskServiceActor.props(TaskRepository())), "task-service")
+  val taskService = system.actorOf(FromConfig.props(TaskServiceActor.props(TaskRepository())), TaskServiceActor.Name)
 
   // Initialize server
   Http().bindAndHandle(routes, httpInterface, httpPort)
 
+  scala.sys.addShutdownHook{
+    log.info("Shutting down server and actor system")
+    system.terminate()
+    Await.result(system.whenTerminated, 30 seconds)
+  }
 }
 

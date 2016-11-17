@@ -116,7 +116,7 @@ class TasksSimulation extends Simulation with Config {
   setUp(
     taskFlowScenario.inject(
       atOnceUsers(100),
-      rampUsers(150) over (5 seconds)
+      rampUsers(150) over (15 seconds)
     )
   ) maxDuration 5000 protocols httpProtocol
 }

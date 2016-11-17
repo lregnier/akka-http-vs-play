@@ -29,6 +29,9 @@ class TaskServiceActor(val taskRepository: TaskRepository) extends Actor with Ta
 }
 
 object TaskServiceActor {
+
+  val Name = "task-service"
+
   def props(taskRepository: TaskRepository): Props = {
     Props(classOf[TaskServiceActor], taskRepository)
   }
