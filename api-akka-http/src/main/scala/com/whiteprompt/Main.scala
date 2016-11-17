@@ -3,6 +3,7 @@ package com.whiteprompt
 import akka.actor.ActorSystem
 import akka.event.Logging
 import akka.http.scaladsl.Http
+import akka.routing.FromConfig
 import akka.stream.ActorMaterializer
 import com.whiteprompt.api.Routes
 import com.whiteprompt.conf.Config
@@ -16,7 +17,7 @@ object Main extends App with Config with Routes {
   val log = Logging(system, getClass)
 
   // Services
-  val taskService = system.actorOf(TaskServiceActor.props(TaskRepository()), "task-service")
+  val taskService = system.actorOf(FromConfig.props(TaskServiceActor.props(TaskRepository())), "task-service")
 
   // Initialize server
   Http().bindAndHandle(routes, httpInterface, httpPort)
