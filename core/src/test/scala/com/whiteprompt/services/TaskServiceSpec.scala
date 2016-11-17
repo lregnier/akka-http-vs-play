@@ -5,10 +5,10 @@ import akka.testkit.{DefaultTimeout, ImplicitSender, TestKit}
 import com.whiteprompt.TestData
 import com.whiteprompt.domain.{Task, TaskEntity}
 import com.whiteprompt.services.TaskServiceActor._
-import org.scalatest.{Matchers, WordSpecLike}
+import org.scalatest.{BeforeAndAfterAll, Matchers, WordSpecLike}
 
 class TaskServiceSpec extends TestKit(ActorSystem("TaskServiceSpec"))
-  with DefaultTimeout with ImplicitSender with WordSpecLike with Matchers {
+    with DefaultTimeout with ImplicitSender with WordSpecLike with Matchers with StopSystemAfterAll {
 
   trait Scope extends TestData {
     implicit val context = system.dispatcher
@@ -87,4 +87,10 @@ class TaskServiceSpec extends TestKit(ActorSystem("TaskServiceSpec"))
     }
   }
 
+}
+
+trait StopSystemAfterAll extends BeforeAndAfterAll {
+  override def afterAll {
+    TestKit.shutdownActorSystem(system)
+  }
 }
