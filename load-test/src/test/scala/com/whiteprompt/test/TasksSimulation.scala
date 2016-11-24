@@ -10,7 +10,7 @@ import scala.util.Random
  */
 object TaskRequests {
 
-  def taskData(): String =  {
+  def newTaskJson(): String =  {
     val randomString = Random.alphanumeric.take(10).mkString
     s"""{
       "name": "$randomString",
@@ -24,7 +24,7 @@ object TaskRequests {
     http("Create a task")
       .post("/tasks")
       .header("Content-Type", "application/json")
-      .body(StringBody(taskData))
+      .body(StringBody(newTaskJson))
       .check(lastUrlSegmentFromLocationHeader.saveAs("taskId"))
       .check(status is 201)
   )
@@ -40,7 +40,7 @@ object TaskRequests {
     http("Update a task")
       .put("/tasks/${taskId}")
       .header("Content-Type", "application/json")
-      .body(StringBody(taskData))
+      .body(StringBody(newTaskJson))
       .asJSON
       .check(status is 200)
   )
@@ -65,7 +65,7 @@ object Create {
 
   val create =
     exec(
-      listTasks    pause 3, // This step is for setting up the update
+      listTasks    pause 3,
       createTask   pause 5,
       listTasks    pause 3,
       retrieveTask pause 5
@@ -77,7 +77,7 @@ object Update {
 
   val update =
     exec(
-      createTask   pause 1, // This step is for setting up the update
+      createTask   pause 1, // First, create the task that will be updated
       listTasks    pause 3,
       retrieveTask pause 5,
       updateTask   pause 5
@@ -89,7 +89,7 @@ object Delete {
 
   val delete =
     exec(
-      createTask   pause 1, // This step is for setting up the update
+      createTask   pause 1, // First, create the task that will be deleted
       listTasks    pause 3,
       retrieveTask pause 5,
       deleteTask   pause 5
@@ -115,8 +115,7 @@ class TasksSimulation extends Simulation with Config {
 
   setUp(
     taskFlowScenario.inject(
-      atOnceUsers(100),
-      rampUsers(150) over (15 seconds)
+      constantUsersPerSec(100) during(10 seconds)
     )
-  ) maxDuration 5000 protocols httpProtocol
+  ) protocols httpProtocol
 }
