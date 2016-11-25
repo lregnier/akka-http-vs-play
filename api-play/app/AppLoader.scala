@@ -1,3 +1,4 @@
+import akka.routing.FromConfig
 import com.whiteprompt.persistence.TaskRepository
 import com.whiteprompt.services.TaskServiceActor
 import controllers.{Assets, HealthCheckController, TaskController}
@@ -15,7 +16,7 @@ class AppLoader extends ApplicationLoader {
 class ApplicationComponents(context: Context) extends BuiltInComponentsFromContext(context) {
   // Services
   implicit val ec = actorSystem.dispatcher
-  val taskService = actorSystem.actorOf(TaskServiceActor.props(TaskRepository()), "task-service")
+  val taskService = actorSystem.actorOf(FromConfig.props(TaskServiceActor.props(TaskRepository())), TaskServiceActor.Name)
 
   // Controllers
   lazy val healthCheckController = new HealthCheckController()
