@@ -6,7 +6,7 @@ import akka.http.scaladsl.model.headers.Location
 import akka.http.scaladsl.server.Directives._
 import akka.pattern.ask
 import akka.util.Timeout
-import com.whiteprompt.api.utils.AutoMarshaller
+import com.whiteprompt.api.utils.Json4sJacksonSupport
 import com.whiteprompt.domain.{Task, TaskEntity}
 import com.whiteprompt.services.TaskServiceActor
 
@@ -17,7 +17,7 @@ case class TaskData(name: String, description: String) extends Task {
   require(description.nonEmpty)
 }
 
-trait TaskRoutes extends AutoMarshaller {
+trait TaskRoutes extends Json4sJacksonSupport {
   import TaskServiceActor._
 
   implicit val timeout = Timeout(5 seconds)
