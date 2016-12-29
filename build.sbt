@@ -8,7 +8,7 @@ resolvers += "Typesafe Snapshots" at "http://repo.typesafe.com/typesafe/snapshot
 lazy val commonSettings = Seq(
   organization := "com.whiteprompt",
   version := "0.1.0",
-  scalaVersion := "2.11.7"
+  scalaVersion := "2.11.8"
 )
 
 lazy val root = (project in file("."))
@@ -34,7 +34,7 @@ lazy val apiAkkaHttp = Project(
   .settings(
     name := "API Akka-Http",
     libraryDependencies ++= Dependencies.commonDependencies ++ Dependencies.akkaDependencies ++
-      Dependencies.akkaStreamDependencies
+      Dependencies.akkaHttpDependencies
   )
   .dependsOn(core % "compile -> compile; test -> test")
 
@@ -58,10 +58,8 @@ lazy val loadTest = Project(
   .enablePlugins(GatlingPlugin)
   .settings(commonSettings: _*)
   .settings(
-    name := "Stress tests",
+    name := "Load tests",
     libraryDependencies ++= Dependencies.commonDependencies ++ Dependencies.gatlingDependencies
   )
   .dependsOn(core)
   .dependsOn(apiAkkaHttp)
-
-scalacOptions in Test ++= Seq("-Yrangepos")

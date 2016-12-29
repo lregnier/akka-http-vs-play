@@ -10,7 +10,7 @@ object Dependencies {
   }
 
   val akkaDependencies = {
-    val akkaVersion = "2.4.1"
+    val akkaVersion = "2.4.14"
     Seq(
       "com.typesafe.akka" %% "akka-actor"   % akkaVersion,
       "com.typesafe.akka" %% "akka-slf4j"   % akkaVersion,
@@ -18,16 +18,15 @@ object Dependencies {
     )
   }
 
-  val akkaStreamDependencies = {
-    val akkaStreamVersion = "2.0-M2"
+  val akkaHttpDependencies = {
+    val akkaHttpVersion = "10.0.0"
     val json4sVersion = "3.3.0"
     Seq(
-      "com.typesafe.akka" %% "akka-http-core-experimental"    % akkaStreamVersion,
-      "com.typesafe.akka" %% "akka-http-experimental"         % akkaStreamVersion,
-      "com.typesafe.akka" %% "akka-http-testkit-experimental" % akkaStreamVersion % "test",
+      "com.typesafe.akka" %% "akka-http" % akkaHttpVersion,
+      "com.typesafe.akka" %% "akka-http-testkit" % akkaHttpVersion % "test",
 
       "org.json4s" %% "json4s-jackson" % json4sVersion,
-      "de.heikoseeberger" %% "akka-http-json4s" % "1.4.1"
+      "de.heikoseeberger" %% "akka-http-json4s" % "1.11.0"
     )
   }
 
