@@ -32,7 +32,7 @@ class TaskController(val taskService: ActorRef)(implicit val ec: ExecutionContex
   def create = Action.async(BodyParsers.parse.json) { implicit request =>
     taskForm.bindFromRequest.fold(
       formWithErrors => {
-        Future(BadRequest)
+        Future.successful(BadRequest)
       },
       taskData => {
         (taskService ? CreateTask(taskData))
@@ -57,7 +57,7 @@ class TaskController(val taskService: ActorRef)(implicit val ec: ExecutionContex
   def update(id: String) = Action.async(BodyParsers.parse.json) { implicit request =>
     taskForm.bindFromRequest.fold(
       formWithErrors => {
-        Future(BadRequest)
+        Future.successful(BadRequest)
       },
       taskData => {
         (taskService ? UpdateTask(id, taskData)).mapTo[Option[TaskEntity]].map{
