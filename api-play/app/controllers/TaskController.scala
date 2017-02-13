@@ -1,5 +1,7 @@
 package controllers
 
+import java.util.UUID
+
 import akka.actor._
 import akka.pattern.ask
 import akka.util.Timeout
@@ -46,7 +48,7 @@ class TaskController(val taskService: ActorRef)(implicit val ec: ExecutionContex
     )
   }
 
-  def retrieve(id: String) = Action.async {
+  def retrieve(id: UUID) = Action.async {
     (taskService ? RetrieveTask(id))
       .mapTo[Option[TaskEntity]].map {
         case Some(task) => Ok(Json.toJson(task))
@@ -54,7 +56,7 @@ class TaskController(val taskService: ActorRef)(implicit val ec: ExecutionContex
     }
   }
 
-  def update(id: String) = Action.async(BodyParsers.parse.json) { implicit request =>
+  def update(id: UUID) = Action.async(BodyParsers.parse.json) { implicit request =>
     taskForm.bindFromRequest.fold(
       formWithErrors => {
         Future.successful(BadRequest)
@@ -68,7 +70,7 @@ class TaskController(val taskService: ActorRef)(implicit val ec: ExecutionContex
     )
   }
 
-  def delete(id: String) = Action.async {
+  def delete(id: UUID) = Action.async {
     (taskService ? DeleteTask(id))
       .mapTo[Option[TaskEntity]].map {
         case Some(taskEntity) => NoContent

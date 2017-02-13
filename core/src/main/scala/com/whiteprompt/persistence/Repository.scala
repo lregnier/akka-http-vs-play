@@ -1,18 +1,24 @@
 package com.whiteprompt.persistence
 
+import java.util.UUID
+
 import scala.collection.mutable
 import scala.concurrent.{ExecutionContext, Future}
 
-trait Entity {
-  val id: String
+trait Entity[K] {
+  val id: K
 }
 
-trait Repository[T <: Entity] {
-  val store: mutable.Map[String, T]
+trait UUIDEntity extends Entity[UUID] {
+  val id: UUID
 }
 
-trait CRUDOps[T <: Entity] {
-    self: Repository[T] =>
+trait Repository[K, T <: Entity[K]] {
+  val store: mutable.Map[K, T]
+}
+
+trait CRUDOps[K, T <: Entity[K]] {
+    self: Repository[K, T] =>
 
   implicit val ec: ExecutionContext
 
@@ -21,7 +27,7 @@ trait CRUDOps[T <: Entity] {
     e
   }
 
-  def retrieve(id: String): Future[Option[T]] = Future {
+  def retrieve(id: K): Future[Option[T]] = Future {
     store.get(id)
   }
 
@@ -32,7 +38,7 @@ trait CRUDOps[T <: Entity] {
     } else None
   }
 
-  def delete(id: String): Future[Option[T]] = Future {
+  def delete(id: K): Future[Option[T]] = Future {
     store.remove(id)
   }
 }

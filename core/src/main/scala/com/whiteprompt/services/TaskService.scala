@@ -13,19 +13,19 @@ trait TaskService {
   val taskRepository: TaskRepository
 
   def create(task: Task): Future[TaskEntity] = {
-    val id = UUID.randomUUID().toString()
+    val id = UUID.randomUUID()
     taskRepository.create(TaskEntity(id, task.name, task.description))
   }
 
-  def retrieve(id: String): Future[Option[TaskEntity]] = {
+  def retrieve(id: UUID): Future[Option[TaskEntity]] = {
     taskRepository.retrieve(id)
   }
 
-  def update(id: String, toUpdate: Task): Future[Option[TaskEntity]] = {
+  def update(id: UUID, toUpdate: Task): Future[Option[TaskEntity]] = {
     taskRepository.update(TaskEntity(id, toUpdate.name, toUpdate.description))
   }
 
-  def delete(id: String): Future[Option[TaskEntity]] = {
+  def delete(id: UUID): Future[Option[TaskEntity]] = {
     taskRepository.delete(id)
   }
 

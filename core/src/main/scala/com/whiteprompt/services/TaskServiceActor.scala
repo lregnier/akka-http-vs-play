@@ -1,5 +1,7 @@
 package com.whiteprompt.services
 
+import java.util.UUID
+
 import akka.actor.{Actor, Props}
 import akka.pattern.pipe
 import com.whiteprompt.domain.Task
@@ -37,9 +39,9 @@ object TaskServiceActor {
   }
 
   case class CreateTask(task: Task)
-  case class RetrieveTask(taskId: String)
-  case class UpdateTask(taskId: String, task: Task)
-  case class DeleteTask(taskId: String)
+  case class RetrieveTask(taskId: UUID)
+  case class UpdateTask(taskId: UUID, task: Task)
+  case class DeleteTask(taskId: UUID)
   object ListTasks
 }
 

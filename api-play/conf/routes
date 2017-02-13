@@ -7,9 +7,9 @@ GET      /health-check                           controllers.HealthCheckControll
 
 # Tasks
 POST     /v1/tasks                               controllers.TaskController.create
-GET      /v1/tasks/:id                           controllers.TaskController.retrieve(id: String)
-PUT      /v1/tasks/:id                           controllers.TaskController.update(id: String)
-DELETE   /v1/tasks/:id                           controllers.TaskController.delete(id: String)
+GET      /v1/tasks/:id                           controllers.TaskController.retrieve(id: java.util.UUID)
+PUT      /v1/tasks/:id                           controllers.TaskController.update(id: java.util.UUID)
+DELETE   /v1/tasks/:id                           controllers.TaskController.delete(id: java.util.UUID)
 GET      /v1/tasks                               controllers.TaskController.list
 
 
