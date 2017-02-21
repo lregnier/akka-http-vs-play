@@ -14,7 +14,7 @@ lazy val commonSettings = Seq(
 lazy val root = (project in file("."))
   .settings(commonSettings: _*)
   .settings(
-    name := "Root Project"
+    name := "Akka HTTP vs Play Framework"
   )
   .aggregate(core, apiAkkaHttp, apiPlay, loadTest)
 
