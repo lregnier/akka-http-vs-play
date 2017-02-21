@@ -45,7 +45,7 @@ trait TaskRoutes extends CustomDirectives with Json4sJacksonSupport {
 
   def update =
     (path(UUIDSegment) & put & entity(as[TaskData])) { (id, task)  =>
-      onSuccess((taskService ? TaskServiceActor.UpdateTask(id, task)).mapTo[Option[TaskEntity]]) {
+      onSuccess((taskService ? UpdateTask(id, task)).mapTo[Option[TaskEntity]]) {
         case Some(task) => complete(task)
         case None => complete(StatusCodes.NotFound)
       }
