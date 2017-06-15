@@ -6,7 +6,7 @@ import akka.http.scaladsl.model.headers.Location
 import akka.http.scaladsl.server.Directives._
 import akka.pattern.ask
 import akka.util.Timeout
-import com.whiteprompt.api.utils.{CustomDirectives, Json4sJacksonSupport}
+import com.whiteprompt.api.utils.Json4sJacksonSupport
 import com.whiteprompt.domain.{Task, TaskEntity}
 import com.whiteprompt.services.TaskService
 
@@ -17,7 +17,7 @@ case class TaskData(name: String, description: String) extends Task {
   require(description.nonEmpty)
 }
 
-trait TaskRoutes extends CustomDirectives with Json4sJacksonSupport {
+trait TaskRoutes extends Json4sJacksonSupport {
   import TaskService._
 
   implicit val timeout = Timeout(5 seconds)
@@ -36,7 +36,7 @@ trait TaskRoutes extends CustomDirectives with Json4sJacksonSupport {
     }
 
   def retrieve =
-    (path(UUIDSegment) & get) { id =>
+    (path(JavaUUID) & get) { id =>
       onSuccess((taskService ? RetrieveTask(id)).mapTo[Option[TaskEntity]]) {
         case Some(task) => complete(task)
         case None => complete(StatusCodes.NotFound)
@@ -44,7 +44,7 @@ trait TaskRoutes extends CustomDirectives with Json4sJacksonSupport {
     }
 
   def update =
-    (path(UUIDSegment) & put & entity(as[TaskData])) { (id, task)  =>
+    (path(JavaUUID) & put & entity(as[TaskData])) { (id, task)  =>
       onSuccess((taskService ? UpdateTask(id, task)).mapTo[Option[TaskEntity]]) {
         case Some(task) => complete(task)
         case None => complete(StatusCodes.NotFound)
@@ -52,7 +52,7 @@ trait TaskRoutes extends CustomDirectives with Json4sJacksonSupport {
     }
 
   def remove =
-    (path(UUIDSegment) & delete) { id =>
+    (path(JavaUUID) & delete) { id =>
       onSuccess((taskService ? DeleteTask(id)).mapTo[Option[TaskEntity]]) {
         case Some(_) => complete(StatusCodes.NoContent)
         case None => complete(StatusCodes.NotFound)
