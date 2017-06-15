@@ -8,7 +8,7 @@ import akka.pattern.ask
 import akka.util.Timeout
 import com.whiteprompt.api.utils.{CustomDirectives, Json4sJacksonSupport}
 import com.whiteprompt.domain.{Task, TaskEntity}
-import com.whiteprompt.services.TaskServiceActor
+import com.whiteprompt.services.TaskService
 
 import scala.concurrent.duration._
 
@@ -18,7 +18,7 @@ case class TaskData(name: String, description: String) extends Task {
 }
 
 trait TaskRoutes extends CustomDirectives with Json4sJacksonSupport {
-  import TaskServiceActor._
+  import TaskService._
 
   implicit val timeout = Timeout(5 seconds)
 

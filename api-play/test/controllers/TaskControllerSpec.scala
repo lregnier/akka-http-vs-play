@@ -4,7 +4,7 @@ import java.io.File
 
 import com.whiteprompt.TestData
 import com.whiteprompt.domain.TaskEntity
-import com.whiteprompt.services.TaskServiceActor
+import com.whiteprompt.services.TaskService
 import org.scalatest.{BeforeAndAfterAll, TestData => ScalaTestData}
 import org.scalatestplus.play._
 import play.api.ApplicationLoader.Context
@@ -21,7 +21,7 @@ class TaskControllerSpec extends PlaySpec with BeforeAndAfterAll with OneAppPerT
 
   class TestApplicationComponents(context: Context) extends BuiltInComponentsFromContext(context) {
     implicit val ec = actorSystem.dispatcher
-    val taskService = actorSystem.actorOf(TaskServiceActor.props(taskRepository()), "task-service")
+    val taskService = actorSystem.actorOf(TaskService.props(taskRepository()), "task-service")
 
     lazy val healthCheckController = new HealthCheckController()
     lazy val taskController = new TaskController(taskService)

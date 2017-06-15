@@ -4,7 +4,7 @@ import akka.actor.ActorSystem
 import akka.testkit.{DefaultTimeout, ImplicitSender, TestKit}
 import com.whiteprompt.TestData
 import com.whiteprompt.domain.{Task, TaskEntity}
-import com.whiteprompt.services.TaskServiceActor._
+import com.whiteprompt.services.TaskService._
 import org.scalatest.{Suite, BeforeAndAfterAll, Matchers, WordSpecLike}
 
 class TaskServiceSpec extends TestKit(ActorSystem("TaskServiceSpec"))
@@ -12,7 +12,7 @@ class TaskServiceSpec extends TestKit(ActorSystem("TaskServiceSpec"))
 
   trait Scope extends TestData {
     implicit val context = system.dispatcher
-    val taskService = system.actorOf(TaskServiceActor.props(taskRepository()))
+    val taskService = system.actorOf(TaskService.props(taskRepository()))
 
     def task(_name: String, _description: String): Task = new Task {
       val name = _name
