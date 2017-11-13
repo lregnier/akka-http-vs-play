@@ -26,6 +26,7 @@ object Dependencies {
       "com.typesafe.akka" %% "akka-http-testkit" % akkaHttpVersion % "test",
 
       "org.json4s" %% "json4s-jackson" % json4sVersion,
+      "org.json4s" %% "json4s-ext" % json4sVersion,
       "de.heikoseeberger" %% "akka-http-json4s" % "1.11.0"
     )
   }

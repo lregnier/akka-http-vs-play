@@ -1,10 +1,12 @@
 package controllers
 
+import java.util.UUID
+
 import akka.actor._
 import akka.pattern.ask
 import akka.util.Timeout
 import com.whiteprompt.domain.{Task, TaskEntity}
-import com.whiteprompt.services.TaskServiceActor
+import com.whiteprompt.services.TaskService
 import play.api.data.Forms._
 import play.api.data._
 import play.api.libs.json._
@@ -16,7 +18,7 @@ import scala.concurrent.{ExecutionContext, Future}
 case class TaskData(name: String, description: String) extends Task
 
 class TaskController(val taskService: ActorRef)(implicit val ec: ExecutionContext) extends Controller {
-  import TaskServiceActor._
+  import TaskService._
   implicit val timeout = Timeout(5 seconds)
 
   implicit val taskImplicitReads = Json.reads[TaskData]
@@ -32,7 +34,7 @@ class TaskController(val taskService: ActorRef)(implicit val ec: ExecutionContex
   def create = Action.async(BodyParsers.parse.json) { implicit request =>
     taskForm.bindFromRequest.fold(
       formWithErrors => {
-        Future(BadRequest)
+        Future.successful(BadRequest)
       },
       taskData => {
         (taskService ? CreateTask(taskData))
@@ -46,7 +48,7 @@ class TaskController(val taskService: ActorRef)(implicit val ec: ExecutionContex
     )
   }
 
-  def retrieve(id: String) = Action.async {
+  def retrieve(id: UUID) = Action.async {
     (taskService ? RetrieveTask(id))
       .mapTo[Option[TaskEntity]].map {
         case Some(task) => Ok(Json.toJson(task))
@@ -54,10 +56,10 @@ class TaskController(val taskService: ActorRef)(implicit val ec: ExecutionContex
     }
   }
 
-  def update(id: String) = Action.async(BodyParsers.parse.json) { implicit request =>
+  def update(id: UUID) = Action.async(BodyParsers.parse.json) { implicit request =>
     taskForm.bindFromRequest.fold(
       formWithErrors => {
-        Future(BadRequest)
+        Future.successful(BadRequest)
       },
       taskData => {
         (taskService ? UpdateTask(id, taskData)).mapTo[Option[TaskEntity]].map{
@@ -68,7 +70,7 @@ class TaskController(val taskService: ActorRef)(implicit val ec: ExecutionContex
     )
   }
 
-  def delete(id: String) = Action.async {
+  def delete(id: UUID) = Action.async {
     (taskService ? DeleteTask(id))
       .mapTo[Option[TaskEntity]].map {
         case Some(taskEntity) => NoContent

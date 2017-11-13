@@ -7,13 +7,13 @@ import akka.http.scaladsl.testkit.ScalatestRouteTest
 import com.whiteprompt.TestData
 import com.whiteprompt.api.utils.Json4sJacksonSupport
 import com.whiteprompt.domain.TaskEntity
-import com.whiteprompt.services.TaskServiceActor
+import com.whiteprompt.services.TaskService
 import org.scalatest.{Matchers, WordSpec}
 
 class TasksRoutesSpec extends WordSpec with Matchers with ScalatestRouteTest {
 
   trait Scope extends TaskRoutes with Json4sJacksonSupport with TestData {
-    val taskService = system.actorOf(TaskServiceActor.props(taskRepository()))
+    val taskService = system.actorOf(TaskService.props(taskRepository()))
   }
 
   "When sending a POST request, the Task API" should {

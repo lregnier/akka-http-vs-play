@@ -8,7 +8,7 @@ import akka.pattern.ask
 import akka.util.Timeout
 import com.whiteprompt.api.utils.Json4sJacksonSupport
 import com.whiteprompt.domain.{Task, TaskEntity}
-import com.whiteprompt.services.TaskServiceActor
+import com.whiteprompt.services.TaskService
 
 import scala.concurrent.duration._
 
@@ -18,7 +18,7 @@ case class TaskData(name: String, description: String) extends Task {
 }
 
 trait TaskRoutes extends Json4sJacksonSupport {
-  import TaskServiceActor._
+  import TaskService._
 
   implicit val timeout = Timeout(5 seconds)
 
@@ -36,7 +36,7 @@ trait TaskRoutes extends Json4sJacksonSupport {
     }
 
   def retrieve =
-    (path(Segment) & get) { id =>
+    (path(JavaUUID) & get) { id =>
       onSuccess((taskService ? RetrieveTask(id)).mapTo[Option[TaskEntity]]) {
         case Some(task) => complete(task)
         case None => complete(StatusCodes.NotFound)
@@ -44,17 +44,17 @@ trait TaskRoutes extends Json4sJacksonSupport {
     }
 
   def update =
-    (path(Segment) & put & entity(as[TaskData])) { (id, task)  =>
-      onSuccess((taskService ? TaskServiceActor.UpdateTask(id, task)).mapTo[Option[TaskEntity]]) {
+    (path(JavaUUID) & put & entity(as[TaskData])) { (id, task)  =>
+      onSuccess((taskService ? UpdateTask(id, task)).mapTo[Option[TaskEntity]]) {
         case Some(task) => complete(task)
         case None => complete(StatusCodes.NotFound)
       }
     }
 
   def remove =
-    (path(Segment) & delete) { id =>
+    (path(JavaUUID) & delete) { id =>
       onSuccess((taskService ? DeleteTask(id)).mapTo[Option[TaskEntity]]) {
-        case Some(task) => complete(StatusCodes.NoContent)
+        case Some(_) => complete(StatusCodes.NoContent)
         case None => complete(StatusCodes.NotFound)
       }
     }
